@@ -50,19 +50,57 @@ const Navbar = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Safaris</NavigationMenuTrigger>
+                  <NavigationMenuTrigger>Tanzania Safaris</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[400px] p-4 bg-popover">
                       <NavigationMenuLink asChild>
                         <Link to="/safaris/tanzania" className="block p-3 hover:bg-accent rounded-md transition-colors">
-                          <div className="font-semibold mb-1">Tanzania Safaris</div>
-                          <div className="text-sm text-muted-foreground">3-7 day safari packages</div>
+                          <div className="font-semibold mb-1">All Tanzania Safaris</div>
+                          <div className="text-sm text-muted-foreground">Browse all safari packages</div>
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
+                        <Link to="/safaris/tanzania#3-day" className="block p-3 hover:bg-accent rounded-md transition-colors">
+                          <div className="font-semibold mb-1">3-Day Safaris</div>
+                          <div className="text-sm text-muted-foreground">Quick safari adventures</div>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link to="/safaris/tanzania#5-day" className="block p-3 hover:bg-accent rounded-md transition-colors">
+                          <div className="font-semibold mb-1">5-Day Safaris</div>
+                          <div className="text-sm text-muted-foreground">Extended safari experience</div>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link to="/safaris/tanzania#7-day" className="block p-3 hover:bg-accent rounded-md transition-colors">
+                          <div className="font-semibold mb-1">7-Day Safaris</div>
+                          <div className="text-sm text-muted-foreground">Complete safari journey</div>
+                        </Link>
+                      </NavigationMenuLink>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Migration Safaris</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-[400px] p-4 bg-popover">
+                      <NavigationMenuLink asChild>
                         <Link to="/safaris/migration" className="block p-3 hover:bg-accent rounded-md transition-colors">
-                          <div className="font-semibold mb-1">Serengeti & Migration Safaris</div>
+                          <div className="font-semibold mb-1">All Migration Safaris</div>
                           <div className="text-sm text-muted-foreground">Witness the Great Migration</div>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link to="/safaris/migration#serengeti" className="block p-3 hover:bg-accent rounded-md transition-colors">
+                          <div className="font-semibold mb-1">Serengeti Migration</div>
+                          <div className="text-sm text-muted-foreground">Follow the wildebeest herds</div>
+                        </Link>
+                      </NavigationMenuLink>
+                      <NavigationMenuLink asChild>
+                        <Link to="/safaris/migration#river-crossing" className="block p-3 hover:bg-accent rounded-md transition-colors">
+                          <div className="font-semibold mb-1">River Crossing Experience</div>
+                          <div className="text-sm text-muted-foreground">Mara River crossings</div>
                         </Link>
                       </NavigationMenuLink>
                     </div>
@@ -161,14 +199,37 @@ const Navbar = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center justify-between w-full py-2 text-foreground hover:text-primary transition-colors">
-                Safaris <ChevronDown className="w-4 h-4" />
+                Tanzania Safaris <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56 bg-popover">
                 <DropdownMenuItem asChild>
-                  <Link to="/safaris/tanzania" onClick={() => setIsOpen(false)}>Tanzania Safaris</Link>
+                  <Link to="/safaris/tanzania" onClick={() => setIsOpen(false)}>All Tanzania Safaris</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/safaris/migration" onClick={() => setIsOpen(false)}>Migration Safaris</Link>
+                  <Link to="/safaris/tanzania#3-day" onClick={() => setIsOpen(false)}>3-Day Safaris</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/safaris/tanzania#5-day" onClick={() => setIsOpen(false)}>5-Day Safaris</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/safaris/tanzania#7-day" onClick={() => setIsOpen(false)}>7-Day Safaris</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center justify-between w-full py-2 text-foreground hover:text-primary transition-colors">
+                Migration Safaris <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 bg-popover">
+                <DropdownMenuItem asChild>
+                  <Link to="/safaris/migration" onClick={() => setIsOpen(false)}>All Migration Safaris</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/safaris/migration#serengeti" onClick={() => setIsOpen(false)}>Serengeti Migration</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/safaris/migration#river-crossing" onClick={() => setIsOpen(false)}>River Crossing Experience</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
