@@ -1,0 +1,144 @@
+import { MapPin, Clock, DollarSign, ArrowRight } from "lucide-react";
+import elephantsImage from "@/assets/elephants.jpg";
+import lionImage from "@/assets/lion.jpg";
+import safariJeepImage from "@/assets/safari-jeep.jpg";
+import safariHeroImage from "@/assets/safari-hero.jpg";
+
+const TripFinder = () => {
+  const expeditions = [
+    {
+      title: "TANZANIA HIGHLIGHTS SAFARI",
+      location: "Serengeti National Park",
+      duration: "6 Days",
+      price: "From $3,000",
+      image: elephantsImage,
+    },
+    {
+      title: "CRATER RIM ADVENTURE",
+      location: "Serengeti National Park",
+      duration: "7 Days",
+      price: "From $3,200",
+      image: safariHeroImage,
+    },
+    {
+      title: "NDUTU MIGRATION EXPERIENCE",
+      location: "Southern Serengeti & Ndutu",
+      duration: "6 Days",
+      price: "From $4,000",
+      image: safariJeepImage,
+    },
+    {
+      title: "MT. KILIMANJARO MARANGU ROUTE",
+      location: "Kilimanjaro Trail Huts",
+      duration: "5 Days",
+      price: "From $12,000",
+      image: lionImage,
+    },
+    {
+      title: "MT. KILIMANJARO MACHAME ROUTE",
+      location: "Kilimanjaro Trail Huts",
+      duration: "6 Days",
+      price: "From $12,000",
+      image: elephantsImage,
+    },
+    {
+      title: "MT. KILIMANJARO LEMOSHO ROUTE",
+      location: "Kilimanjaro Trail Huts",
+      duration: "8 Days",
+      price: "From $12,000",
+      image: safariHeroImage,
+    },
+    {
+      title: "EXPLORE ZANZIBAR",
+      location: "Mnarani Seafront Hotel, Stone Town",
+      duration: "5 Days, 1 Night",
+      price: "From $9,000",
+      image: safariJeepImage,
+    },
+    {
+      title: "THE ZANZIBAR EXPERIENCE",
+      location: "Mnarani Seafront Hotel, Stone Town",
+      duration: "3 Days, 2 Nights",
+      price: "From $12,000",
+      image: lionImage,
+    },
+    {
+      title: "ZANZIBAR IMMERSIVE",
+      location: "Mnarani Seafront Hotel, Stone Town",
+      duration: "4 Days, 3 Nights",
+      price: "From $15,000",
+      image: elephantsImage,
+    },
+  ];
+
+  return (
+    <section className="py-20 bg-muted/20">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <p className="text-sm text-primary uppercase tracking-[0.3em] mb-4">
+            TRIP FINDER
+          </p>
+          <h2 className="text-4xl md:text-6xl font-serif text-secondary">
+            DISCOVER <span className="italic font-light">your next</span> ADVENTURE
+          </h2>
+        </div>
+
+        {/* Expedition Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {expeditions.map((expedition, index) => (
+            <div
+              key={index}
+              className="group relative h-[350px] overflow-hidden rounded-lg shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+            >
+              {/* Background Image */}
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                style={{ backgroundImage: `url(${expedition.image})` }}
+              />
+              
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80" />
+
+              {/* Content */}
+              <div className="relative h-full flex flex-col justify-between p-6 text-white">
+                <div>
+                  <h3 className="text-xl font-serif uppercase tracking-wide leading-tight mb-4">
+                    {expedition.title}
+                  </h3>
+                </div>
+
+                <div className="space-y-3">
+                  {/* Location */}
+                  <div className="flex items-center gap-2 text-sm">
+                    <MapPin className="w-4 h-4 text-primary" />
+                    <span>{expedition.location}</span>
+                  </div>
+
+                  {/* Duration */}
+                  <div className="flex items-center gap-2 text-sm">
+                    <Clock className="w-4 h-4 text-primary" />
+                    <span>{expedition.duration}</span>
+                  </div>
+
+                  {/* Price and Arrow */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-sm">
+                      <DollarSign className="w-4 h-4 text-primary" />
+                      <span className="font-semibold">{expedition.price}</span>
+                    </div>
+                    <button className="w-10 h-10 rounded-full bg-primary/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
+                      <ArrowRight className="w-5 h-5 text-white" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TripFinder;
