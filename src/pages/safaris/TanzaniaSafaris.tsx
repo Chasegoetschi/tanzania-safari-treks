@@ -13,6 +13,7 @@ import safariJeepImage from "@/assets/safari-jeep.jpg";
 import safariHeroImage from "@/assets/safari-hero.jpg";
 import giraffeImage from "@/assets/giraffe-sunset.png";
 import giraffePatternImage from "@/assets/giraffe-pattern.png";
+import riverCruiseImage from "@/assets/river-cruise.png";
 
 const TanzaniaSafaris = () => {
   const [selectedLocation, setSelectedLocation] = useState("LOCATION");
@@ -33,7 +34,7 @@ const TanzaniaSafaris = () => {
       duration: "4 Days",
       price: "From $1,000",
       groupSize: "Group Size: 2+",
-      image: safariJeepImage,
+      image: riverCruiseImage,
     },
     {
       title: "MID-RANGE BEST OF TANZANIA",
