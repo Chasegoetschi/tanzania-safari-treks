@@ -122,7 +122,7 @@ const TripFinder = () => {
                   </h3>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {/* Location */}
                   <div className="flex items-center gap-2 text-sm">
                     <MapPin className="w-4 h-4 text-primary" />
