@@ -12,6 +12,7 @@ import kilimanjaroNightImage from "@/assets/kilimanjaro-night.png";
 import kilimanjaroSummitImage from "@/assets/kilimanjaro-summit.png";
 import zanzibarStonetownImage from "@/assets/zanzibar-stonetown.png";
 import zanzibarBeachImage from "@/assets/zanzibar-beach.png";
+import zanzibarExperienceImage from "@/assets/zanzibar-experience.png";
 
 const TripFinder = () => {
   const expeditions = [
@@ -76,7 +77,7 @@ const TripFinder = () => {
       location: "Mnarani Seafront Hotel, Stone Town",
       duration: "3 Days, 2 Nights",
       price: "From $12,000",
-      image: lionImage,
+      image: zanzibarExperienceImage,
       link: "/locations/zanzibar",
     },
     {
