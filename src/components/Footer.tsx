@@ -26,7 +26,7 @@ const Footer = () => {
             <p className="text-white/80 mb-4 leading-relaxed">
               Stay connected for safari updates, wildlife photography, and exclusive offers
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mb-6">
               <a 
                 href="https://facebook.com/profile.php?id=100063871123184" 
                 target="_blank"
@@ -52,6 +52,17 @@ const Footer = () => {
               >
                 <Twitter className="w-5 h-5" />
               </a>
+            </div>
+            <div className="space-y-2 text-white/80">
+              <p>
+                <span className="font-semibold text-white">Email:</span> info@grantexpedition.com
+              </p>
+              <p>
+                <span className="font-semibold text-white">Phone:</span> +255 766 437 358
+              </p>
+              <p>
+                <span className="font-semibold text-white">Address:</span> Arusha, Tanzania
+              </p>
             </div>
           </div>
         </div>
