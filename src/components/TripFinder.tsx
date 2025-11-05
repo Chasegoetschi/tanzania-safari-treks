@@ -1,7 +1,7 @@
 import { MapPin, Clock, DollarSign, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import elephantsImage from "@/assets/elephants.jpg";
-import lionImage from "@/assets/lion.jpg";
+import lionImage from "@/assets/lioness-mound.png";
 import safariJeepImage from "@/assets/safari-jeep.jpg";
 import safariHeroImage from "@/assets/safari-hero.jpg";
 
