@@ -16,6 +16,7 @@ import giraffePatternImage from "@/assets/giraffe-pattern.png";
 import riverCruiseImage from "@/assets/river-cruise.png";
 import zebrasImage from "@/assets/zebras.png";
 import cheetahImage from "@/assets/cheetah.png";
+import lionCloseupImage from "@/assets/lion-closeup.png";
 
 const TanzaniaSafaris = () => {
   const [selectedLocation, setSelectedLocation] = useState("LOCATION");
@@ -60,7 +61,7 @@ const TanzaniaSafaris = () => {
       duration: "7 Days",
       price: "From $3,200",
       groupSize: "Group Size: 2+",
-      image: elephantsImage,
+      image: lionCloseupImage,
     },
     {
       title: "TANZANIA LUXURY ALL-INCLUSIVE",
