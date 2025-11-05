@@ -6,6 +6,7 @@ import safariJeepImage from "@/assets/safari-jeep.jpg";
 import safariHeroImage from "@/assets/safari-hero.jpg";
 import lionessSunsetImage from "@/assets/lioness-sunset.png";
 import oryxImage from "@/assets/oryx.png";
+import riftValleyImage from "@/assets/rift-valley.png";
 
 const TripFinder = () => {
   const expeditions = [
@@ -30,7 +31,7 @@ const TripFinder = () => {
       location: "Southern Serengeti & Ndutu",
       duration: "6 Days",
       price: "From $4,000",
-      image: safariJeepImage,
+      image: riftValleyImage,
       link: "/safaris/migration",
     },
     {
