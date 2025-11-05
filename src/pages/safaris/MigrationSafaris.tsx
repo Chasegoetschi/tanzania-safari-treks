@@ -11,6 +11,7 @@ import elephantsImage from "@/assets/elephants.jpg";
 import safariJeepImage from "@/assets/safari-jeep.jpg";
 import lionsSavannaImage from "@/assets/lions-savanna.png";
 import lionessMoundImage from "@/assets/lioness-mound-2.png";
+import wildebeestZebraImage from "@/assets/wildebeest-zebra-herd.png";
 
 const MigrationSafaris = () => {
   const migrationPackages = [
@@ -28,7 +29,7 @@ const MigrationSafaris = () => {
       duration: "8 Days",
       groupSize: "2+",
       price: "From $4,000",
-      image: elephantsImage,
+      image: wildebeestZebraImage,
     },
     {
       title: "MARA RIVER CROSSING",
