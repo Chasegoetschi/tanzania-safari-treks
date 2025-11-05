@@ -10,7 +10,7 @@ import lionImage from "@/assets/lion.jpg";
 import elephantsImage from "@/assets/elephants.jpg";
 import safariJeepImage from "@/assets/safari-jeep.jpg";
 import lionsSavannaImage from "@/assets/lions-savanna.png";
-import lionessMoundImage from "@/assets/lioness-mound.png";
+import lionessMoundImage from "@/assets/lioness-mound-2.png";
 
 const MigrationSafaris = () => {
   const migrationPackages = [
