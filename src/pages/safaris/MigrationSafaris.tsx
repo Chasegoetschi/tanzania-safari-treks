@@ -10,6 +10,7 @@ import lionImage from "@/assets/lion.jpg";
 import elephantsImage from "@/assets/elephants.jpg";
 import safariJeepImage from "@/assets/safari-jeep.jpg";
 import lionsSavannaImage from "@/assets/lions-savanna.png";
+import lionessMoundImage from "@/assets/lioness-mound.png";
 
 const MigrationSafaris = () => {
   const migrationPackages = [
@@ -19,7 +20,7 @@ const MigrationSafaris = () => {
       duration: "7 Days",
       groupSize: "2+",
       price: "From $3,200",
-      image: lionImage,
+      image: lionessMoundImage,
     },
     {
       title: "NDUTU MIGRATION EXPERIENCE",
