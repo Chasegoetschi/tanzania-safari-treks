@@ -5,6 +5,7 @@ import lionImage from "@/assets/lioness-mound.png";
 import safariJeepImage from "@/assets/safari-jeep.jpg";
 import safariHeroImage from "@/assets/safari-hero.jpg";
 import lionessSunsetImage from "@/assets/lioness-sunset.png";
+import oryxImage from "@/assets/oryx.png";
 
 const TripFinder = () => {
   const expeditions = [
@@ -21,7 +22,7 @@ const TripFinder = () => {
       location: "Serengeti National Park",
       duration: "7 Days",
       price: "From $3,200",
-      image: safariHeroImage,
+      image: oryxImage,
       link: "/safaris/tanzania",
     },
     {
