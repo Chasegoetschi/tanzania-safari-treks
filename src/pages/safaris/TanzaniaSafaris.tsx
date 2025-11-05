@@ -74,7 +74,7 @@ const TanzaniaSafaris = () => {
       <section className="relative h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${giraffeImage})`, backgroundPosition: 'center 40%' }}
+          style={{ backgroundImage: `url(${giraffeImage})`, backgroundPosition: 'center 60%' }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/70 to-primary/80" />
         </div>
