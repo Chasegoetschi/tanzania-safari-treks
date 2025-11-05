@@ -71,10 +71,10 @@ const TanzaniaSafaris = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${giraffeImage})` }}
+          style={{ backgroundImage: `url(${giraffeImage})`, backgroundPosition: 'center 40%' }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/70 to-primary/80" />
         </div>
