@@ -17,6 +17,7 @@ import riverCruiseImage from "@/assets/river-cruise.png";
 import zebrasImage from "@/assets/zebras.png";
 import cheetahImage from "@/assets/cheetah.png";
 import lionCloseupImage from "@/assets/lion-closeup.png";
+import giraffeFeedingImage from "@/assets/giraffe-feeding.png";
 
 const TanzaniaSafaris = () => {
   const [selectedLocation, setSelectedLocation] = useState("LOCATION");
@@ -69,7 +70,7 @@ const TanzaniaSafaris = () => {
       duration: "7 Days",
       price: "From $4,000",
       groupSize: "Group Size: 2+",
-      image: safariJeepImage,
+      image: giraffeFeedingImage,
     },
   ];
 
