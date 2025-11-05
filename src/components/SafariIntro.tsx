@@ -1,4 +1,4 @@
-import lionImage from "@/assets/lion.jpg";
+import tigerImage from "@/assets/tiger.png";
 
 const SafariIntro = () => {
   return (
@@ -8,7 +8,7 @@ const SafariIntro = () => {
           {/* Image Side */}
           <div className="relative">
             <img 
-              src={lionImage} 
+              src={tigerImage} 
               alt="Tiger in Tanzania" 
               className="w-full h-[400px] object-cover rounded-lg shadow-lg"
             />
