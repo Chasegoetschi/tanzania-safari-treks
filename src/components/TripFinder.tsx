@@ -103,7 +103,7 @@ const TripFinder = () => {
             <Link
               key={index}
               to={expedition.link}
-              className="group relative h-[350px] overflow-hidden rounded-lg shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 block"
+              className="group relative h-[450px] overflow-hidden rounded-lg shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 block"
             >
               {/* Background Image */}
               <div
