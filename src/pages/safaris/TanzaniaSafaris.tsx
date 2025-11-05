@@ -1,12 +1,7 @@
 import { useState } from "react";
 import { MapPin, Clock, DollarSign, Users, ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import elephantsImage from "@/assets/elephants.jpg";
 import lionImage from "@/assets/lion.jpg";
 import safariJeepImage from "@/assets/safari-jeep.jpg";
@@ -18,72 +13,57 @@ import zebrasImage from "@/assets/zebras.png";
 import cheetahImage from "@/assets/cheetah.png";
 import lionCloseupImage from "@/assets/lion-closeup.png";
 import giraffeFeedingImage from "@/assets/giraffe-feeding.png";
-
 const TanzaniaSafaris = () => {
   const [selectedLocation, setSelectedLocation] = useState("LOCATION");
   const [selectedLength, setSelectedLength] = useState("LENGTH");
-
-  const safaris = [
-    {
-      title: "TASTE OF TANZANIA",
-      location: "Ngorongoro Crater",
-      duration: "3 Days",
-      price: "From $800",
-      groupSize: "Group Size: 2+",
-      image: giraffePatternImage,
-    },
-    {
-      title: "MID-RANGE WILDERNESS",
-      location: "Ngorongoro Crater",
-      duration: "4 Days",
-      price: "From $1,000",
-      groupSize: "Group Size: 2+",
-      image: riverCruiseImage,
-    },
-    {
-      title: "MID-RANGE BEST OF TANZANIA",
-      location: "Serengeti National Park",
-      duration: "5 days",
-      price: "From $2,000",
-      groupSize: "Group Size: 2+",
-      image: zebrasImage,
-    },
-    {
-      title: "MID-RANGE TANZANIA HIGHLIGHTS",
-      location: "Serengeti National Park",
-      duration: "6 Days",
-      price: "From $3,000",
-      groupSize: "Group Size: 2+",
-      image: cheetahImage,
-    },
-    {
-      title: "CRATER RIM ADVENTURE",
-      location: "Serengeti National Park",
-      duration: "7 Days",
-      price: "From $3,200",
-      groupSize: "Group Size: 2+",
-      image: lionCloseupImage,
-    },
-    {
-      title: "TANZANIA LUXURY ALL-INCLUSIVE",
-      location: "Serengeti National Park",
-      duration: "7 Days",
-      price: "From $4,000",
-      groupSize: "Group Size: 2+",
-      image: giraffeFeedingImage,
-    },
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const safaris = [{
+    title: "TASTE OF TANZANIA",
+    location: "Ngorongoro Crater",
+    duration: "3 Days",
+    price: "From $800",
+    groupSize: "Group Size: 2+",
+    image: giraffePatternImage
+  }, {
+    title: "MID-RANGE WILDERNESS",
+    location: "Ngorongoro Crater",
+    duration: "4 Days",
+    price: "From $1,000",
+    groupSize: "Group Size: 2+",
+    image: riverCruiseImage
+  }, {
+    title: "MID-RANGE BEST OF TANZANIA",
+    location: "Serengeti National Park",
+    duration: "5 days",
+    price: "From $2,000",
+    groupSize: "Group Size: 2+",
+    image: zebrasImage
+  }, {
+    title: "MID-RANGE TANZANIA HIGHLIGHTS",
+    location: "Serengeti National Park",
+    duration: "6 Days",
+    price: "From $3,000",
+    groupSize: "Group Size: 2+",
+    image: cheetahImage
+  }, {
+    title: "CRATER RIM ADVENTURE",
+    location: "Serengeti National Park",
+    duration: "7 Days",
+    price: "From $3,200",
+    groupSize: "Group Size: 2+",
+    image: lionCloseupImage
+  }, {
+    title: "TANZANIA LUXURY ALL-INCLUSIVE",
+    location: "Serengeti National Park",
+    duration: "7 Days",
+    price: "From $4,000",
+    groupSize: "Group Size: 2+",
+    image: giraffeFeedingImage
+  }];
+  return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <img
-          src={giraffeImage}
-          alt="Giraffe silhouette at sunset in Tanzania Safaris hero"
-          className="absolute inset-0 w-full h-full object-cover object-[center_35%]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/70 to-primary/80" />
+        <img src={giraffeImage} alt="Giraffe silhouette at sunset in Tanzania Safaris hero" className="absolute inset-0 w-full h-full object-cover object-[center_35%]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/70 to-primary/80 mx-0 py-[10px]" />
 
         <div className="relative z-10 text-center text-white px-4">
           <p className="text-2xl md:text-3xl italic font-light mb-2">breathtaking</p>
@@ -111,10 +91,7 @@ const TanzaniaSafaris = () => {
           <div className="flex justify-center gap-4">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button 
-                  variant="outline" 
-                  className="bg-primary text-white hover:bg-primary/90 hover:text-white border-none px-8 py-6 uppercase tracking-wider"
-                >
+                <Button variant="outline" className="bg-primary text-white hover:bg-primary/90 hover:text-white border-none px-8 py-6 uppercase tracking-wider">
                   {selectedLocation}
                   <ChevronDown className="ml-2 h-4 w-4" />
                 </Button>
@@ -137,10 +114,7 @@ const TanzaniaSafaris = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button 
-                  variant="outline" 
-                  className="bg-primary text-white hover:bg-primary/90 hover:text-white border-none px-8 py-6 uppercase tracking-wider"
-                >
+                <Button variant="outline" className="bg-primary text-white hover:bg-primary/90 hover:text-white border-none px-8 py-6 uppercase tracking-wider">
                   {selectedLength}
                   <ChevronDown className="ml-2 h-4 w-4" />
                 </Button>
@@ -168,16 +142,11 @@ const TanzaniaSafaris = () => {
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="space-y-6">
-            {safaris.map((safari, index) => (
-              <div
-                key={index}
-                className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
-              >
+            {safaris.map((safari, index) => <div key={index} className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                 {/* Background Image */}
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                  style={{ backgroundImage: `url(${safari.image})` }}
-                />
+                <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style={{
+              backgroundImage: `url(${safari.image})`
+            }} />
 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
@@ -217,13 +186,10 @@ const TanzaniaSafaris = () => {
                     <ArrowRight className="w-6 h-6 text-white" />
                   </button>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default TanzaniaSafaris;
