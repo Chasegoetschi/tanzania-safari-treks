@@ -135,12 +135,14 @@ const TripFinder = () => {
                     <span>{expedition.duration}</span>
                   </div>
 
-                  {/* Price and Arrow */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-sm">
-                      <DollarSign className="w-4 h-4 text-primary" />
-                      <span className="font-semibold">{expedition.price}</span>
-                    </div>
+                  {/* Price */}
+                  <div className="flex items-center gap-2 text-sm">
+                    <DollarSign className="w-4 h-4 text-primary" />
+                    <span className="font-semibold">{expedition.price}</span>
+                  </div>
+                  
+                  {/* Arrow Button */}
+                  <div className="flex justify-end">
                     <div className="w-10 h-10 rounded-full bg-primary/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
                       <ArrowRight className="w-5 h-5 text-white" />
                     </div>
