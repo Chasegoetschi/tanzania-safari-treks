@@ -9,6 +9,7 @@ import {
 import lionImage from "@/assets/lion.jpg";
 import elephantsImage from "@/assets/elephants.jpg";
 import safariJeepImage from "@/assets/safari-jeep.jpg";
+import lionsSavannaImage from "@/assets/lions-savanna.png";
 
 const MigrationSafaris = () => {
   const migrationPackages = [
@@ -43,7 +44,7 @@ const MigrationSafaris = () => {
       {/* Hero Section */}
       <section 
         className="relative h-[60vh] flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: `url(${lionImage})` }}
+        style={{ backgroundImage: `url(${lionsSavannaImage})` }}
       >
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-center text-white px-4">
