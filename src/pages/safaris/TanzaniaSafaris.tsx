@@ -1,105 +1,216 @@
+import { useState } from "react";
+import { MapPin, Clock, DollarSign, Users, ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Clock, Users, Star } from "lucide-react";
-import { Link } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import elephantsImage from "@/assets/elephants.jpg";
+import lionImage from "@/assets/lion.jpg";
+import safariJeepImage from "@/assets/safari-jeep.jpg";
+import safariHeroImage from "@/assets/safari-hero.jpg";
 
 const TanzaniaSafaris = () => {
-  const safariPackages = [
+  const [selectedLocation, setSelectedLocation] = useState("LOCATION");
+  const [selectedLength, setSelectedLength] = useState("LENGTH");
+
+  const safaris = [
     {
-      title: "3-Day Taste of Tanzania",
+      title: "TASTE OF TANZANIA",
+      location: "Ngorongoro Crater",
       duration: "3 Days",
-      groupSize: "2-6 People",
-      price: "$1,200",
-      rating: "4.8",
-      description: "Perfect introduction to Tanzania's wildlife in Tarangire and Ngorongoro",
+      price: "From $800",
+      groupSize: "Group Size: 2+",
+      image: elephantsImage,
     },
     {
-      title: "4-Day Mid-Range Wilderness",
+      title: "MID-RANGE WILDERNESS",
+      location: "Ngorongoro Crater",
       duration: "4 Days",
-      groupSize: "2-6 People",
-      price: "$1,600",
-      rating: "4.7",
-      description: "Experience the best parks with comfortable mid-range accommodations",
+      price: "From $1,000",
+      groupSize: "Group Size: 2+",
+      image: safariJeepImage,
     },
     {
-      title: "5-Day Mid-Range Best of Tanzania",
-      duration: "5 Days",
-      groupSize: "2-6 People",
-      price: "$2,200",
-      rating: "4.9",
-      description: "Comprehensive tour covering Serengeti, Ngorongoro, and Tarangire",
+      title: "MID-RANGE BEST OF TANZANIA",
+      location: "Serengeti National Park",
+      duration: "5 days",
+      price: "From $2,000",
+      groupSize: "Group Size: 2+",
+      image: lionImage,
     },
     {
-      title: "6-Day Mid-Range Highlights of Tanzania",
+      title: "MID-RANGE TANZANIA HIGHLIGHTS",
+      location: "Serengeti National Park",
       duration: "6 Days",
-      groupSize: "2-8 People",
-      price: "$2,800",
-      rating: "5.0",
-      description: "Extended safari exploring all major northern circuit parks",
+      price: "From $3,000",
+      groupSize: "Group Size: 2+",
+      image: safariHeroImage,
     },
     {
-      title: "7-Day Mid-Range Epic Adventure",
+      title: "CRATER RIM ADVENTURE",
+      location: "Serengeti National Park",
       duration: "7 Days",
-      groupSize: "2-8 People",
-      price: "$3,400",
-      rating: "4.9",
-      description: "Ultimate mid-range safari with plenty of time in each park",
+      price: "From $3,200",
+      groupSize: "Group Size: 2+",
+      image: elephantsImage,
     },
     {
-      title: "7-Day Tanzania Luxury All-Inclusive",
+      title: "TANZANIA LUXURY ALL-INCLUSIVE",
+      location: "Serengeti National Park",
       duration: "7 Days",
-      groupSize: "2-6 People",
-      price: "$5,500",
-      rating: "5.0",
-      description: "Luxury lodges and exclusive experiences throughout the northern circuit",
+      price: "From $4,000",
+      groupSize: "Group Size: 2+",
+      image: safariJeepImage,
     },
   ];
 
   return (
-    <div className="min-h-screen pt-20">
-      <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
-              Tanzania Safari Packages
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Explore our carefully curated safari experiences, from quick getaways to extended luxury adventures
-            </p>
-          </div>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${safariHeroImage})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/70 to-primary/80" />
+        </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {safariPackages.map((safari, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-1">
-                      <Star className="w-4 h-4 fill-primary text-primary" />
-                      <span className="text-sm font-semibold">{safari.rating}</span>
+        <div className="relative z-10 text-center text-white px-4">
+          <p className="text-2xl md:text-3xl italic font-light mb-2">breathtaking</p>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif uppercase tracking-wide">
+            TANZANIA
+          </h1>
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-serif uppercase tracking-wide">
+            SAFARIS
+          </h2>
+        </div>
+
+        {/* Scroll Down Arrow */}
+        <button className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ChevronDown className="w-8 h-8 text-white" />
+        </button>
+      </section>
+
+      {/* Sort Section */}
+      <section className="py-12 bg-background">
+        <div className="container mx-auto px-4">
+          <p className="text-center text-sm text-muted-foreground uppercase tracking-[0.3em] mb-6">
+            SORT BY
+          </p>
+
+          <div className="flex justify-center gap-4">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="outline" 
+                  className="bg-primary text-white hover:bg-primary/90 hover:text-white border-none px-8 py-6 uppercase tracking-wider"
+                >
+                  {selectedLocation}
+                  <ChevronDown className="ml-2 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-white z-[100]">
+                <DropdownMenuItem onClick={() => setSelectedLocation("All Locations")}>
+                  All Locations
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setSelectedLocation("Serengeti")}>
+                  Serengeti
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setSelectedLocation("Ngorongoro")}>
+                  Ngorongoro
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setSelectedLocation("Tarangire")}>
+                  Tarangire
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="outline" 
+                  className="bg-primary text-white hover:bg-primary/90 hover:text-white border-none px-8 py-6 uppercase tracking-wider"
+                >
+                  {selectedLength}
+                  <ChevronDown className="ml-2 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-white z-[100]">
+                <DropdownMenuItem onClick={() => setSelectedLength("All Lengths")}>
+                  All Lengths
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setSelectedLength("3-4 Days")}>
+                  3-4 Days
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setSelectedLength("5-6 Days")}>
+                  5-6 Days
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setSelectedLength("7+ Days")}>
+                  7+ Days
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+        </div>
+      </section>
+
+      {/* Safari Cards */}
+      <section className="py-12 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="space-y-6">
+            {safaris.map((safari, index) => (
+              <div
+                key={index}
+                className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+              >
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                  style={{ backgroundImage: `url(${safari.image})` }}
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+
+                {/* Content */}
+                <div className="relative h-full flex items-center justify-between px-8 text-white">
+                  <div className="space-y-3">
+                    <h3 className="text-2xl md:text-3xl font-serif uppercase tracking-wide">
+                      {safari.title}
+                    </h3>
+
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-white" />
+                        <span>{safari.location}</span>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <DollarSign className="w-4 h-4 text-white" />
+                        <span className="font-semibold">{safari.price}</span>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <Clock className="w-4 h-4 text-white" />
+                        <span>{safari.duration}</span>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <Users className="w-4 h-4 text-white" />
+                        <span>{safari.groupSize}</span>
+                      </div>
                     </div>
-                    <span className="text-2xl font-bold text-primary">{safari.price}</span>
                   </div>
-                  <CardTitle className="text-2xl">{safari.title}</CardTitle>
-                  <CardDescription className="text-base">{safari.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      <span>{safari.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Users className="w-4 h-4" />
-                      <span>{safari.groupSize}</span>
-                    </div>
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button className="w-full" size="lg">
-                    View Details
-                  </Button>
-                </CardFooter>
-              </Card>
+
+                  {/* Arrow Button */}
+                  <button className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:scale-110 flex-shrink-0">
+                    <ArrowRight className="w-6 h-6 text-white" />
+                  </button>
+                </div>
+              </div>
             ))}
           </div>
         </div>
