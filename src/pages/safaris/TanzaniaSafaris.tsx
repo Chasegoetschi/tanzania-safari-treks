@@ -81,7 +81,7 @@ const TanzaniaSafaris = () => {
         <img
           src={giraffeImage}
           alt="Giraffe silhouette at sunset in Tanzania Safaris hero"
-          className="absolute inset-0 w-full h-full object-cover object-[center_95%]"
+          className="absolute inset-0 w-full h-full object-cover object-[center_95%] scale-90"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/70 to-primary/80" />
 
