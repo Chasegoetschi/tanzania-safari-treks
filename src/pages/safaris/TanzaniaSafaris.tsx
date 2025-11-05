@@ -15,6 +15,7 @@ import giraffeImage from "@/assets/giraffe-sunset.png";
 import giraffePatternImage from "@/assets/giraffe-pattern.png";
 import riverCruiseImage from "@/assets/river-cruise.png";
 import zebrasImage from "@/assets/zebras.png";
+import cheetahImage from "@/assets/cheetah.png";
 
 const TanzaniaSafaris = () => {
   const [selectedLocation, setSelectedLocation] = useState("LOCATION");
@@ -51,7 +52,7 @@ const TanzaniaSafaris = () => {
       duration: "6 Days",
       price: "From $3,000",
       groupSize: "Group Size: 2+",
-      image: safariHeroImage,
+      image: cheetahImage,
     },
     {
       title: "CRATER RIM ADVENTURE",
