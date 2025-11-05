@@ -77,7 +77,7 @@ const TanzaniaSafaris = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <img
           src={giraffeImage}
           alt="Giraffe silhouette at sunset in Tanzania Safaris hero"
