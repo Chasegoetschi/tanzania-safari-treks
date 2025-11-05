@@ -12,6 +12,7 @@ import safariJeepImage from "@/assets/safari-jeep.jpg";
 import lionsSavannaImage from "@/assets/lions-savanna.png";
 import lionessMoundImage from "@/assets/lioness-mound-2.png";
 import wildebeestZebraImage from "@/assets/wildebeest-zebra-herd.png";
+import maraRiverAerialImage from "@/assets/mara-river-aerial.png";
 
 const MigrationSafaris = () => {
   const migrationPackages = [
@@ -37,7 +38,7 @@ const MigrationSafaris = () => {
       duration: "10 Days",
       groupSize: "2+",
       price: "From $5,000",
-      image: safariJeepImage,
+      image: maraRiverAerialImage,
     },
   ];
 
