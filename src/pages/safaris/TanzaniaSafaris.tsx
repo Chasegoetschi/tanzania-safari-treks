@@ -11,7 +11,7 @@ import elephantsImage from "@/assets/elephants.jpg";
 import lionImage from "@/assets/lion.jpg";
 import safariJeepImage from "@/assets/safari-jeep.jpg";
 import safariHeroImage from "@/assets/safari-hero.jpg";
-import giraffeImage from "@/assets/giraffe-sunset.png";
+import giraffeImage from "@/assets/giraffe-silhouette-sunset.png";
 import giraffePatternImage from "@/assets/giraffe-pattern.png";
 import riverCruiseImage from "@/assets/river-cruise.png";
 import zebrasImage from "@/assets/zebras.png";
@@ -81,7 +81,7 @@ const TanzaniaSafaris = () => {
         <img
           src={giraffeImage}
           alt="Giraffe silhouette at sunset in Tanzania Safaris hero"
-          className="absolute inset-0 w-full h-full object-cover object-[center_95%] scale-90"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/70 to-primary/80" />
 
