@@ -1,80 +1,143 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Clock, Users, Star } from "lucide-react";
+import { MapPin, Clock, DollarSign, Users, ChevronDown, ArrowRight } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import lionImage from "@/assets/lion.jpg";
+import elephantsImage from "@/assets/elephants.jpg";
+import safariJeepImage from "@/assets/safari-jeep.jpg";
 
 const MigrationSafaris = () => {
   const migrationPackages = [
     {
-      title: "7-Day Wildebeest Migration",
+      title: "WESTERN CORRIDOR MIGRATION",
+      location: "Serengeti Western Corridor",
       duration: "7 Days",
-      groupSize: "2-8 People",
-      price: "$3,800",
-      rating: "5.0",
-      description: "Witness the greatest wildlife spectacle on Earth during the annual migration",
+      groupSize: "2+",
+      price: "From $3,200",
+      image: lionImage,
     },
     {
-      title: "8-Day Mid-Range Ndutu Migration",
+      title: "NDUTU MIGRATION EXPERIENCE",
+      location: "Southern Serengeti & Ndutu",
       duration: "8 Days",
-      groupSize: "2-6 People",
-      price: "$4,200",
-      rating: "4.9",
-      description: "Experience the calving season in Ndutu with incredible predator action",
+      groupSize: "2+",
+      price: "From $4,000",
+      image: elephantsImage,
     },
     {
-      title: "10-Day Wildebeest Migration",
+      title: "MARA RIVER CROSSING",
+      location: "Mara River",
       duration: "10 Days",
-      groupSize: "2-8 People",
-      price: "$5,500",
-      rating: "5.0",
-      description: "Extended migration safari following the herds across the Serengeti",
+      groupSize: "2+",
+      price: "From $5,000",
+      image: safariJeepImage,
     },
   ];
 
   return (
-    <div className="min-h-screen pt-20">
-      <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section 
+        className="relative h-[60vh] flex items-center justify-center bg-cover bg-center"
+        style={{ backgroundImage: `url(${lionImage})` }}
+      >
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 text-center text-white px-4">
+          <p className="text-2xl md:text-3xl italic font-light mb-2">remarkable</p>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif uppercase tracking-wide leading-tight">
+            SERENGETI AND<br />MIGRATION SAFARIS
+          </h1>
+        </div>
+        <button className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white animate-bounce">
+          <ChevronDown className="w-8 h-8" />
+        </button>
+      </section>
+
+      {/* Sort Section */}
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
-              Serengeti & Migration Safaris
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Follow the Great Migration and witness nature's most spectacular wildlife event
-            </p>
+          <div className="flex flex-col items-center gap-6 mb-12">
+            <h2 className="text-sm uppercase tracking-[0.3em] text-foreground">SORT BY</h2>
+            <div className="flex gap-4">
+              <Select>
+                <SelectTrigger className="w-[180px] bg-primary text-white border-none uppercase tracking-wider">
+                  <SelectValue placeholder="LOCATION" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="western">Western Corridor</SelectItem>
+                  <SelectItem value="ndutu">Ndutu</SelectItem>
+                  <SelectItem value="mara">Mara River</SelectItem>
+                </SelectContent>
+              </Select>
+              <Select>
+                <SelectTrigger className="w-[180px] bg-primary text-white border-none uppercase tracking-wider">
+                  <SelectValue placeholder="LENGTH" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="7">7 Days</SelectItem>
+                  <SelectItem value="8">8 Days</SelectItem>
+                  <SelectItem value="10">10 Days</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Safari Cards */}
+          <div className="max-w-4xl mx-auto space-y-6">
             {migrationPackages.map((safari, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-1">
-                      <Star className="w-4 h-4 fill-primary text-primary" />
-                      <span className="text-sm font-semibold">{safari.rating}</span>
+              <div
+                key={index}
+                className="group relative h-[300px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+              >
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                  style={{ backgroundImage: `url(${safari.image})` }}
+                />
+                
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
+
+                {/* Content */}
+                <div className="relative h-full flex items-center justify-between px-8">
+                  <div className="text-white space-y-4">
+                    <h3 className="text-3xl md:text-4xl font-serif uppercase tracking-wide">
+                      {safari.title}
+                    </h3>
+                    
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-sm">
+                        <MapPin className="w-5 h-5 text-white" />
+                        <span>{safari.location}</span>
+                      </div>
+                      
+                      <div className="flex items-center gap-2 text-sm">
+                        <Clock className="w-5 h-5 text-white" />
+                        <span>{safari.duration}</span>
+                      </div>
+                      
+                      <div className="flex items-center gap-2 text-sm">
+                        <DollarSign className="w-5 h-5 text-white" />
+                        <span className="font-semibold">{safari.price}</span>
+                      </div>
+                      
+                      <div className="flex items-center gap-2 text-sm">
+                        <Users className="w-5 h-5 text-white" />
+                        <span>Group Size: {safari.groupSize}</span>
+                      </div>
                     </div>
-                    <span className="text-2xl font-bold text-primary">{safari.price}</span>
                   </div>
-                  <CardTitle className="text-2xl">{safari.title}</CardTitle>
-                  <CardDescription className="text-base">{safari.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      <span>{safari.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Users className="w-4 h-4" />
-                      <span>{safari.groupSize}</span>
-                    </div>
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button className="w-full" size="lg">
-                    Book Now
-                  </Button>
-                </CardFooter>
-              </Card>
+
+                  {/* Arrow Button */}
+                  <button className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
+                    <ArrowRight className="w-6 h-6 text-white" />
+                  </button>
+                </div>
+              </div>
             ))}
           </div>
         </div>
