@@ -11,6 +11,7 @@ import elephantsImage from "@/assets/elephants.jpg";
 import lionImage from "@/assets/lion.jpg";
 import safariJeepImage from "@/assets/safari-jeep.jpg";
 import safariHeroImage from "@/assets/safari-hero.jpg";
+import giraffeImage from "@/assets/giraffe-sunset.png";
 
 const TanzaniaSafaris = () => {
   const [selectedLocation, setSelectedLocation] = useState("LOCATION");
@@ -73,7 +74,7 @@ const TanzaniaSafaris = () => {
       <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${safariHeroImage})` }}
+          style={{ backgroundImage: `url(${giraffeImage})` }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/70 to-primary/80" />
         </div>
