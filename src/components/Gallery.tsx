@@ -10,10 +10,10 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="gallery" className="py-24 bg-accent/10">
+    <section id="gallery" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-serif italic text-secondary mb-6">
+          <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-6 uppercase tracking-wide">
             Safari Moments
           </h2>
           <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">

@@ -14,7 +14,7 @@ const Contact = () => {
     <section id="contact" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-serif italic text-secondary mb-6">
+          <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-6 uppercase tracking-wide">
             Plan Your Journey
           </h2>
           <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
@@ -27,29 +27,29 @@ const Contact = () => {
             <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-1">Phone</h4>
+                  <h4 className="font-semibold mb-1 text-secondary">Phone</h4>
                   <p className="text-muted-foreground">+255 123 456 789</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-1">Email</h4>
-                  <p className="text-muted-foreground">info@safaritanzania.com</p>
+                  <h4 className="font-semibold mb-1 text-secondary">Email</h4>
+                  <p className="text-muted-foreground">info@grantexpedition.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-1">Location</h4>
+                  <h4 className="font-semibold mb-1 text-secondary">Location</h4>
                   <p className="text-muted-foreground">Arusha, Tanzania</p>
                 </div>
               </div>

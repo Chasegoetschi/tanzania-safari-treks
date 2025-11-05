@@ -37,7 +37,7 @@ const Safaris = () => {
     <section id="safaris" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-serif italic text-secondary mb-6">
+          <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-6 uppercase tracking-wide">
             Featured Safari Experiences
           </h2>
           <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
@@ -48,8 +48,8 @@ const Safaris = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {safariPackages.map((safari, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border-accent/30">
-              <CardHeader className="bg-accent/10">
+            <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border-muted/50">
+              <CardHeader className="bg-muted/30">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-1">
                     <Star className="w-5 h-5 fill-primary text-primary" />
@@ -57,7 +57,7 @@ const Safaris = () => {
                   </div>
                   <span className="text-2xl font-bold text-primary">{safari.price}</span>
                 </div>
-                <CardTitle className="text-2xl font-serif text-secondary">{safari.title}</CardTitle>
+                <CardTitle className="text-2xl font-serif text-secondary uppercase tracking-wide">{safari.title}</CardTitle>
                 <CardDescription className="text-base text-foreground/70">{safari.description}</CardDescription>
               </CardHeader>
               <CardContent>
@@ -80,8 +80,8 @@ const Safaris = () => {
                   ))}
                 </ul>
               </CardContent>
-              <CardFooter className="bg-accent/5">
-                <Button className="w-full bg-primary hover:bg-primary/90 text-white" size="lg">
+              <CardFooter className="bg-muted/20">
+                <Button className="w-full bg-primary hover:bg-primary/90 text-white uppercase tracking-wider" size="lg">
                   Book This Safari
                 </Button>
               </CardFooter>

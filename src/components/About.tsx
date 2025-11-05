@@ -25,10 +25,10 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-accent/20">
+    <section id="about" className="py-24 bg-muted/40">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-serif italic text-secondary mb-6">
+          <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-6 uppercase tracking-wide">
             Discover and Adventure
           </h2>
           <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
@@ -41,12 +41,12 @@ const About = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="text-center p-6 rounded-lg bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="text-center p-6 rounded-lg bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-accent/20"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
-                <feature.icon className="w-8 h-8 text-primary" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/20 mb-4">
+                <feature.icon className="w-8 h-8 text-accent" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">
+              <h3 className="text-xl font-semibold text-secondary mb-2">
                 {feature.title}
               </h3>
               <p className="text-muted-foreground">

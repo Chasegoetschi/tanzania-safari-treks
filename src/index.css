@@ -8,44 +8,46 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Safari-inspired color palette from Figma */
-    --background: 40 30% 95%;
-    --foreground: 30 25% 20%;
+    /* Safari-inspired earthy color palette */
+    --background: 45 50% 92%;
+    --foreground: 30 25% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 30 25% 20%;
+    --card-foreground: 30 25% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 30 25% 20%;
+    --popover-foreground: 30 25% 25%;
 
-    /* Primary: Warm tan/beige */
-    --primary: 35 45% 55%;
+    /* Primary: Terracotta/Orange */
+    --primary: 25 65% 55%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary: Deep forest green */
-    --secondary: 120 25% 25%;
-    --secondary-foreground: 40 30% 95%;
+    /* Secondary: Dark Forest Green */
+    --secondary: 120 30% 20%;
+    --secondary-foreground: 45 50% 92%;
 
-    --muted: 40 20% 88%;
-    --muted-foreground: 30 15% 45%;
+    /* Muted: Light tan/sand */
+    --muted: 30 45% 85%;
+    --muted-foreground: 30 20% 40%;
 
-    /* Accent: Lighter tan */
-    --accent: 38 35% 75%;
-    --accent-foreground: 30 25% 20%;
+    /* Accent: Olive/Sage Green */
+    --accent: 75 30% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 15% 82%;
-    --input: 40 15% 82%;
-    --ring: 35 45% 55%;
+    --border: 30 30% 80%;
+    --input: 30 30% 80%;
+    --ring: 25 65% 55%;
 
     --radius: 0.5rem;
     
-    /* Safari gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(35 45% 55%) 0%, hsl(30 40% 45%) 100%);
-    --gradient-safari: linear-gradient(180deg, hsl(120 25% 25%) 0%, hsl(120 30% 20%) 100%);
-    --shadow-elegant: 0 10px 40px -10px hsl(35 45% 55% / 0.3);
+    /* Safari gradients using the new palette */
+    --gradient-hero: linear-gradient(135deg, hsl(25 65% 55%) 0%, hsl(25 70% 45%) 100%);
+    --gradient-safari: linear-gradient(180deg, hsl(120 30% 20%) 0%, hsl(75 30% 45%) 100%);
+    --gradient-earth: linear-gradient(135deg, hsl(75 30% 45%) 0%, hsl(30 60% 65%) 100%);
+    --shadow-elegant: 0 10px 40px -10px hsl(25 65% 55% / 0.3);
     --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -67,33 +69,33 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 30 25% 10%;
-    --foreground: 40 30% 95%;
+    --background: 30 25% 12%;
+    --foreground: 45 50% 92%;
 
-    --card: 30 20% 15%;
-    --card-foreground: 40 30% 95%;
+    --card: 30 20% 18%;
+    --card-foreground: 45 50% 92%;
 
-    --popover: 30 20% 15%;
-    --popover-foreground: 40 30% 95%;
+    --popover: 30 20% 18%;
+    --popover-foreground: 45 50% 92%;
 
-    --primary: 35 45% 55%;
+    --primary: 25 65% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 120 25% 30%;
-    --secondary-foreground: 40 30% 95%;
+    --secondary: 120 30% 25%;
+    --secondary-foreground: 45 50% 92%;
 
-    --muted: 30 15% 22%;
-    --muted-foreground: 40 15% 65%;
+    --muted: 30 15% 25%;
+    --muted-foreground: 30 30% 65%;
 
-    --accent: 38 35% 65%;
-    --accent-foreground: 40 30% 95%;
+    --accent: 75 30% 40%;
+    --accent-foreground: 45 50% 92%;
 
     --destructive: 0 62.8% 50%;
-    --destructive-foreground: 40 30% 95%;
+    --destructive-foreground: 45 50% 92%;
 
-    --border: 30 15% 25%;
-    --input: 30 15% 25%;
-    --ring: 35 45% 55%;
+    --border: 30 15% 28%;
+    --input: 30 15% 28%;
+    --ring: 25 65% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
