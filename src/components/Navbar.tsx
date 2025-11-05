@@ -67,7 +67,7 @@ const Navbar = () => {
                   <Link to="/safaris/tanzania" className="cursor-pointer">Tanzania Safaris</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/safaris/migration" className="cursor-pointer">Migration Safaris</Link>
+                  <Link to="/safaris/migration" className="cursor-pointer">Serengeti and Migration Safaris</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -145,7 +145,7 @@ const Navbar = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link to="/safaris/migration" onClick={() => setIsOpen(false)} className="cursor-pointer">
-                    Migration Safaris
+                    Serengeti and Migration Safaris
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
