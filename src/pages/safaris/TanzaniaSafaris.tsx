@@ -62,7 +62,7 @@ const TanzaniaSafaris = () => {
   return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <img src={giraffeImage} alt="Giraffe silhouette at sunset in Tanzania Safaris hero" className="absolute inset-0 w-full h-full object-contain object-center" />
+        <img src={giraffeImage} alt="Giraffe silhouette at sunset in Tanzania Safaris hero" className="absolute inset-0 w-full h-full object-cover object-[center_35%]" />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/70 to-primary/80 mx-0 py-[10px]" />
 
         <div className="relative z-10 text-center text-white px-4">
