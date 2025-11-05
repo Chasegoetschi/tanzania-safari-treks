@@ -1,4 +1,5 @@
 import { MapPin, Clock, DollarSign, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import elephantsImage from "@/assets/elephants.jpg";
 import lionImage from "@/assets/lion.jpg";
 import safariJeepImage from "@/assets/safari-jeep.jpg";
@@ -12,6 +13,7 @@ const TripFinder = () => {
       duration: "6 Days",
       price: "From $3,000",
       image: elephantsImage,
+      link: "/safaris/tanzania",
     },
     {
       title: "CRATER RIM ADVENTURE",
@@ -19,6 +21,7 @@ const TripFinder = () => {
       duration: "7 Days",
       price: "From $3,200",
       image: safariHeroImage,
+      link: "/safaris/tanzania",
     },
     {
       title: "NDUTU MIGRATION EXPERIENCE",
@@ -26,6 +29,7 @@ const TripFinder = () => {
       duration: "6 Days",
       price: "From $4,000",
       image: safariJeepImage,
+      link: "/safaris/migration",
     },
     {
       title: "MT. KILIMANJARO MARANGU ROUTE",
@@ -33,6 +37,7 @@ const TripFinder = () => {
       duration: "5 Days",
       price: "From $12,000",
       image: lionImage,
+      link: "/activities/hiking",
     },
     {
       title: "MT. KILIMANJARO MACHAME ROUTE",
@@ -40,6 +45,7 @@ const TripFinder = () => {
       duration: "6 Days",
       price: "From $12,000",
       image: elephantsImage,
+      link: "/activities/hiking",
     },
     {
       title: "MT. KILIMANJARO LEMOSHO ROUTE",
@@ -47,6 +53,7 @@ const TripFinder = () => {
       duration: "8 Days",
       price: "From $12,000",
       image: safariHeroImage,
+      link: "/activities/hiking",
     },
     {
       title: "EXPLORE ZANZIBAR",
@@ -54,6 +61,7 @@ const TripFinder = () => {
       duration: "5 Days, 1 Night",
       price: "From $9,000",
       image: safariJeepImage,
+      link: "/locations/zanzibar",
     },
     {
       title: "THE ZANZIBAR EXPERIENCE",
@@ -61,6 +69,7 @@ const TripFinder = () => {
       duration: "3 Days, 2 Nights",
       price: "From $12,000",
       image: lionImage,
+      link: "/locations/zanzibar",
     },
     {
       title: "ZANZIBAR IMMERSIVE",
@@ -68,6 +77,7 @@ const TripFinder = () => {
       duration: "4 Days, 3 Nights",
       price: "From $15,000",
       image: elephantsImage,
+      link: "/locations/zanzibar",
     },
   ];
 
@@ -87,9 +97,10 @@ const TripFinder = () => {
         {/* Expedition Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {expeditions.map((expedition, index) => (
-            <div
+            <Link
               key={index}
-              className="group relative h-[350px] overflow-hidden rounded-lg shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+              to={expedition.link}
+              className="group relative h-[350px] overflow-hidden rounded-lg shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 block"
             >
               {/* Background Image */}
               <div
@@ -127,13 +138,13 @@ const TripFinder = () => {
                       <DollarSign className="w-4 h-4 text-primary" />
                       <span className="font-semibold">{expedition.price}</span>
                     </div>
-                    <button className="w-10 h-10 rounded-full bg-primary/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
+                    <div className="w-10 h-10 rounded-full bg-primary/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
                       <ArrowRight className="w-5 h-5 text-white" />
-                    </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
