@@ -97,7 +97,7 @@ const MigrationSafaris = () => {
               >
                 {/* Background Image */}
                 <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                  className="absolute inset-0 bg-contain bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-105"
                   style={{ backgroundImage: `url(${safari.image})` }}
                 />
                 
