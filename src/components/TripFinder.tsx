@@ -115,8 +115,8 @@ const TripFinder = () => {
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80" />
 
               {/* Content */}
-              <div className="relative h-full flex flex-col justify-between p-6 text-white">
-                <div>
+              <div className="relative h-full flex flex-col justify-end p-6 text-white">
+                <div className="mb-auto">
                   <h3 className="text-xl font-serif uppercase tracking-wide leading-tight mb-4">
                     {expedition.title}
                   </h3>
