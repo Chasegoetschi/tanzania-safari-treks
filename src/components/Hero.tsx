@@ -13,23 +13,24 @@ const Hero = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-secondary/40 via-secondary/60 to-secondary/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/40" />
       </div>
       
-      <div className="relative z-10 container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-serif italic text-primary mb-8 animate-fade-in drop-shadow-lg">
-            Tanzania Safaris
+      <div className="relative z-10 container mx-auto px-4 text-center pt-24">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif text-white mb-8 animate-fade-in tracking-[0.15em] uppercase">
+            SAFARI EXPERIENCES
           </h1>
-          <p className="text-xl md:text-3xl text-white font-light mb-12 animate-fade-in leading-relaxed" style={{ animationDelay: "0.2s" }}>
-            Discover the wild. Find your adventure.
+          <p className="text-xl md:text-2xl text-white font-light mb-12 animate-fade-in leading-relaxed" style={{ animationDelay: "0.2s" }}>
+            Escape to the wild with our unforgettable safari tours.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <Button size="lg" onClick={scrollToContact} className="text-lg px-10 py-6 bg-primary hover:bg-primary/90 text-white">
-              Plan Your Safari
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-10 py-6 bg-white/95 backdrop-blur-sm text-secondary border-2 border-white hover:bg-white">
-              Explore More
+          <div className="flex justify-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
+            <Button 
+              size="lg" 
+              onClick={scrollToContact} 
+              className="text-base px-12 py-6 bg-white/95 hover:bg-white text-foreground border-none uppercase tracking-widest font-medium"
+            >
+              FIND YOUR ADVENTURE
             </Button>
           </div>
         </div>
