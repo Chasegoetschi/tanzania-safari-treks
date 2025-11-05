@@ -8,6 +8,7 @@ import lionessSunsetImage from "@/assets/lioness-sunset.png";
 import oryxImage from "@/assets/oryx.png";
 import riftValleyImage from "@/assets/rift-valley.png";
 import kilimanjaroSignImage from "@/assets/kilimanjaro-sign.png";
+import kilimanjaroNightImage from "@/assets/kilimanjaro-night.png";
 
 const TripFinder = () => {
   const expeditions = [
@@ -48,7 +49,7 @@ const TripFinder = () => {
       location: "Kilimanjaro Trail Huts",
       duration: "6 Days",
       price: "From $12,000",
-      image: elephantsImage,
+      image: kilimanjaroNightImage,
       link: "/activities/hiking",
     },
     {
