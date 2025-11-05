@@ -37,28 +37,28 @@ const Safaris = () => {
     <section id="safaris" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Featured Safari Packages
+          <h2 className="text-4xl md:text-6xl font-serif italic text-secondary mb-6">
+            Featured Safari Experiences
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Choose from our carefully curated safari experiences, each designed to showcase 
-            the best of Tanzania's natural wonders.
+          <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+            Embark on extraordinary journeys through Tanzania's most iconic landscapes. 
+            Each experience is crafted to create memories that last a lifetime.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {safariPackages.map((safari, index) => (
-            <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <CardHeader>
+            <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border-accent/30">
+              <CardHeader className="bg-accent/10">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-1">
-                    <Star className="w-4 h-4 fill-primary text-primary" />
-                    <span className="text-sm font-semibold">{safari.rating}</span>
+                    <Star className="w-5 h-5 fill-primary text-primary" />
+                    <span className="text-sm font-semibold text-secondary">{safari.rating}</span>
                   </div>
                   <span className="text-2xl font-bold text-primary">{safari.price}</span>
                 </div>
-                <CardTitle className="text-2xl">{safari.title}</CardTitle>
-                <CardDescription className="text-base">{safari.description}</CardDescription>
+                <CardTitle className="text-2xl font-serif text-secondary">{safari.title}</CardTitle>
+                <CardDescription className="text-base text-foreground/70">{safari.description}</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
@@ -80,8 +80,8 @@ const Safaris = () => {
                   ))}
                 </ul>
               </CardContent>
-              <CardFooter>
-                <Button className="w-full" size="lg">
+              <CardFooter className="bg-accent/5">
+                <Button className="w-full bg-primary hover:bg-primary/90 text-white" size="lg">
                   Book This Safari
                 </Button>
               </CardFooter>

@@ -10,15 +10,15 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="gallery" className="py-24 bg-muted/30">
+    <section id="gallery" className="py-24 bg-accent/10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Capture the Wild
+          <h2 className="text-4xl md:text-6xl font-serif italic text-secondary mb-6">
+            Safari Moments
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
             Experience the beauty and wonder of Tanzania's wildlife through stunning moments 
-            captured on our safaris.
+            captured on our extraordinary journeys.
           </p>
         </div>
 

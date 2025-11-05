@@ -25,15 +25,15 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-muted/30">
+    <section id="about" className="py-24 bg-accent/20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Your Gateway to Wild Africa
+          <h2 className="text-4xl md:text-6xl font-serif italic text-secondary mb-6">
+            Discover and Adventure
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            With over 15 years of experience, we craft authentic safari experiences that connect you 
-            with Tanzania's incredible wildlife and breathtaking landscapes.
+          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+            Immerse yourself in Tanzania's rich tapestry of wildlife, culture, and natural wonders. 
+            From the Serengeti plains to Zanzibar shores, every journey is an unforgettable adventure.
           </p>
         </div>
 

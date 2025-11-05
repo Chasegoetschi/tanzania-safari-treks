@@ -14,11 +14,11 @@ const Contact = () => {
     <section id="contact" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Start Your Adventure
+          <h2 className="text-4xl md:text-6xl font-serif italic text-secondary mb-6">
+            Plan Your Journey
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to experience the safari of a lifetime? Get in touch with us today.
+          <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+            Ready to experience the safari of a lifetime? Connect with us and let's create your perfect adventure.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ const Contact = () => {
                 className="min-h-[150px]"
               />
             </div>
-            <Button type="submit" size="lg" className="w-full">
+            <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-white">
               Send Inquiry
             </Button>
           </form>
