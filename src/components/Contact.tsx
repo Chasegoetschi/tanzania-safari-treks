@@ -1,13 +1,47 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Thank you! We'll contact you soon to plan your adventure.");
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from("contact_submissions")
+        .insert({
+          name,
+          email,
+          phone: phone || null,
+          message,
+        });
+
+      if (error) throw error;
+
+      toast.success("Thank you! We'll contact you soon to plan your adventure.");
+      
+      // Reset form
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -60,7 +94,10 @@ const Contact = () => {
             <div>
               <Input
                 placeholder="Your Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 required
+                disabled={isSubmitting}
                 className="h-12"
               />
             </div>
@@ -68,7 +105,10 @@ const Contact = () => {
               <Input
                 type="email"
                 placeholder="Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
+                disabled={isSubmitting}
                 className="h-12"
               />
             </div>
@@ -76,18 +116,29 @@ const Contact = () => {
               <Input
                 type="tel"
                 placeholder="Phone Number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                disabled={isSubmitting}
                 className="h-12"
               />
             </div>
             <div>
               <Textarea
                 placeholder="Tell us about your dream safari..."
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 required
+                disabled={isSubmitting}
                 className="min-h-[150px]"
               />
             </div>
-            <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-white">
-              Send Inquiry
+            <Button 
+              type="submit" 
+              size="lg" 
+              className="w-full bg-primary hover:bg-primary/90 text-white"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Sending..." : "Send Inquiry"}
             </Button>
           </form>
         </div>
