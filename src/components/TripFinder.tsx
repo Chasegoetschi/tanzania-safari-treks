@@ -44,7 +44,7 @@ const TripFinder = () => {
       title: "MT. KILIMANJARO MARANGU ROUTE",
       location: "Kilimanjaro Trail Huts",
       duration: "5 Days",
-      price: "From $12,000",
+      price: "From $4,000",
       image: kilimanjaroSignImage,
       link: "/activities/hiking",
     },
