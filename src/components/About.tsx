@@ -25,7 +25,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-muted/40 scroll-mt-24">
+    <section id="about" className="min-h-screen py-24 bg-muted/40 scroll-mt-24 flex items-center">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-6 uppercase tracking-wide">
