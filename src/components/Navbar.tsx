@@ -19,7 +19,7 @@ const Navbar = () => {
     setTimeout(() => {
       const element = document.getElementById(id);
       element?.scrollIntoView({ behavior: "smooth" });
-    }, 100);
+    }, 300);
     setIsOpen(false);
   };
 
