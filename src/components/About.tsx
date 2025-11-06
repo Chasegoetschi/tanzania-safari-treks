@@ -27,17 +27,17 @@ const About = () => {
   return (
     <section id="about" className="min-h-screen pt-0 pb-12 bg-muted/40 scroll-mt-24 flex items-center justify-center">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-8 uppercase tracking-widest">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-10 uppercase tracking-wide">
             Discover and Adventure
           </h2>
-          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-loose tracking-wide">
+          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-loose">
             Immerse yourself in Tanzania's rich tapestry of wildlife, culture, and natural wonders. 
             From the Serengeti plains to Zanzibar shores, every journey is an unforgettable adventure.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto">
           {features.map((feature, index) => (
             <div
               key={index}
