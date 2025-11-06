@@ -25,7 +25,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="min-h-screen py-24 bg-muted/40 scroll-mt-24 flex items-center">
+    <section id="about" className="min-h-screen py-24 bg-muted/40 scroll-mt-24 flex items-center justify-center">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-6 uppercase tracking-wide">
@@ -37,7 +37,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {features.map((feature, index) => (
             <div
               key={index}
