@@ -24,8 +24,11 @@ const NavigationHandler = () => {
   useEffect(() => {
     const navEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
     const isReload = navEntry?.type === 'reload';
-    if (isReload && location.pathname !== '/') {
-      navigate('/', { replace: true });
+    if (isReload) {
+      window.scrollTo(0, 0);
+      if (location.pathname !== '/') {
+        navigate('/', { replace: true });
+      }
     }
   }, []);
 
