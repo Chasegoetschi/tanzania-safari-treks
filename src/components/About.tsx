@@ -25,13 +25,13 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="min-h-screen pt-2 pb-12 bg-muted/40 scroll-mt-24 flex items-center justify-center">
+    <section id="about" className="min-h-screen pt-0 pb-12 bg-muted/40 scroll-mt-24 flex items-center justify-center">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-8 uppercase tracking-wide">
+          <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-8 uppercase tracking-widest">
             Discover and Adventure
           </h2>
-          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-loose">
+          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-loose tracking-wide">
             Immerse yourself in Tanzania's rich tapestry of wildlife, culture, and natural wonders. 
             From the Serengeti plains to Zanzibar shores, every journey is an unforgettable adventure.
           </p>
