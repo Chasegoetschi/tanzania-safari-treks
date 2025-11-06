@@ -22,10 +22,19 @@ const NavigationHandler = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // Disable automatic scroll restoration
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
     const navEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
     const isReload = navEntry?.type === 'reload';
     if (isReload) {
+      // Force scroll to top immediately on reload
       window.scrollTo(0, 0);
+      // Small delay to ensure it takes effect
+      setTimeout(() => window.scrollTo(0, 0), 0);
+      
       if (location.pathname !== '/') {
         navigate('/', { replace: true });
       }
