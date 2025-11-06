@@ -64,10 +64,10 @@ const Navbar = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white z-[100]">
                 <DropdownMenuItem asChild>
-                  <Link to="/safaris/tanzania" className="cursor-pointer">Tanzania Safaris</Link>
+                  <Link to="/safaris/tanzania" className="cursor-pointer" onClick={() => window.scrollTo(0, 0)}>Tanzania Safaris</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/safaris/migration" className="cursor-pointer">Serengeti and Migration Safaris</Link>
+                  <Link to="/safaris/migration" className="cursor-pointer" onClick={() => window.scrollTo(0, 0)}>Serengeti and Migration Safaris</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -78,13 +78,13 @@ const Navbar = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white z-[100]">
                 <DropdownMenuItem asChild>
-                  <Link to="/activities/hiking" className="cursor-pointer">Hiking Adventures</Link>
+                  <Link to="/activities/hiking" className="cursor-pointer" onClick={() => window.scrollTo(0, 0)}>Hiking Adventures</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/activities/cultural" className="cursor-pointer">Cultural Experiences</Link>
+                  <Link to="/activities/cultural" className="cursor-pointer" onClick={() => window.scrollTo(0, 0)}>Cultural Experiences</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/activities/outdoor" className="cursor-pointer">Outdoor Experiences</Link>
+                  <Link to="/activities/outdoor" className="cursor-pointer" onClick={() => window.scrollTo(0, 0)}>Outdoor Experiences</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -95,13 +95,13 @@ const Navbar = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white z-[100]">
                 <DropdownMenuItem asChild>
-                  <Link to="/locations/zanzibar" className="cursor-pointer">Zanzibar Islands</Link>
+                  <Link to="/locations/zanzibar" className="cursor-pointer" onClick={() => window.scrollTo(0, 0)}>Zanzibar Islands</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/locations/mainland" className="cursor-pointer">Mainland Highlights</Link>
+                  <Link to="/locations/mainland" className="cursor-pointer" onClick={() => window.scrollTo(0, 0)}>Mainland Highlights</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/locations/northern-circuit" className="cursor-pointer">Northern Circuit</Link>
+                  <Link to="/locations/northern-circuit" className="cursor-pointer" onClick={() => window.scrollTo(0, 0)}>Northern Circuit</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -139,12 +139,12 @@ const Navbar = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white z-[100]">
                 <DropdownMenuItem asChild>
-                  <Link to="/safaris/tanzania" onClick={() => setIsOpen(false)} className="cursor-pointer">
+                  <Link to="/safaris/tanzania" onClick={() => { setIsOpen(false); window.scrollTo(0, 0); }} className="cursor-pointer">
                     Tanzania Safaris
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/safaris/migration" onClick={() => setIsOpen(false)} className="cursor-pointer">
+                  <Link to="/safaris/migration" onClick={() => { setIsOpen(false); window.scrollTo(0, 0); }} className="cursor-pointer">
                     Serengeti and Migration Safaris
                   </Link>
                 </DropdownMenuItem>
@@ -157,17 +157,17 @@ const Navbar = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white z-[100]">
                 <DropdownMenuItem asChild>
-                  <Link to="/activities/hiking" onClick={() => setIsOpen(false)} className="cursor-pointer">
+                  <Link to="/activities/hiking" onClick={() => { setIsOpen(false); window.scrollTo(0, 0); }} className="cursor-pointer">
                     Hiking Adventures
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/activities/cultural" onClick={() => setIsOpen(false)} className="cursor-pointer">
+                  <Link to="/activities/cultural" onClick={() => { setIsOpen(false); window.scrollTo(0, 0); }} className="cursor-pointer">
                     Cultural Experiences
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/activities/outdoor" onClick={() => setIsOpen(false)} className="cursor-pointer">
+                  <Link to="/activities/outdoor" onClick={() => { setIsOpen(false); window.scrollTo(0, 0); }} className="cursor-pointer">
                     Outdoor Experiences
                   </Link>
                 </DropdownMenuItem>
@@ -180,17 +180,17 @@ const Navbar = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white z-[100]">
                 <DropdownMenuItem asChild>
-                  <Link to="/locations/zanzibar" onClick={() => setIsOpen(false)} className="cursor-pointer">
+                  <Link to="/locations/zanzibar" onClick={() => { setIsOpen(false); window.scrollTo(0, 0); }} className="cursor-pointer">
                     Zanzibar Islands
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/locations/mainland" onClick={() => setIsOpen(false)} className="cursor-pointer">
+                  <Link to="/locations/mainland" onClick={() => { setIsOpen(false); window.scrollTo(0, 0); }} className="cursor-pointer">
                     Mainland Highlights
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/locations/northern-circuit" onClick={() => setIsOpen(false)} className="cursor-pointer">
+                  <Link to="/locations/northern-circuit" onClick={() => { setIsOpen(false); window.scrollTo(0, 0); }} className="cursor-pointer">
                     Northern Circuit
                   </Link>
                 </DropdownMenuItem>
