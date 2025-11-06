@@ -3,7 +3,7 @@ import {
   Dialog,
   DialogContent,
 } from "@/components/ui/dialog";
-import grantLogo from "@/assets/grant-expedition-logo.png";
+import grantLogo from "@/assets/grant-expedition-logo-new.png";
 
 const RebrandingDialog = () => {
   const [open, setOpen] = useState(false);
