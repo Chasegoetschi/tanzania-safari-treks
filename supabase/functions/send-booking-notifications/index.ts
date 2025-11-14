@@ -128,6 +128,11 @@ const handler = async (req: Request): Promise<Response> => {
       </div>
     `;
 
+    // Get admin URL from environment
+    const supabaseUrl = Deno.env.get("VITE_SUPABASE_URL") || "";
+    const adminUrl = supabaseUrl.replace("https://", "https://").replace(".supabase.co", ".lovableproject.com");
+    const manageBookingUrl = `${adminUrl}/admin?bookingRef=${encodeURIComponent(bookingRef)}`;
+
     // Email 2: Alert to the Product Owner/Team
     const ownerEmailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 700px; margin: 0 auto;">
@@ -136,6 +141,13 @@ const handler = async (req: Request): Promise<Response> => {
         </h1>
         
         <p style="font-size: 16px; margin: 20px 0;">A new booking request has been submitted and requires your attention.</p>
+        
+        <div style="text-align: center; margin: 30px 0;">
+          <a href="${manageBookingUrl}" style="display: inline-block; background-color: #2c5530; color: white; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            📋 Manage Booking Requests
+          </a>
+          <p style="margin-top: 10px; font-size: 14px; color: #666;">Click to view and respond to this booking</p>
+        </div>
         
         <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h2 style="color: #2c5530; margin-top: 0;">Booking Information</h2>

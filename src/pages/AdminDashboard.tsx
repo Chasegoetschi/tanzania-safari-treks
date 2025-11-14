@@ -38,6 +38,7 @@ const AdminDashboard = () => {
   const [statusFilter, setStatusFilter] = useState("all");
   const [loading, setLoading] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [highlightedBookingRef, setHighlightedBookingRef] = useState<string | null>(null);
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -45,6 +46,12 @@ const AdminDashboard = () => {
     if (!authLoading && (!user || !isAdmin)) {
       navigate('/admin-login');
     } else if (user && isAdmin) {
+      // Check for bookingRef query param
+      const params = new URLSearchParams(window.location.search);
+      const bookingRef = params.get('bookingRef');
+      if (bookingRef) {
+        setHighlightedBookingRef(bookingRef);
+      }
       fetchBookings();
     }
   }, [user, isAdmin, authLoading, navigate]);
@@ -118,6 +125,17 @@ const AdminDashboard = () => {
     }
   };
 
+  const getStatusLabel = (status: string) => {
+    switch (status.toLowerCase()) {
+      case 'confirmed':
+        return 'Accepted';
+      case 'cancelled':
+        return 'Denied';
+      default:
+        return status.charAt(0).toUpperCase() + status.slice(1);
+    }
+  };
+
   const getStatusCount = (status: string) => {
     if (status === "all") return bookings.length;
     return bookings.filter(b => b.status.toLowerCase() === status).length;
@@ -175,7 +193,7 @@ const AdminDashboard = () => {
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium text-muted-foreground">
-                Confirmed
+                Accepted
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -187,7 +205,7 @@ const AdminDashboard = () => {
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium text-muted-foreground">
-                Cancelled
+                Denied
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -215,8 +233,8 @@ const AdminDashboard = () => {
                   <SelectContent>
                     <SelectItem value="all">All Status</SelectItem>
                     <SelectItem value="pending">Pending</SelectItem>
-                    <SelectItem value="confirmed">Confirmed</SelectItem>
-                    <SelectItem value="cancelled">Cancelled</SelectItem>
+                    <SelectItem value="confirmed">Accepted</SelectItem>
+                    <SelectItem value="cancelled">Denied</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -246,7 +264,11 @@ const AdminDashboard = () => {
                     {filteredBookings.map((booking) => (
                       <TableRow
                         key={booking.id}
-                        className="cursor-pointer hover:bg-muted/50"
+                        className={`cursor-pointer hover:bg-muted/50 ${
+                          highlightedBookingRef === booking.booking_ref 
+                            ? 'bg-primary/10 border-l-4 border-primary' 
+                            : ''
+                        }`}
                       >
                         <TableCell className="font-mono text-sm">
                           {booking.booking_ref}
@@ -262,7 +284,7 @@ const AdminDashboard = () => {
                         <TableCell>{booking.group_size}</TableCell>
                         <TableCell>
                           <Badge className={getStatusColor(booking.status)}>
-                            {booking.status}
+                            {getStatusLabel(booking.status)}
                           </Badge>
                         </TableCell>
                         <TableCell>
@@ -382,20 +404,20 @@ const AdminDashboard = () => {
                     Pending
                   </Button>
                   <Button
-                    variant="outline"
-                    className="flex-1"
+                    variant="default"
+                    className="flex-1 bg-green-600 hover:bg-green-700"
                     onClick={() => updateBookingStatus(selectedBooking.id, 'confirmed')}
                     disabled={selectedBooking.status.toLowerCase() === 'confirmed'}
                   >
-                    Confirmed
+                    Accept
                   </Button>
                   <Button
-                    variant="outline"
+                    variant="destructive"
                     className="flex-1"
                     onClick={() => updateBookingStatus(selectedBooking.id, 'cancelled')}
                     disabled={selectedBooking.status.toLowerCase() === 'cancelled'}
                   >
-                    Cancelled
+                    Deny
                   </Button>
                 </div>
               </div>
