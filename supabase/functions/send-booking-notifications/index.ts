@@ -22,7 +22,7 @@ interface BookingNotificationRequest {
   specialRequests?: string;
 }
 
-const OWNER_EMAIL = "hello@grantexpedition.com"; // Update this with actual owner email
+const OWNER_EMAIL = "torreslj@dukes.jmu.edu";
 
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
