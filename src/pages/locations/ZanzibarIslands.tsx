@@ -61,7 +61,11 @@ const ZanzibarIslands = () => {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full" size="lg">
+                  <Button 
+                    className="w-full" 
+                    size="lg"
+                    onClick={() => window.location.href = `/book?content_type=location&content_name=${encodeURIComponent(pkg.title)}`}
+                  >
                     Book Island Escape
                   </Button>
                 </CardFooter>

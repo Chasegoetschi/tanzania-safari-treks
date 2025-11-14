@@ -1,4 +1,5 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { MapPin } from "lucide-react";
 
 const MainlandHighlights = () => {
@@ -67,6 +68,14 @@ const MainlandHighlights = () => {
                     ))}
                   </div>
                 </CardContent>
+                <CardFooter>
+                  <Button 
+                    className="w-full"
+                    onClick={() => window.location.href = `/book?content_type=location&content_name=${encodeURIComponent(location.title)}`}
+                  >
+                    Explore Location
+                  </Button>
+                </CardFooter>
               </Card>
             ))}
           </div>

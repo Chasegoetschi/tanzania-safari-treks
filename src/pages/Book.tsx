@@ -14,10 +14,14 @@ import { useToast } from "@/hooks/use-toast";
 interface Tour {
   id: string;
   name: string;
-  location: string;
-  duration_days: number;
-  base_price: number;
-  description: string;
+  location?: string;
+  duration_days?: number;
+  base_price?: number;
+  description?: string;
+  duration?: string;
+  price?: number;
+  region?: string;
+  image_url?: string;
 }
 
 const Book = () => {
@@ -27,6 +31,7 @@ const Book = () => {
   
   const [tours, setTours] = useState<Tour[]>([]);
   const [selectedTour, setSelectedTour] = useState<Tour | null>(null);
+  const [contentType, setContentType] = useState<'safari' | 'activity' | 'location'>('safari');
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   
@@ -50,35 +55,60 @@ const Book = () => {
   }, []);
 
   const loadTours = async () => {
+    setLoading(true);
     try {
+      // Get content type and parameters from URL
+      const contentTypeParam = searchParams.get('content_type') || 'safari';
+      const contentNameParam = searchParams.get('content_name');
+      const contentIdParam = searchParams.get('content_id');
+      
+      setContentType(contentTypeParam as 'safari' | 'activity' | 'location');
+      
+      // Determine which table to query based on content type
+      const tableName = contentTypeParam === 'safari' ? 'tours' : 
+                       contentTypeParam === 'activity' ? 'activities' : 'locations';
+      
       const { data, error } = await supabase
-        .from("tours")
-        .select("*")
-        .eq("is_active", true)
-        .order("name");
+        .from(tableName)
+        .select('*')
+        .eq('is_active', true)
+        .order('name');
 
       if (error) throw error;
 
-      setTours(data || []);
-
-      // Check for pre-selected tour from URL
-      const tourName = searchParams.get("tour_name");
-      const tourId = searchParams.get("tour_id");
-
-      if (data && data.length > 0) {
-        if (tourId) {
-          const tour = data.find((t) => t.id === tourId);
-          if (tour) setSelectedTour(tour);
-        } else if (tourName) {
-          const tour = data.find((t) => t.name.toLowerCase() === tourName.toLowerCase());
-          if (tour) setSelectedTour(tour);
+      if (data) {
+        setTours(data);
+        
+        // Try to match by ID first, then by name
+        if (data.length > 0) {
+          let matchedContent = null;
+          
+          if (contentIdParam) {
+            matchedContent = data.find((t) => t.id === contentIdParam);
+          }
+          
+          if (!matchedContent && contentNameParam) {
+            // Try exact match
+            matchedContent = data.find(
+              (t) => t.name.toLowerCase() === contentNameParam.toLowerCase()
+            );
+            
+            // Try partial match
+            if (!matchedContent) {
+              matchedContent = data.find((t) =>
+                t.name.toLowerCase().includes(contentNameParam.toLowerCase())
+              );
+            }
+          }
+          
+          setSelectedTour(matchedContent || data[0]);
         }
       }
     } catch (error) {
-      console.error("Error loading tours:", error);
+      console.error('Error loading content:', error);
       toast({
         title: "Error",
-        description: "Failed to load tours. Please try again.",
+        description: "Failed to load content. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -167,7 +197,7 @@ const Book = () => {
       if (error) throw error;
 
       // Navigate to success page
-      navigate(`/book/success?ref=${bookingRef}`);
+      navigate(`/book/success?ref=${bookingRef}&content_name=${encodeURIComponent(selectedTour.name)}`);
     } catch (error) {
       console.error("Error submitting booking:", error);
       toast({

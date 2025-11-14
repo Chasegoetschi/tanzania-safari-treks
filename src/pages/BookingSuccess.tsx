@@ -43,7 +43,7 @@ const BookingSuccess = () => {
               Booking Request Received!
             </h1>
             <p className="text-lg text-muted-foreground">
-              Thank you for choosing Grant Expedition for your adventure
+              Your request for <span className="font-semibold">{searchParams.get('content_name') || 'your selected experience'}</span> has been submitted successfully.
             </p>
           </div>
 
