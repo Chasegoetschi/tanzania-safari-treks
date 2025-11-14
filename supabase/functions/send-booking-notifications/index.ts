@@ -19,8 +19,8 @@ const bookingSchema = z.object({
   lastName: z.string().trim().min(1, "Last name is required").max(100, "Last name too long"),
   email: z.string().trim().email("Invalid email address").max(255, "Email too long"),
   groupSize: z.number().int("Group size must be an integer").min(1, "Group size must be at least 1").max(100, "Group size too large"),
-  startDate: z.string().datetime("Invalid start date format"),
-  endDate: z.string().datetime("Invalid end date format").optional(),
+  startDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Invalid start date format (expected YYYY-MM-DD)"),
+  endDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Invalid end date format (expected YYYY-MM-DD)").optional().nullable(),
   specialRequests: z.string().trim().max(2000, "Special requests too long").optional(),
 });
 
