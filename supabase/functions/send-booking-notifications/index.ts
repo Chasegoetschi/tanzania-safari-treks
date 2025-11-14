@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "https://esm.sh/resend@2.0.0";
+import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -9,24 +10,35 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type",
 };
 
-interface BookingNotificationRequest {
-  bookingRef: string;
-  contentType: string;
-  contentName: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  groupSize: number;
-  startDate: string;
-  endDate?: string;
-  specialRequests?: string;
-}
+// Comprehensive validation schema
+const bookingSchema = z.object({
+  bookingRef: z.string().trim().min(1, "Booking reference is required").max(20, "Booking reference too long"),
+  contentType: z.enum(['safari', 'activity', 'location'], { errorMap: () => ({ message: "Invalid content type" }) }),
+  contentName: z.string().trim().min(1, "Content name is required").max(200, "Content name too long"),
+  firstName: z.string().trim().min(1, "First name is required").max(100, "First name too long"),
+  lastName: z.string().trim().min(1, "Last name is required").max(100, "Last name too long"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email too long"),
+  groupSize: z.number().int("Group size must be an integer").min(1, "Group size must be at least 1").max(100, "Group size too large"),
+  startDate: z.string().datetime("Invalid start date format"),
+  endDate: z.string().datetime("Invalid end date format").optional(),
+  specialRequests: z.string().trim().max(2000, "Special requests too long").optional(),
+});
 
 const OWNER_EMAIL = "torreslj@dukes.jmu.edu";
 const TEAM_EMAILS = [
   "torreslj@dukes.jmu.edu",
   // Add more team member emails here
 ];
+
+// HTML escape function to prevent XSS in email templates
+function escapeHtml(unsafe: string): string {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
 
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
@@ -35,26 +47,24 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const bookingData: BookingNotificationRequest = await req.json();
+    // Parse and validate input
+    const rawData = await req.json();
+    const bookingData = bookingSchema.parse(rawData);
     
     console.log("Processing booking notification for:", bookingData.bookingRef);
 
-    const {
-      bookingRef,
-      contentType,
-      contentName,
-      firstName,
-      lastName,
-      email,
-      groupSize,
-      startDate,
-      endDate,
-      specialRequests,
-    } = bookingData;
+    // Sanitize all user inputs for HTML templates
+    const bookingRef = escapeHtml(bookingData.bookingRef);
+    const contentName = escapeHtml(bookingData.contentName);
+    const firstName = escapeHtml(bookingData.firstName);
+    const lastName = escapeHtml(bookingData.lastName);
+    const email = bookingData.email; // Already validated as email format
+    const groupSize = bookingData.groupSize;
+    const specialRequests = bookingData.specialRequests ? escapeHtml(bookingData.specialRequests) : '';
 
     const fullName = `${firstName} ${lastName}`;
-    const contentTypeLabel = contentType === 'safari' ? 'Safari' : 
-                            contentType === 'activity' ? 'Activity' : 'Location';
+    const contentTypeLabel = bookingData.contentType === 'safari' ? 'Safari' : 
+                            bookingData.contentType === 'activity' ? 'Activity' : 'Location';
 
     // Email 1: Confirmation to the User
     const userEmailHtml = `
@@ -80,12 +90,12 @@ const handler = async (req: Request): Promise<Response> => {
             </tr>
             <tr>
               <td style="padding: 8px 0; font-weight: bold;">Start Date:</td>
-              <td style="padding: 8px 0;">${new Date(startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</td>
+              <td style="padding: 8px 0;">${new Date(bookingData.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</td>
             </tr>
-            ${endDate ? `
+            ${bookingData.endDate ? `
             <tr>
               <td style="padding: 8px 0; font-weight: bold;">End Date:</td>
-              <td style="padding: 8px 0;">${new Date(endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</td>
+              <td style="padding: 8px 0;">${new Date(bookingData.endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</td>
             </tr>
             ` : ''}
             <tr>
@@ -152,12 +162,12 @@ const handler = async (req: Request): Promise<Response> => {
             </tr>
             <tr>
               <td style="padding: 10px; background-color: #e8f5e9; font-weight: bold;">Start Date</td>
-              <td style="padding: 10px; background-color: #ffffff;">${new Date(startDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</td>
+              <td style="padding: 10px; background-color: #ffffff;">${new Date(bookingData.startDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</td>
             </tr>
-            ${endDate ? `
+            ${bookingData.endDate ? `
             <tr>
               <td style="padding: 10px; background-color: #e8f5e9; font-weight: bold;">End Date</td>
-              <td style="padding: 10px; background-color: #ffffff;">${new Date(endDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</td>
+              <td style="padding: 10px; background-color: #ffffff;">${new Date(bookingData.endDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</td>
             </tr>
             ` : ''}
             <tr>
@@ -200,7 +210,7 @@ const handler = async (req: Request): Promise<Response> => {
       resend.emails.send({
         from: "Grant Expedition Bookings <onboarding@resend.dev>", // Update with verified domain
         to: TEAM_EMAILS,
-        subject: `NEW BOOKING REQUEST: ${contentName} - ${new Date(startDate).toLocaleDateString()}`,
+        subject: `NEW BOOKING REQUEST: ${contentName} - ${new Date(bookingData.startDate).toLocaleDateString()}`,
         html: ownerEmailHtml,
       }),
     ]);
