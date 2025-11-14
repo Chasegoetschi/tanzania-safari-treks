@@ -196,6 +196,29 @@ const Book = () => {
 
       if (error) throw error;
 
+      // Send booking notification emails
+      try {
+        await supabase.functions.invoke('send-booking-notifications', {
+          body: {
+            bookingRef,
+            contentType: contentType,
+            contentName: selectedTour?.name || "",
+            firstName: firstName.trim(),
+            lastName: lastName.trim(),
+            email: email.trim(),
+            groupSize: parseInt(groupSize),
+            startDate,
+            endDate: endDate || null,
+            specialRequests: specialRequests.trim() || null,
+          },
+        });
+        console.log("Booking notification emails sent successfully");
+      } catch (emailError) {
+        // Log the error but don't fail the booking
+        console.error("Failed to send notification emails:", emailError);
+        // Still show success to user since booking was saved
+      }
+
       // Navigate to success page
       navigate(`/book/success?ref=${bookingRef}&content_name=${encodeURIComponent(selectedTour.name)}`);
     } catch (error) {
