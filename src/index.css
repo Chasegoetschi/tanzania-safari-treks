@@ -43,6 +43,27 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
     
+    /* Global Design System - Spacing Variables */
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 32px;
+    --space-xl: 48px;
+    --space-2xl: 64px;
+    
+    /* Section Padding Standards */
+    --section-padding-y: var(--space-lg);  /* 32px top/bottom */
+    --section-padding-x: var(--space-md);  /* 16px left/right */
+    
+    /* Hero Section Heights */
+    --hero-height-mobile: 250px;
+    --hero-height-desktop: 400px;
+    
+    /* Card Standards */
+    --card-max-width: 350px;
+    --card-padding: var(--space-md);  /* 16px internal padding */
+    --card-gap: var(--space-lg);       /* 32px gap between cards */
+    --card-border-radius: var(--radius);
+    
     /* Safari gradients using the new palette */
     --gradient-hero: linear-gradient(135deg, hsl(25 65% 55%) 0%, hsl(25 70% 45%) 100%);
     --gradient-safari: linear-gradient(180deg, hsl(120 30% 20%) 0%, hsl(75 30% 45%) 100%);
@@ -119,5 +140,83 @@ All colors MUST be HSL.
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer components {
+  /* Standard Section Padding */
+  .section-padding {
+    @apply py-8 px-4;
+  }
+  
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-top: var(--section-padding-y);
+      padding-bottom: var(--section-padding-y);
+      padding-left: var(--section-padding-x);
+      padding-right: var(--section-padding-x);
+    }
+  }
+  
+  /* Hero Section Standard */
+  .hero-section {
+    min-height: var(--hero-height-mobile);
+    @apply relative flex items-center justify-center overflow-hidden;
+  }
+  
+  @media (min-width: 768px) {
+    .hero-section {
+      min-height: var(--hero-height-desktop);
+    }
+  }
+  
+  /* Card Grid Layout */
+  .card-grid {
+    @apply grid gap-6;
+    gap: var(--card-gap);
+  }
+  
+  @media (min-width: 640px) {
+    .card-grid {
+      @apply grid-cols-2;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .card-grid {
+      @apply grid-cols-3;
+    }
+  }
+  
+  /* Standard Card Component */
+  .card-standard {
+    max-width: var(--card-max-width);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    @apply bg-card text-card-foreground shadow-sm border transition-all duration-300;
+  }
+  
+  .card-standard:hover {
+    @apply shadow-lg -translate-y-1;
+  }
+  
+  /* Card Image Aspect Ratios */
+  .card-image-4-3 {
+    @apply aspect-[4/3] w-full object-cover rounded-t-lg;
+  }
+  
+  .card-image-16-9 {
+    @apply aspect-[16/9] w-full object-cover rounded-t-lg;
+  }
+  
+  /* Spacing Utilities */
+  .space-y-section {
+    @apply space-y-8;
+  }
+  
+  @media (min-width: 768px) {
+    .space-y-section {
+      row-gap: var(--space-lg);
+    }
   }
 }
