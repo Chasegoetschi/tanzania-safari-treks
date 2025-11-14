@@ -1,73 +1,91 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Mountain, MapPin } from "lucide-react";
+import { ArrowRight, DollarSign, Users } from "lucide-react";
+import kilimanjaroSummitImage from "@/assets/kilimanjaro-summit.png";
+import kilimanjaroNightImage from "@/assets/kilimanjaro-night.png";
+import riftValleyImage from "@/assets/rift-valley.png";
 
 const NorthernCircuit = () => {
   const peaks = [
     {
-      title: "Mount Kilimanjaro",
-      elevation: "5,895m",
-      description: "Africa's highest peak and the world's tallest free-standing mountain. Multiple routes available including Machame, Lemosho, Marangu, and Rongai.",
-      features: ["7 Climatic Zones", "Multiple Routes", "Professional Guides", "Summit Success Support"],
+      title: "NORTHERN CIRCUIT MOUNTAINS",
+      price: "26,000",
+      groupSize: "4+",
+      image: kilimanjaroSummitImage,
+      link: "/book?content_type=location&content_name=Mount Kilimanjaro"
     },
     {
-      title: "Mount Meru",
-      elevation: "4,566m",
-      description: "Tanzania's second highest mountain, perfect for acclimatization before Kilimanjaro or as a standalone adventure through lush forests.",
-      features: ["Wildlife Encounters", "Stunning Views", "Less Crowded", "Crater Rim Walk"],
+      title: "KILIMANJARO EXPEDITION",
+      price: "28,000",
+      groupSize: "2+",
+      image: kilimanjaroNightImage,
+      link: "/book?content_type=location&content_name=Mount Kilimanjaro"
+    },
+    {
+      title: "MOUNT MERU TREK",
+      price: "18,000",
+      groupSize: "4+",
+      image: riftValleyImage,
+      link: "/book?content_type=location&content_name=Mount Meru"
     },
   ];
 
   return (
-    <div className="min-h-screen pt-20">
-      <section className="py-16 bg-gradient-to-b from-secondary/10 to-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
-              Northern Circuit
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Conquer Tanzania's legendary mountain peaks in the Northern Circuit
-            </p>
-          </div>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <img 
+          src={kilimanjaroSummitImage} 
+          alt="Northern Circuit Mountains" 
+          className="absolute inset-0 w-full h-full object-cover object-center" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/50 to-primary/60" />
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {peaks.map((peak, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-3">
-                    <Mountain className="w-8 h-8 text-secondary" />
-                    <div>
-                      <CardTitle className="text-3xl">{peak.title}</CardTitle>
-                      <div className="flex items-center gap-2 mt-1">
-                        <MapPin className="w-4 h-4 text-muted-foreground" />
-                        <span className="text-lg font-semibold text-secondary">{peak.elevation}</span>
-                      </div>
+        <div className="relative z-10 text-center text-white px-4">
+          <p className="text-2xl md:text-3xl italic font-light mb-2">explore the</p>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif uppercase tracking-wide">
+            LOCATIONS
+          </h1>
+        </div>
+      </section>
+
+      {/* Cards Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 space-y-6">
+          {peaks.map((peak, index) => (
+            <div
+              key={index}
+              onClick={() => window.location.href = peak.link}
+              className="relative h-[300px] rounded-2xl overflow-hidden cursor-pointer group transition-transform hover:scale-[1.02] duration-300"
+            >
+              <img
+                src={peak.image}
+                alt={peak.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-primary/40" />
+              
+              <div className="relative h-full flex items-center justify-between px-8 md:px-12">
+                <div className="text-white space-y-4">
+                  <h2 className="text-4xl md:text-5xl font-serif uppercase tracking-wide">
+                    {peak.title}
+                  </h2>
+                  <div className="flex items-center gap-8 text-lg">
+                    <div className="flex items-center gap-2">
+                      <DollarSign className="w-5 h-5" />
+                      <span>From ${peak.price}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Users className="w-5 h-5" />
+                      <span>Group Size: {peak.groupSize}</span>
                     </div>
                   </div>
-                  <CardDescription className="text-base">{peak.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    {peak.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                        <span className="text-sm">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button 
-                    className="w-full"
-                    onClick={() => window.location.href = `/book?content_type=location&content_name=${encodeURIComponent(peak.title)}`}
-                  >
-                    Book Trek
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
+                </div>
+                
+                <div className="hidden md:flex items-center justify-center w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm group-hover:bg-white/30 transition-colors">
+                  <ArrowRight className="w-8 h-8 text-white" />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>
