@@ -27,13 +27,6 @@ const HikingAdventures = () => {
       image: kilimanjaroSignImage,
       link: "/book?content_type=activity&content_name=MOUNT KILIMANJARO - MARANGU ROUTE"
     },
-    {
-      title: "MOUNT MERU ADVENTURE",
-      price: "12,000",
-      groupSize: "2+",
-      image: riftValleyImage,
-      link: "/book?content_type=activity&content_name=MOUNT MERU ADVENTURE"
-    },
   ];
 
   return (
@@ -48,7 +41,7 @@ const HikingAdventures = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/50 to-primary/60" />
 
         <div className="relative z-10 text-center text-white px-4">
-          <p className="text-2xl md:text-3xl italic font-light mb-2">conquer</p>
+          <p className="text-2xl md:text-3xl italic font-light mb-2">exhilarating</p>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif uppercase tracking-wide">
             ACTIVITIES
           </h1>
