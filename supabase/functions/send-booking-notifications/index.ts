@@ -23,6 +23,10 @@ interface BookingNotificationRequest {
 }
 
 const OWNER_EMAIL = "torreslj@dukes.jmu.edu";
+const TEAM_EMAILS = [
+  "torreslj@dukes.jmu.edu",
+  // Add more team member emails here
+];
 
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
@@ -173,13 +177,6 @@ const handler = async (req: Request): Promise<Response> => {
           <p style="margin: 0;"><strong>⚡ Action Required:</strong> Please review this booking request and contact the customer within 24 hours to confirm availability and finalize the booking details.</p>
         </div>
         
-        <p style="margin: 30px 0;">
-          <a href="${Deno.env.get('SUPABASE_URL')}/project/default/editor" 
-             style="display: inline-block; background-color: #2c5530; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">
-            View in Backend →
-          </a>
-        </p>
-        
         <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 30px 0;">
         
         <p style="color: #666; font-size: 12px;">
@@ -199,10 +196,10 @@ const handler = async (req: Request): Promise<Response> => {
         html: userEmailHtml,
       }),
       
-      // Owner alert email
+      // Owner and team alert email
       resend.emails.send({
         from: "Grant Expedition Bookings <onboarding@resend.dev>", // Update with verified domain
-        to: [OWNER_EMAIL],
+        to: TEAM_EMAILS,
         subject: `NEW BOOKING REQUEST: ${contentName} - ${new Date(startDate).toLocaleDateString()}`,
         html: ownerEmailHtml,
       }),
