@@ -1,77 +1,91 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Palmtree, Clock, Star } from "lucide-react";
+import { ArrowRight, DollarSign, Users } from "lucide-react";
+import zanzibarBeachImage from "@/assets/zanzibar-beach.png";
+import zanzibarExperienceImage from "@/assets/zanzibar-experience.png";
+import zanzibarStonetownImage from "@/assets/zanzibar-stonetown.png";
 
 const ZanzibarIslands = () => {
   const beachPackages = [
     {
-      title: "5-Day Beach Getaway",
-      duration: "5 Days",
-      price: "$1,400",
-      rating: "4.8",
-      description: "Relax on pristine beaches with snorkeling and spice tours included",
+      title: "ZANZIBAR ISLANDS",
+      price: "26,000",
+      groupSize: "2+",
+      image: zanzibarBeachImage,
+      link: "/book?content_type=location&content_name=5-Day Beach Getaway"
     },
     {
-      title: "6-Day Island Adventure",
-      duration: "6 Days",
-      price: "$1,800",
-      rating: "4.9",
-      description: "Extended beach stay with Stone Town tours and water sports activities",
+      title: "BEACH PARADISE ESCAPE",
+      price: "28,000",
+      groupSize: "2+",
+      image: zanzibarExperienceImage,
+      link: "/book?content_type=location&content_name=6-Day Island Adventure"
     },
     {
-      title: "7-Day Luxury Escape",
-      duration: "7 Days",
-      price: "$3,200",
-      rating: "5.0",
-      description: "Ultimate luxury experience with private beach access and fine dining",
+      title: "STONE TOWN HERITAGE",
+      price: "32,000",
+      groupSize: "4+",
+      image: zanzibarStonetownImage,
+      link: "/book?content_type=location&content_name=7-Day Luxury Escape"
     },
   ];
 
   return (
-    <div className="min-h-screen pt-20">
-      <section className="py-16 bg-gradient-to-b from-accent/10 to-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
-              Zanzibar Islands
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Paradise beaches, turquoise waters, and rich Swahili culture await
-            </p>
-          </div>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <img 
+          src={zanzibarBeachImage} 
+          alt="Zanzibar Islands" 
+          className="absolute inset-0 w-full h-full object-cover object-center" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/50 to-primary/60" />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {beachPackages.map((pkg, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-1">
-                      <Star className="w-4 h-4 fill-primary text-primary" />
-                      <span className="text-sm font-semibold">{pkg.rating}</span>
+        <div className="relative z-10 text-center text-white px-4">
+          <p className="text-2xl md:text-3xl italic font-light mb-2">discover the</p>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif uppercase tracking-wide">
+            LOCATIONS
+          </h1>
+        </div>
+      </section>
+
+      {/* Cards Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 space-y-6">
+          {beachPackages.map((pkg, index) => (
+            <div
+              key={index}
+              onClick={() => window.location.href = pkg.link}
+              className="relative h-[300px] rounded-2xl overflow-hidden cursor-pointer group transition-transform hover:scale-[1.02] duration-300"
+            >
+              <img
+                src={pkg.image}
+                alt={pkg.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-primary/40" />
+              
+              <div className="relative h-full flex items-center justify-between px-8 md:px-12">
+                <div className="text-white space-y-4">
+                  <h2 className="text-4xl md:text-5xl font-serif uppercase tracking-wide">
+                    {pkg.title}
+                  </h2>
+                  <div className="flex items-center gap-8 text-lg">
+                    <div className="flex items-center gap-2">
+                      <DollarSign className="w-5 h-5" />
+                      <span>From ${pkg.price}</span>
                     </div>
-                    <span className="text-2xl font-bold text-primary">{pkg.price}</span>
+                    <div className="flex items-center gap-2">
+                      <Users className="w-5 h-5" />
+                      <span>Group Size: {pkg.groupSize}</span>
+                    </div>
                   </div>
-                  <CardTitle className="text-2xl">{pkg.title}</CardTitle>
-                  <CardDescription className="text-base">{pkg.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                    <Clock className="w-4 h-4" />
-                    <span>{pkg.duration}</span>
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button 
-                    className="w-full" 
-                    size="lg"
-                    onClick={() => window.location.href = `/book?content_type=location&content_name=${encodeURIComponent(pkg.title)}`}
-                  >
-                    Book Island Escape
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
+                </div>
+                
+                <div className="hidden md:flex items-center justify-center w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm group-hover:bg-white/30 transition-colors">
+                  <ArrowRight className="w-8 h-8 text-white" />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>

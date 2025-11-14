@@ -1,79 +1,91 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Waves, Moon, Wind } from "lucide-react";
+import { ArrowRight, DollarSign, Users } from "lucide-react";
+import safariJeepImage from "@/assets/safari-jeep.jpg";
+import maraRiverImage from "@/assets/mara-river-aerial.png";
+import riverCruiseImage from "@/assets/river-cruise.png";
 
 const OutdoorExperiences = () => {
   const outdoorTrips = [
     {
-      title: "Hot Air Balloon Experience",
-      icon: Wind,
-      duration: "3-4 Hours",
-      location: "Serengeti",
-      description: "Soar above the Serengeti plains at sunrise for breathtaking aerial views of wildlife",
-      price: "$550",
+      title: "OUTDOOR EXPERIENCES",
+      price: "8,500",
+      groupSize: "2+",
+      image: safariJeepImage,
+      link: "/book?content_type=activity&content_name=Hot Air Balloon Experience"
     },
     {
-      title: "Lake Manyara Canoeing",
-      icon: Waves,
-      duration: "2-3 Hours",
-      location: "Lake Manyara",
-      description: "Paddle peacefully along the lake shore observing hippos and diverse birdlife",
-      price: "$120",
+      title: "RIVER SAFARI ADVENTURE",
+      price: "12,000",
+      groupSize: "4+",
+      image: maraRiverImage,
+      link: "/book?content_type=activity&content_name=Lake Manyara Canoeing"
     },
     {
-      title: "Night Game Drive",
-      icon: Moon,
-      duration: "2-3 Hours",
-      location: "Various Parks",
-      description: "Discover nocturnal wildlife with spotlights revealing creatures of the night",
-      price: "$80",
+      title: "LAKE CRUISE EXPERIENCE",
+      price: "6,500",
+      groupSize: "2+",
+      image: riverCruiseImage,
+      link: "/book?content_type=activity&content_name=Night Game Drive"
     },
   ];
 
   return (
-    <div className="min-h-screen pt-20">
-      <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
-              Outdoor & Nature Experiences
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Unique outdoor adventures that showcase Tanzania's natural beauty
-            </p>
-          </div>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <img 
+          src={safariJeepImage} 
+          alt="Outdoor Experiences" 
+          className="absolute inset-0 w-full h-full object-cover object-center" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/50 to-primary/60" />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {outdoorTrips.map((trip, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <trip.icon className="w-6 h-6 text-primary" />
-                    <span className="text-2xl font-bold text-primary">{trip.price}</span>
+        <div className="relative z-10 text-center text-white px-4">
+          <p className="text-2xl md:text-3xl italic font-light mb-2">experience the</p>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif uppercase tracking-wide">
+            ACTIVITIES
+          </h1>
+        </div>
+      </section>
+
+      {/* Cards Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 space-y-6">
+          {outdoorTrips.map((trip, index) => (
+            <div
+              key={index}
+              onClick={() => window.location.href = trip.link}
+              className="relative h-[300px] rounded-2xl overflow-hidden cursor-pointer group transition-transform hover:scale-[1.02] duration-300"
+            >
+              <img
+                src={trip.image}
+                alt={trip.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-primary/40" />
+              
+              <div className="relative h-full flex items-center justify-between px-8 md:px-12">
+                <div className="text-white space-y-4">
+                  <h2 className="text-4xl md:text-5xl font-serif uppercase tracking-wide">
+                    {trip.title}
+                  </h2>
+                  <div className="flex items-center gap-8 text-lg">
+                    <div className="flex items-center gap-2">
+                      <DollarSign className="w-5 h-5" />
+                      <span>From ${trip.price}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Users className="w-5 h-5" />
+                      <span>Group Size: {trip.groupSize}</span>
+                    </div>
                   </div>
-                  <CardTitle className="text-2xl">{trip.title}</CardTitle>
-                  <CardDescription className="text-base">{trip.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <span>{trip.duration}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <span>{trip.location}</span>
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button 
-                    className="w-full" 
-                    size="lg"
-                    onClick={() => window.location.href = `/book?content_type=activity&content_name=${encodeURIComponent(trip.title)}`}
-                  >
-                    Book Adventure
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
+                </div>
+                
+                <div className="hidden md:flex items-center justify-center w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm group-hover:bg-white/30 transition-colors">
+                  <ArrowRight className="w-8 h-8 text-white" />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>
