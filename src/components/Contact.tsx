@@ -5,6 +5,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  phone: z.string().trim().max(20, "Phone must be less than 20 characters").optional().or(z.literal("")),
+  message: z.string().trim().min(10, "Message must be at least 10 characters").max(2000, "Message must be less than 2000 characters"),
+});
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -18,13 +26,21 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
+      // Validate input data
+      const validatedData = contactSchema.parse({
+        name,
+        email,
+        phone: phone || "",
+        message,
+      });
+
       const { error } = await supabase
         .from("contact_submissions")
         .insert({
-          name,
-          email,
-          phone: phone || null,
-          message,
+          name: validatedData.name,
+          email: validatedData.email,
+          phone: validatedData.phone || null,
+          message: validatedData.message,
         });
 
       if (error) throw error;
@@ -37,8 +53,14 @@ const Contact = () => {
       setPhone("");
       setMessage("");
     } catch (error) {
-      console.error("Error submitting form:", error);
-      toast.error("Something went wrong. Please try again.");
+      if (error instanceof z.ZodError) {
+        // Show validation errors
+        error.errors.forEach((err) => {
+          toast.error(err.message);
+        });
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
     } finally {
       setIsSubmitting(false);
     }
