@@ -13,6 +13,21 @@ export default {
       },
     },
     extend: {
+      spacing: {
+        'space-sm': 'var(--space-sm)',
+        'space-md': 'var(--space-md)',
+        'space-lg': 'var(--space-lg)',
+        'space-xl': 'var(--space-xl)',
+        'space-2xl': 'var(--space-2xl)',
+        'section-y': 'var(--section-padding-y)',
+        'section-x': 'var(--section-padding-x)',
+        'card-gap': 'var(--card-gap)',
+        'hero-mobile': 'var(--hero-height-mobile)',
+        'hero-desktop': 'var(--hero-height-desktop)',
+      },
+      maxWidth: {
+        'card': 'var(--card-max-width)',
+      },
       fontFamily: {
         serif: ['Cormorant Garamond', 'serif'],
         sans: ['Poppins', 'sans-serif'],

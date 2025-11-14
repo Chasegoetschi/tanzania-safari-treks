@@ -30,8 +30,8 @@ const ZanzibarIslands = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Using Design System Standards */}
+      <section className="hero-section">
         <img 
           src={zanzibarBeachImage} 
           alt="Zanzibar Islands" 
@@ -47,14 +47,14 @@ const ZanzibarIslands = () => {
         </div>
       </section>
 
-      {/* Cards Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 space-y-6">
+      {/* Cards Section - Using Design System Standards */}
+      <section className="section-padding bg-background">
+        <div className="container mx-auto px-4 space-y-card-gap">
           {beachPackages.map((pkg, index) => (
             <div
               key={index}
               onClick={() => window.location.href = pkg.link}
-              className="relative h-[300px] rounded-2xl overflow-hidden cursor-pointer group transition-transform hover:scale-[1.02] duration-300"
+              className="relative h-[300px] rounded-lg overflow-hidden cursor-pointer group transition-transform hover:scale-[1.02] duration-300 shadow-card hover:shadow-xl"
             >
               <img
                 src={pkg.image}
@@ -63,12 +63,12 @@ const ZanzibarIslands = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-primary/40" />
               
-              <div className="relative h-full flex items-center justify-between px-8 md:px-12">
+              <div className="relative h-full flex items-center justify-between px-space-lg md:px-12">
                 <div className="text-white space-y-4">
                   <h2 className="text-4xl md:text-5xl font-serif uppercase tracking-wide">
                     {pkg.title}
                   </h2>
-                  <div className="flex items-center gap-8 text-lg">
+                  <div className="flex items-center gap-space-lg text-lg">
                     <div className="flex items-center gap-2">
                       <DollarSign className="w-5 h-5" />
                       <span>From ${pkg.price}</span>
