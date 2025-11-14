@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,6 +11,28 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { MapPin, Clock, DollarSign, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+// Generate a random 8-character alphanumeric confirmation code
+const generateConfirmationNumber = (): string => {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  let result = '';
+  for (let i = 0; i < 8; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return result;
+};
+
+const bookingSchema = z.object({
+  firstName: z.string().trim().min(1, "First name is required").max(100),
+  lastName: z.string().trim().min(1, "Last name is required").max(100),
+  email: z.string().trim().email("Invalid email address").max(255),
+  phone: z.string().trim().max(20).optional(),
+  groupSize: z.number().min(1, "Group size must be at least 1").max(100),
+  startDate: z.string().min(1, "Start date is required"),
+  endDate: z.string().optional(),
+  specialRequests: z.string().max(2000).optional(),
+});
 
 interface Tour {
   id: string;
@@ -28,6 +51,7 @@ const Book = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { user } = useAuth();
   
   const [tours, setTours] = useState<Tour[]>([]);
   const [selectedTour, setSelectedTour] = useState<Tour | null>(null);
@@ -143,15 +167,6 @@ const Book = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const generateBookingRef = (): string => {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    let ref = "GE-";
-    for (let i = 0; i < 8; i++) {
-      ref += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    return ref;
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -177,10 +192,11 @@ const Book = () => {
     setSubmitting(true);
 
     try {
-      const bookingRef = generateBookingRef();
+      const bookingRef = generateConfirmationNumber();
 
       const { error } = await supabase.from("bookings").insert({
         booking_ref: bookingRef,
+        user_id: user?.id || null,
         tour_id: selectedTour?.id,
         tour_name: selectedTour?.name || "",
         first_name: firstName.trim(),
@@ -192,6 +208,8 @@ const Book = () => {
         end_date: endDate || null,
         special_requests: specialRequests.trim() || null,
         status: "pending",
+        content_type: contentType,
+        content_name: selectedTour?.name || "",
       });
 
       if (error) throw error;

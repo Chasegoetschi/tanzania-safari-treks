@@ -4,8 +4,15 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { AuthProvider } from "./contexts/AuthContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import AdminLogin from "./pages/AdminLogin";
+import Account from "./pages/Account";
+import MyBookings from "./pages/MyBookings";
+import AdminDashboard from "./pages/AdminDashboard";
 import TanzaniaSafaris from "./pages/safaris/TanzaniaSafaris";
 import MigrationSafaris from "./pages/safaris/MigrationSafaris";
 import HikingAdventures from "./pages/activities/HikingAdventures";
@@ -58,24 +65,31 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <NavigationHandler />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/safaris/tanzania" element={<TanzaniaSafaris />} />
-          <Route path="/safaris/migration" element={<MigrationSafaris />} />
-          <Route path="/activities/hiking" element={<HikingAdventures />} />
-          <Route path="/activities/cultural" element={<CulturalExperiences />} />
-          <Route path="/activities/outdoor" element={<OutdoorExperiences />} />
-          <Route path="/locations/zanzibar" element={<ZanzibarIslands />} />
-          <Route path="/locations/mainland" element={<MainlandHighlights />} />
-          <Route path="/locations/northern-circuit" element={<NorthernCircuit />} />
-          <Route path="/book" element={<Book />} />
-          <Route path="/book/success" element={<BookingSuccess />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
+        <AuthProvider>
+          <NavigationHandler />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/admin-login" element={<AdminLogin />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/my-bookings" element={<MyBookings />} />
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/safaris/tanzania" element={<TanzaniaSafaris />} />
+            <Route path="/safaris/migration" element={<MigrationSafaris />} />
+            <Route path="/activities/hiking" element={<HikingAdventures />} />
+            <Route path="/activities/cultural" element={<CulturalExperiences />} />
+            <Route path="/activities/outdoor" element={<OutdoorExperiences />} />
+            <Route path="/locations/zanzibar" element={<ZanzibarIslands />} />
+            <Route path="/locations/mainland" element={<MainlandHighlights />} />
+            <Route path="/locations/northern-circuit" element={<NorthernCircuit />} />
+            <Route path="/book" element={<Book />} />
+            <Route path="/book/success" element={<BookingSuccess />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Footer />
+        </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
