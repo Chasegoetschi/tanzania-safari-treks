@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Menu, X, Star } from "lucide-react";
+import { Menu, X, Star, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
 import grantLogo from "@/assets/grant-expedition-logo.png";
 import {
   DropdownMenu,
@@ -13,6 +14,7 @@ import {
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const { user } = useAuth();
 
   const scrollToSection = (id: string) => {
     navigate("/");
@@ -112,6 +114,19 @@ const Navbar = () => {
             >
               INFORMATION
             </button>
+
+            {user ? (
+              <Button asChild variant="default">
+                <Link to="/account">
+                  <User className="w-4 h-4 mr-2" />
+                  My Account
+                </Link>
+              </Button>
+            ) : (
+              <Button asChild variant="default">
+                <Link to="/login">Login</Link>
+              </Button>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
