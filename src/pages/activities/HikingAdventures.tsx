@@ -56,14 +56,15 @@ const HikingAdventures = () => {
       </section>
 
       {/* Cards Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 space-y-6">
-          {hikingTrips.map((trip, index) => (
-            <div
-              key={index}
-              onClick={() => window.location.href = trip.link}
-              className="relative h-[300px] rounded-2xl overflow-hidden cursor-pointer group transition-transform hover:scale-[1.02] duration-300"
-            >
+      <section className="py-12 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="space-y-6">
+            {hikingTrips.map((trip, index) => (
+              <div
+                key={index}
+                onClick={() => window.location.href = trip.link}
+                className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+              >
               <img
                 src={trip.image}
                 alt={trip.title}
@@ -92,8 +93,9 @@ const HikingAdventures = () => {
                   <ArrowRight className="w-8 h-8 text-white" />
                 </div>
               </div>
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
