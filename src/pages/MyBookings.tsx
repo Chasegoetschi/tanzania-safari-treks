@@ -79,29 +79,66 @@ const MyBookings = () => {
       return;
     }
 
+    if (!user?.email) {
+      toast({
+        title: "Authentication Error",
+        description: "You must be logged in to search bookings.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setLoading(true);
     try {
+      // First check if booking exists at all
+      const { data: existingBooking, error: checkError } = await supabase
+        .from('bookings')
+        .select('email')
+        .eq('booking_ref', searchRef.toUpperCase())
+        .maybeSingle();
+
+      if (checkError) throw checkError;
+
+      // If no booking exists at all
+      if (!existingBooking) {
+        setBookings([]);
+        toast({
+          title: "Not Found",
+          description: "We could not find a booking with that confirmation number.",
+          variant: "destructive",
+        });
+        setSearched(true);
+        setLoading(false);
+        return;
+      }
+
+      // If booking exists but email doesn't match current user
+      if (existingBooking.email !== user.email) {
+        setBookings([]);
+        toast({
+          title: "Access Denied",
+          description: "This confirmation number is not associated with your account.",
+          variant: "destructive",
+        });
+        setSearched(true);
+        setLoading(false);
+        return;
+      }
+
+      // Booking exists and belongs to current user - fetch full details
       const { data, error } = await supabase
         .from('bookings')
         .select('*')
         .eq('booking_ref', searchRef.toUpperCase())
-        .eq('email', user?.email || '')
-        .maybeSingle();
+        .eq('email', user.email)
+        .single();
 
       if (error) throw error;
 
-      if (data) {
-        setBookings([data]);
-      } else {
-        setBookings([]);
-        toast({
-          title: "Not Found",
-          description: "No booking found with that confirmation number.",
-          variant: "destructive",
-        });
-      }
+      setBookings([data]);
       setSearched(true);
     } catch (error: any) {
+      console.error('Search error:', error);
       toast({
         title: "Error",
         description: "Failed to search for booking. Please try again.",
@@ -162,12 +199,27 @@ const MyBookings = () => {
                     placeholder="e.g., ABC123XYZ"
                     value={searchRef}
                     onChange={(e) => setSearchRef(e.target.value.toUpperCase())}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        searchByConfirmation();
+                      }
+                    }}
                     maxLength={20}
                   />
                 </div>
                 <Button onClick={searchByConfirmation} disabled={loading}>
                   <Search className="w-4 h-4 mr-2" />
                   Search
+                </Button>
+                <Button 
+                  variant="outline" 
+                  onClick={() => {
+                    setSearchRef('');
+                    fetchUserBookings();
+                  }} 
+                  disabled={loading}
+                >
+                  View All
                 </Button>
               </div>
             </CardContent>
