@@ -14,6 +14,8 @@ import OutdoorExperiences from "./pages/activities/OutdoorExperiences";
 import ZanzibarIslands from "./pages/locations/ZanzibarIslands";
 import MainlandHighlights from "./pages/locations/MainlandHighlights";
 import NorthernCircuit from "./pages/locations/NorthernCircuit";
+import Book from "./pages/Book";
+import BookingSuccess from "./pages/BookingSuccess";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -68,6 +70,8 @@ const App = () => (
           <Route path="/locations/zanzibar" element={<ZanzibarIslands />} />
           <Route path="/locations/mainland" element={<MainlandHighlights />} />
           <Route path="/locations/northern-circuit" element={<NorthernCircuit />} />
+          <Route path="/book" element={<Book />} />
+          <Route path="/book/success" element={<BookingSuccess />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

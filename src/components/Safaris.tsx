@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Clock, Users, Star } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Safaris = () => {
+  const navigate = useNavigate();
   const safariPackages = [
     {
       title: "Serengeti Explorer",
@@ -81,7 +83,11 @@ const Safaris = () => {
                 </ul>
               </CardContent>
               <CardFooter className="bg-muted/20">
-                <Button className="w-full bg-primary hover:bg-primary/90 text-white uppercase tracking-wider" size="lg">
+                <Button 
+                  onClick={() => navigate(`/book?tour_name=${encodeURIComponent(safari.title)}`)}
+                  className="w-full bg-primary hover:bg-primary/90 text-white uppercase tracking-wider" 
+                  size="lg"
+                >
                   Book This Safari
                 </Button>
               </CardFooter>

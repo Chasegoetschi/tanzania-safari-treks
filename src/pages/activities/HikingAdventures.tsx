@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { MapPin, Clock, TrendingUp, ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -8,6 +9,7 @@ import kilimanjaroNightImage from "@/assets/kilimanjaro-night.png";
 import riftValleyImage from "@/assets/rift-valley.png";
 
 const HikingAdventures = () => {
+  const navigate = useNavigate();
   const [selectedLocation, setSelectedLocation] = useState("MOUNTAIN");
   const [selectedLength, setSelectedLength] = useState("LENGTH");
 
@@ -137,6 +139,7 @@ const HikingAdventures = () => {
             {hikingTrips.map((trip, index) => (
               <div
                 key={index}
+                onClick={() => navigate(`/book?tour_name=${encodeURIComponent(trip.title)}`)}
                 className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
               >
                 {/* Background Image */}
