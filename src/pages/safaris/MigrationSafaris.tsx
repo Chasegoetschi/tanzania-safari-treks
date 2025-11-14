@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { MapPin, Clock, DollarSign, Users, ChevronDown, ArrowRight } from "lucide-react";
 import {
   Select,
@@ -15,6 +17,7 @@ import wildebeestZebraImage from "@/assets/wildebeest-zebra-herd.png";
 import maraRiverAerialImage from "@/assets/mara-river-aerial.png";
 
 const MigrationSafaris = () => {
+  const navigate = useNavigate();
   const migrationPackages = [
     {
       title: "WESTERN CORRIDOR MIGRATION",
@@ -95,7 +98,8 @@ const MigrationSafaris = () => {
             {migrationPackages.map((safari, index) => (
               <div
                 key={index}
-                className="group relative h-[300px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                onClick={() => navigate(`/book?tour_name=${encodeURIComponent(safari.title)}`)}
+                className="group relative h-[300px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
               >
                 {/* Background Image */}
                 <div

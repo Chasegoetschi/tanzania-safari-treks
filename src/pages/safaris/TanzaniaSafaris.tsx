@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { MapPin, Clock, DollarSign, Users, ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -14,6 +15,7 @@ import cheetahImage from "@/assets/cheetah.png";
 import lionCloseupImage from "@/assets/lion-closeup.png";
 import giraffeFeedingImage from "@/assets/giraffe-feeding.png";
 const TanzaniaSafaris = () => {
+  const navigate = useNavigate();
   const [selectedLocation, setSelectedLocation] = useState("LOCATION");
   const [selectedLength, setSelectedLength] = useState("LENGTH");
   const safaris = [{
@@ -142,7 +144,11 @@ const TanzaniaSafaris = () => {
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="space-y-6">
-            {safaris.map((safari, index) => <div key={index} className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            {safaris.map((safari, index) => <div 
+                key={index} 
+                onClick={() => navigate(`/book?tour_name=${encodeURIComponent(safari.title)}`)}
+                className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+              >
                 {/* Background Image */}
                 <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style={{
               backgroundImage: `url(${safari.image})`

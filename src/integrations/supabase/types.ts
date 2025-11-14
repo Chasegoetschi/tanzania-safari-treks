@@ -14,6 +14,65 @@ export type Database = {
   }
   public: {
     Tables: {
+      bookings: {
+        Row: {
+          booking_ref: string
+          created_at: string
+          email: string
+          end_date: string | null
+          first_name: string
+          group_size: number
+          id: string
+          last_name: string
+          phone: string | null
+          special_requests: string | null
+          start_date: string
+          status: string
+          tour_id: string | null
+          tour_name: string
+        }
+        Insert: {
+          booking_ref: string
+          created_at?: string
+          email: string
+          end_date?: string | null
+          first_name: string
+          group_size: number
+          id?: string
+          last_name: string
+          phone?: string | null
+          special_requests?: string | null
+          start_date: string
+          status?: string
+          tour_id?: string | null
+          tour_name: string
+        }
+        Update: {
+          booking_ref?: string
+          created_at?: string
+          email?: string
+          end_date?: string | null
+          first_name?: string
+          group_size?: number
+          id?: string
+          last_name?: string
+          phone?: string | null
+          special_requests?: string | null
+          start_date?: string
+          status?: string
+          tour_id?: string | null
+          tour_name?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bookings_tour_id_fkey"
+            columns: ["tour_id"]
+            isOneToOne: false
+            referencedRelation: "tours"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       contact_submissions: {
         Row: {
           created_at: string
@@ -38,6 +97,42 @@ export type Database = {
           message?: string
           name?: string
           phone?: string | null
+        }
+        Relationships: []
+      }
+      tours: {
+        Row: {
+          base_price: number | null
+          created_at: string
+          description: string | null
+          duration_days: number | null
+          hero_image_url: string | null
+          id: string
+          is_active: boolean | null
+          location: string | null
+          name: string
+        }
+        Insert: {
+          base_price?: number | null
+          created_at?: string
+          description?: string | null
+          duration_days?: number | null
+          hero_image_url?: string | null
+          id?: string
+          is_active?: boolean | null
+          location?: string | null
+          name: string
+        }
+        Update: {
+          base_price?: number | null
+          created_at?: string
+          description?: string | null
+          duration_days?: number | null
+          hero_image_url?: string | null
+          id?: string
+          is_active?: boolean | null
+          location?: string | null
+          name?: string
         }
         Relationships: []
       }
