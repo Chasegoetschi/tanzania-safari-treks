@@ -1,5 +1,5 @@
 import { ArrowRight, DollarSign, Users } from "lucide-react";
-import kilimanjaroSummitImage from "@/assets/kilimanjaro-summit.png";
+import hikingAdventuresImage from "@/assets/hiking-adventures-hero.png";
 import kilimanjaroSignImage from "@/assets/kilimanjaro-sign.png";
 import kilimanjaroNightImage from "@/assets/kilimanjaro-night.png";
 import riftValleyImage from "@/assets/rift-valley.png";
@@ -7,11 +7,11 @@ import riftValleyImage from "@/assets/rift-valley.png";
 const HikingAdventures = () => {
   const hikingTrips = [
     {
-      title: "MOUNT KILIMANJARO - MACHAME ROUTE",
-      price: "22,000",
-      groupSize: "4+",
-      image: kilimanjaroSummitImage,
-      link: "/book?content_type=activity&content_name=MOUNT KILIMANJARO - MACHAME ROUTE"
+      title: "HIKING ADVENTURES",
+      price: "26,000",
+      groupSize: "2+",
+      image: hikingAdventuresImage,
+      link: "/book?content_type=activity&content_name=HIKING ADVENTURES"
     },
     {
       title: "MOUNT KILIMANJARO - LEMOSHO ROUTE",
@@ -34,8 +34,8 @@ const HikingAdventures = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <img 
-          src={kilimanjaroSummitImage} 
-          alt="Mount Kilimanjaro summit with hikers" 
+          src={hikingAdventuresImage} 
+          alt="Hiking adventures with group on trail" 
           className="absolute inset-0 w-full h-full object-cover object-center" 
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/50 to-primary/60" />
