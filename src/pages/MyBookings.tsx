@@ -90,52 +90,51 @@ const MyBookings = () => {
 
     setLoading(true);
     try {
-      // First check if booking exists at all
+      // Query with both confirmation number AND user email
+      const { data: userBooking, error: userError } = await supabase
+        .from('bookings')
+        .select('*')
+        .eq('booking_ref', searchRef.toUpperCase())
+        .eq('email', user.email)
+        .maybeSingle();
+
+      if (userError) throw userError;
+
+      // If found, display the booking
+      if (userBooking) {
+        setBookings([userBooking]);
+        setSearched(true);
+        setLoading(false);
+        return;
+      }
+
+      // If not found, check if booking exists for another user
       const { data: existingBooking, error: checkError } = await supabase
         .from('bookings')
-        .select('email')
+        .select('booking_ref')
         .eq('booking_ref', searchRef.toUpperCase())
         .maybeSingle();
 
       if (checkError) throw checkError;
 
-      // If no booking exists at all
-      if (!existingBooking) {
-        setBookings([]);
-        toast({
-          title: "Not Found",
-          description: "We could not find a booking with that confirmation number.",
-          variant: "destructive",
-        });
-        setSearched(true);
-        setLoading(false);
-        return;
-      }
-
-      // If booking exists but email doesn't match current user
-      if (existingBooking.email !== user.email) {
+      if (existingBooking) {
+        // Booking exists but belongs to another account
         setBookings([]);
         toast({
           title: "Access Denied",
-          description: "This confirmation number is not associated with your account.",
+          description: "This confirmation number does not belong to your account.",
           variant: "destructive",
         });
-        setSearched(true);
-        setLoading(false);
-        return;
+      } else {
+        // No booking exists at all
+        setBookings([]);
+        toast({
+          title: "Not Found",
+          description: "No booking found.",
+          variant: "destructive",
+        });
       }
 
-      // Booking exists and belongs to current user - fetch full details
-      const { data, error } = await supabase
-        .from('bookings')
-        .select('*')
-        .eq('booking_ref', searchRef.toUpperCase())
-        .eq('email', user.email)
-        .single();
-
-      if (error) throw error;
-
-      setBookings([data]);
       setSearched(true);
     } catch (error: any) {
       console.error('Search error:', error);
