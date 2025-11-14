@@ -63,7 +63,11 @@ const OutdoorExperiences = () => {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full" size="lg">
+                  <Button 
+                    className="w-full" 
+                    size="lg"
+                    onClick={() => window.location.href = `/book?content_type=activity&content_name=${encodeURIComponent(trip.title)}`}
+                  >
                     Book Adventure
                   </Button>
                 </CardFooter>

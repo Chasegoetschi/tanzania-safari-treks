@@ -1,4 +1,5 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Mountain, MapPin } from "lucide-react";
 
 const NorthernCircuit = () => {
@@ -56,6 +57,14 @@ const NorthernCircuit = () => {
                     ))}
                   </div>
                 </CardContent>
+                <CardFooter>
+                  <Button 
+                    className="w-full"
+                    onClick={() => window.location.href = `/book?content_type=location&content_name=${encodeURIComponent(peak.title)}`}
+                  >
+                    Book Trek
+                  </Button>
+                </CardFooter>
               </Card>
             ))}
           </div>

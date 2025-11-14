@@ -14,9 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
+      activities: {
+        Row: {
+          created_at: string
+          description: string | null
+          duration: string | null
+          id: string
+          image_url: string | null
+          is_active: boolean | null
+          name: string
+          price: number | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          duration?: string | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          name: string
+          price?: number | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          duration?: string | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          name?: string
+          price?: number | null
+        }
+        Relationships: []
+      }
       bookings: {
         Row: {
           booking_ref: string
+          content_id: string | null
+          content_name: string | null
+          content_type: string | null
           created_at: string
           email: string
           end_date: string | null
@@ -33,6 +69,9 @@ export type Database = {
         }
         Insert: {
           booking_ref: string
+          content_id?: string | null
+          content_name?: string | null
+          content_type?: string | null
           created_at?: string
           email: string
           end_date?: string | null
@@ -49,6 +88,9 @@ export type Database = {
         }
         Update: {
           booking_ref?: string
+          content_id?: string | null
+          content_name?: string | null
+          content_type?: string | null
           created_at?: string
           email?: string
           end_date?: string | null
@@ -97,6 +139,36 @@ export type Database = {
           message?: string
           name?: string
           phone?: string | null
+        }
+        Relationships: []
+      }
+      locations: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          image_url: string | null
+          is_active: boolean | null
+          name: string
+          region: string | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          name: string
+          region?: string | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          name?: string
+          region?: string | null
         }
         Relationships: []
       }
