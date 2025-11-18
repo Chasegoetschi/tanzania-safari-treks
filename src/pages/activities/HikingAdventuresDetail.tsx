@@ -4,21 +4,21 @@ import hikingAdventuresCardImage from "@/assets/hiking-adventures-card.png";
 const HikingAdventuresDetail = () => {
   const packages = [
     {
-      title: "Day Hike Package",
+      title: "MOUNT MERU",
       price: "8,500",
       duration: "1 Day",
       groupSize: "2-8",
       description: "Perfect for beginners, explore local trails with experienced guides",
     },
     {
-      title: "Weekend Trek",
+      title: "MOUNT KILIMANJARO",
       price: "15,000",
       duration: "2 Days",
       groupSize: "2-6",
       description: "Immersive experience with overnight camping and mountain views",
     },
     {
-      title: "Extended Adventure",
+      title: "NGORONGORO HIGHLANDS",
       price: "26,000",
       duration: "5 Days",
       groupSize: "2-4",
