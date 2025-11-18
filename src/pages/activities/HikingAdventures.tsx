@@ -14,18 +14,18 @@ const HikingAdventures = () => {
       link: "/book?content_type=activity&content_name=HIKING ADVENTURES"
     },
     {
-      title: "MOUNT KILIMANJARO - LEMOSHO ROUTE",
+      title: "CULTURAL AND LOCAL EXPERIENCES",
       price: "25,000",
       groupSize: "2+",
       image: kilimanjaroNightImage,
-      link: "/book?content_type=activity&content_name=MOUNT KILIMANJARO - LEMOSHO ROUTE"
+      link: "/book?content_type=activity&content_name=CULTURAL AND LOCAL EXPERIENCES"
     },
     {
-      title: "MOUNT KILIMANJARO - MARANGU ROUTE",
+      title: "OUTDOOR NATURE EXPERIENCES",
       price: "18,000",
       groupSize: "4+",
       image: kilimanjaroSignImage,
-      link: "/book?content_type=activity&content_name=MOUNT KILIMANJARO - MARANGU ROUTE"
+      link: "/book?content_type=activity&content_name=OUTDOOR NATURE EXPERIENCES"
     },
   ];
 
