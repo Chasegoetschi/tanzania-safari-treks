@@ -71,10 +71,10 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-6 uppercase tracking-wide">
-            Plan Your Journey
+            questions?
           </h2>
           <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
-            Ready to experience the safari of a lifetime? Connect with us and let's create your perfect adventure.
+            to submit an inquery
           </p>
         </div>
 
