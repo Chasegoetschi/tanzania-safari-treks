@@ -16,8 +16,11 @@ import AdminDashboard from "./pages/AdminDashboard";
 import TanzaniaSafaris from "./pages/safaris/TanzaniaSafaris";
 import MigrationSafaris from "./pages/safaris/MigrationSafaris";
 import HikingAdventures from "./pages/activities/HikingAdventures";
+import HikingAdventuresDetail from "./pages/activities/HikingAdventuresDetail";
 import CulturalExperiences from "./pages/activities/CulturalExperiences";
+import CulturalExperiencesDetail from "./pages/activities/CulturalExperiencesDetail";
 import OutdoorExperiences from "./pages/activities/OutdoorExperiences";
+import OutdoorExperiencesDetail from "./pages/activities/OutdoorExperiencesDetail";
 import ZanzibarIslands from "./pages/locations/ZanzibarIslands";
 import MainlandHighlights from "./pages/locations/MainlandHighlights";
 import NorthernCircuit from "./pages/locations/NorthernCircuit";
@@ -79,8 +82,11 @@ const App = () => (
             <Route path="/safaris/tanzania" element={<TanzaniaSafaris />} />
             <Route path="/safaris/migration" element={<MigrationSafaris />} />
             <Route path="/activities/hiking" element={<HikingAdventures />} />
+            <Route path="/activities/hiking-detail" element={<HikingAdventuresDetail />} />
             <Route path="/activities/cultural" element={<CulturalExperiences />} />
+            <Route path="/activities/cultural-detail" element={<CulturalExperiencesDetail />} />
             <Route path="/activities/outdoor" element={<OutdoorExperiences />} />
+            <Route path="/activities/outdoor-detail" element={<OutdoorExperiencesDetail />} />
             <Route path="/locations/zanzibar" element={<ZanzibarIslands />} />
             <Route path="/locations/mainland" element={<MainlandHighlights />} />
             <Route path="/locations/northern-circuit" element={<NorthernCircuit />} />
