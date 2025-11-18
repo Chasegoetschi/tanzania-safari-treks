@@ -38,7 +38,7 @@ const HikingAdventures = () => {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <img 
           src={hikingAdventuresImage} 
-          alt="Hiking adventures with group on trail" 
+          alt="Red panda in natural habitat among foliage" 
           className="absolute inset-0 w-full h-full object-cover object-center" 
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/50 to-primary/60" />
