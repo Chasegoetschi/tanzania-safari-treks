@@ -1,5 +1,6 @@
 import { ArrowRight, DollarSign, Users } from "lucide-react";
 import hikingAdventuresImage from "@/assets/hiking-hero.png";
+import hikingAdventuresCardImage from "@/assets/hiking-adventures-card.png";
 import kilimanjaroSignImage from "@/assets/kilimanjaro-sign.png";
 import kilimanjaroNightImage from "@/assets/kilimanjaro-night.png";
 import riftValleyImage from "@/assets/rift-valley.png";
@@ -10,7 +11,7 @@ const HikingAdventures = () => {
       title: "HIKING ADVENTURES",
       price: "26,000",
       groupSize: "2+",
-      image: hikingAdventuresImage,
+      image: hikingAdventuresCardImage,
       link: "/book?content_type=activity&content_name=HIKING ADVENTURES"
     },
     {
