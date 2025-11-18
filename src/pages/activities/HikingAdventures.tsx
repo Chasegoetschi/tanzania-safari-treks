@@ -1,6 +1,7 @@
 import { ArrowRight, DollarSign, Users } from "lucide-react";
 import hikingAdventuresImage from "@/assets/hiking-hero.png";
 import hikingAdventuresCardImage from "@/assets/hiking-adventures-card.png";
+import culturalExperiencesCardImage from "@/assets/cultural-experiences-card.png";
 import kilimanjaroSignImage from "@/assets/kilimanjaro-sign.png";
 import kilimanjaroNightImage from "@/assets/kilimanjaro-night.png";
 import riftValleyImage from "@/assets/rift-valley.png";
@@ -18,7 +19,7 @@ const HikingAdventures = () => {
       title: "CULTURAL AND LOCAL EXPERIENCES",
       price: "25,000",
       groupSize: "2+",
-      image: kilimanjaroNightImage,
+      image: culturalExperiencesCardImage,
       link: "/book?content_type=activity&content_name=CULTURAL AND LOCAL EXPERIENCES"
     },
     {
