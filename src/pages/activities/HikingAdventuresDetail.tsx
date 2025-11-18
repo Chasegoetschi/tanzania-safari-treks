@@ -1,6 +1,7 @@
 import { ArrowRight, DollarSign, Users, Calendar } from "lucide-react";
 import hikingAdventuresCardImage from "@/assets/hiking-adventures-card.png";
 import mountMeruImage from "@/assets/mount-meru.png";
+import mountKilimanjaroImage from "@/assets/mount-kilimanjaro.png";
 
 const HikingAdventuresDetail = () => {
   const packages = [
@@ -18,7 +19,7 @@ const HikingAdventuresDetail = () => {
       duration: "2 Days",
       groupSize: "2-6",
       description: "Immersive experience with overnight camping and mountain views",
-      image: hikingAdventuresCardImage,
+      image: mountKilimanjaroImage,
     },
     {
       title: "NGORONGORO HIGHLANDS",
