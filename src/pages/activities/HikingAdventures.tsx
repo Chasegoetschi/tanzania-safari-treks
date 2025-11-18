@@ -66,24 +66,20 @@ const HikingAdventures = () => {
                 alt={trip.title}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              {index === 0 ? (
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/50 via-primary/30 to-transparent" />
-              ) : (
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-primary/40" />
-              )}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
               
               <div className="relative h-full flex items-center justify-between px-8 md:px-12">
-                <div className="text-white space-y-4">
-                  <h2 className="text-3xl md:text-4xl font-serif uppercase tracking-wide">
+                <div className="text-white space-y-4 drop-shadow-lg">
+                  <h2 className="text-3xl md:text-4xl font-serif uppercase tracking-wide [text-shadow:_2px_2px_8px_rgb(0_0_0_/_80%)]">
                     {trip.title}
                   </h2>
-                  <div className="flex items-center gap-8 text-lg">
+                  <div className="flex items-center gap-8 text-lg [text-shadow:_1px_1px_4px_rgb(0_0_0_/_80%)]">
                     <div className="flex items-center gap-2">
-                      <DollarSign className="w-5 h-5" />
+                      <DollarSign className="w-5 h-5 drop-shadow-lg" />
                       <span>From ${trip.price}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Users className="w-5 h-5" />
+                      <Users className="w-5 h-5 drop-shadow-lg" />
                       <span>Group Size: {trip.groupSize}</span>
                     </div>
                   </div>
