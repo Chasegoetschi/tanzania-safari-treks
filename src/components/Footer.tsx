@@ -68,6 +68,16 @@ const Footer = () => {
         </div>
         <div className="border-t border-white/20 pt-8 text-center text-white/70">
           <p>&copy; {new Date().getFullYear()} Grant Expedition Ltd. All rights reserved.</p>
+          <p className="mt-2">
+            <a 
+              href="/Certificate_of_Incorporation.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors underline"
+            >
+              Certificate of Incorporation
+            </a>
+          </p>
         </div>
       </div>
     </footer>
