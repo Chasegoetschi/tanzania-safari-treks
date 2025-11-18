@@ -29,7 +29,7 @@ const About = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-10 uppercase tracking-wide">
-            Discover and Adventure
+            QUALITY FIRST
           </h2>
           <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-loose">
             Immerse yourself in Tanzania's rich tapestry of wildlife, culture, and natural wonders. 
