@@ -44,7 +44,7 @@ const HikingAdventures = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/50 to-primary/60" />
 
         <div className="relative z-10 text-center text-white px-4">
-          <p className="text-2xl md:text-3xl italic font-light mb-2">exhilarating</p>
+          <p className="text-2xl md:text-3xl italic font-light mb-2">inspiring</p>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif uppercase tracking-wide">
             ACTIVITIES
           </h1>
