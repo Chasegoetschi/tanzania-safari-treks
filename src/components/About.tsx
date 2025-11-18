@@ -41,7 +41,7 @@ const About = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="text-center p-6 rounded-lg bg-card hover:shadow-lg transition-all duration-300 border border-accent/20"
+              className="text-center p-6 rounded-lg bg-card transition-all duration-300 border border-accent/20"
             >
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/20 mb-4">
                 <feature.icon className="w-8 h-8 text-accent" />
