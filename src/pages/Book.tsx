@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { MapPin, Clock, DollarSign, Loader2 } from "lucide-react";
@@ -484,6 +485,12 @@ const Book = () => {
                   tabIndex={-1}
                   autoComplete="off"
                 />
+
+                <Alert className="bg-accent/10 border-accent/20">
+                  <AlertDescription className="text-sm text-foreground/80">
+                    Booking Inquiries are not binding. Payment will only be necessary upon booking with a member of staff. Inquiries are typically answered in 1-5 business days.
+                  </AlertDescription>
+                </Alert>
 
                 <div className="flex items-start gap-2 pt-2">
                   <Checkbox
