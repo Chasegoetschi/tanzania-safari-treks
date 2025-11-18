@@ -99,7 +99,7 @@ const MigrationSafaris = () => {
               <div
                 key={index}
                 onClick={() => navigate(`/book?tour_name=${encodeURIComponent(safari.title)}`)}
-                className="group relative h-[300px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                className="group relative h-[200px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer hover:-translate-y-1"
               >
                 {/* Background Image */}
                 <div
