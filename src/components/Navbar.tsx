@@ -45,9 +45,9 @@ const Navbar = () => {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-400 ${
       isHomePage 
         ? isScrolled 
-          ? 'bg-primary shadow-sm' 
+          ? 'bg-accent shadow-sm' 
           : 'bg-transparent'
-        : 'bg-primary shadow-sm'
+        : 'bg-accent shadow-sm'
     }`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-24">
