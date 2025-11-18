@@ -1,5 +1,5 @@
 import { ArrowRight, DollarSign, Users } from "lucide-react";
-import hikingAdventuresImage from "@/assets/hiking-adventures-hero.png";
+import hikingAdventuresImage from "@/assets/hiking-hero.png";
 import kilimanjaroSignImage from "@/assets/kilimanjaro-sign.png";
 import kilimanjaroNightImage from "@/assets/kilimanjaro-night.png";
 import riftValleyImage from "@/assets/rift-valley.png";
