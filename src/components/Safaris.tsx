@@ -84,11 +84,14 @@ const Safaris = () => {
               </CardContent>
               <CardFooter className="bg-muted/20">
                 <Button 
-                  onClick={() => navigate(`/book?tour_name=${encodeURIComponent(safari.title)}`)}
+                  onClick={() => {
+                    const slug = safari.title.toLowerCase().replace(/\s+/g, '-');
+                    navigate(`/safaris/${slug}`);
+                  }}
                   className="w-full bg-primary hover:bg-primary/90 text-white uppercase tracking-wider" 
                   size="lg"
                 >
-                  Book This Safari
+                  View Details
                 </Button>
               </CardFooter>
             </Card>

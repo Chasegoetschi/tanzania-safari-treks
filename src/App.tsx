@@ -15,6 +15,7 @@ import MyBookings from "./pages/MyBookings";
 import AdminDashboard from "./pages/AdminDashboard";
 import TanzaniaSafaris from "./pages/safaris/TanzaniaSafaris";
 import MigrationSafaris from "./pages/safaris/MigrationSafaris";
+import SafariDetail from "./pages/safaris/SafariDetail";
 import HikingAdventures from "./pages/activities/HikingAdventures";
 import HikingAdventuresDetail from "./pages/activities/HikingAdventuresDetail";
 import CulturalExperiences from "./pages/activities/CulturalExperiences";
@@ -81,6 +82,7 @@ const App = () => (
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/safaris/tanzania" element={<TanzaniaSafaris />} />
             <Route path="/safaris/migration" element={<MigrationSafaris />} />
+            <Route path="/safaris/:slug" element={<SafariDetail />} />
             <Route path="/activities/hiking" element={<HikingAdventures />} />
             <Route path="/activities/hiking-detail" element={<HikingAdventuresDetail />} />
             <Route path="/activities/cultural" element={<CulturalExperiences />} />
