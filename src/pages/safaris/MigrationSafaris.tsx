@@ -98,7 +98,10 @@ const MigrationSafaris = () => {
             {migrationPackages.map((safari, index) => (
               <div
                 key={index}
-                onClick={() => navigate(`/book?tour_name=${encodeURIComponent(safari.title)}`)}
+                onClick={() => {
+                  const slug = safari.title.toLowerCase().replace(/\s+/g, '-');
+                  navigate(`/safaris/${slug}`);
+                }}
                 className="group relative h-[200px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer hover:-translate-y-1"
               >
                 {/* Background Image */}

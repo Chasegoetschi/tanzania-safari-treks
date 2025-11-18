@@ -146,7 +146,10 @@ const TanzaniaSafaris = () => {
           <div className="space-y-6">
             {safaris.map((safari, index) => <div 
                 key={index} 
-                onClick={() => navigate(`/book?tour_name=${encodeURIComponent(safari.title)}`)}
+              onClick={() => {
+                const slug = safari.title.toLowerCase().replace(/\s+/g, '-');
+                navigate(`/safaris/${slug}`);
+              }}
                 className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
               >
                 {/* Background Image */}
