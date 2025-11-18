@@ -112,13 +112,11 @@ const TripFinder = () => {
               className="group relative h-[450px] overflow-hidden rounded-lg shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 block"
             >
               {/* Background Image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                style={{ backgroundImage: `url(${expedition.image})` }}
+              <img 
+                src={expedition.image} 
+                alt={expedition.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80" />
 
               {/* Content */}
               <div className="relative h-full flex flex-col justify-end p-6 text-white">

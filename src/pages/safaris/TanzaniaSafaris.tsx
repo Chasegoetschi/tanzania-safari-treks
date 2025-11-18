@@ -65,7 +65,6 @@ const TanzaniaSafaris = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <img src={giraffeImage} alt="Giraffe silhouette at sunset in Tanzania Safaris hero" className="absolute inset-0 w-full h-full object-cover object-[center_35%]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/70 to-primary/80 mx-0 py-[10px]" />
 
         <div className="relative z-10 text-center text-white px-4">
           <p className="text-2xl md:text-3xl italic font-light mb-2">breathtaking</p>
@@ -153,12 +152,11 @@ const TanzaniaSafaris = () => {
                 className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
               >
                 {/* Background Image */}
-                <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style={{
-              backgroundImage: `url(${safari.image})`
-            }} />
-
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+                <img 
+                  src={safari.image}
+                  alt={safari.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                />
 
                 {/* Content */}
                 <div className="relative h-full flex items-center justify-between px-8 text-white">
