@@ -14,21 +14,21 @@ const HikingAdventures = () => {
       price: "26,000",
       groupSize: "2+",
       image: hikingAdventuresCardImage,
-      link: "/book?content_type=activity&content_name=HIKING ADVENTURES"
+      link: "/activities/hiking-detail"
     },
     {
       title: "CULTURAL AND LOCAL EXPERIENCES",
       price: "25,000",
       groupSize: "2+",
       image: culturalExperiencesCardImage,
-      link: "/book?content_type=activity&content_name=CULTURAL AND LOCAL EXPERIENCES"
+      link: "/activities/cultural-detail"
     },
     {
       title: "OUTDOOR NATURE EXPERIENCES",
       price: "18,000",
       groupSize: "4+",
       image: outdoorExperiencesCardImage,
-      link: "/book?content_type=activity&content_name=OUTDOOR NATURE EXPERIENCES"
+      link: "/activities/outdoor-detail"
     },
   ];
 
