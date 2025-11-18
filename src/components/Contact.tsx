@@ -74,7 +74,7 @@ const Contact = () => {
             questions?
           </h2>
           <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
-            to submit an inquery
+            Submit an Inquiry
           </p>
         </div>
 
@@ -115,7 +115,7 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <Input
-                placeholder="Your Name"
+                placeholder="Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -126,7 +126,7 @@ const Contact = () => {
             <div>
               <Input
                 type="email"
-                placeholder="Your Email"
+                placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -146,7 +146,7 @@ const Contact = () => {
             </div>
             <div>
               <Textarea
-                placeholder="Tell us about your dream safari..."
+                placeholder="Inquiry"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required
@@ -160,7 +160,7 @@ const Contact = () => {
               className="w-full bg-primary hover:bg-primary/90 text-white"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Sending..." : "Send Inquiry"}
+              {isSubmitting ? "Sending..." : "Submit"}
             </Button>
           </form>
         </div>
