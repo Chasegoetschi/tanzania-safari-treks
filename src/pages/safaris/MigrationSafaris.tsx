@@ -52,7 +52,6 @@ const MigrationSafaris = () => {
         className="relative h-[60vh] flex items-center justify-center bg-cover bg-center"
         style={{ backgroundImage: `url(${lionsSavannaImage})` }}
       >
-        <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-center text-white px-4">
           <p className="text-2xl md:text-3xl italic font-light mb-2">remarkable</p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif uppercase tracking-wide leading-tight">
@@ -105,13 +104,11 @@ const MigrationSafaris = () => {
                 className="group relative h-[200px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer hover:-translate-y-1"
               >
                 {/* Background Image */}
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                  style={{ backgroundImage: `url(${safari.image})` }}
+                <img
+                  src={safari.image}
+                  alt={safari.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
 
                 {/* Content */}
                 <div className="relative h-full flex items-center justify-between px-8">

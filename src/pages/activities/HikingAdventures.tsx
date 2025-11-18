@@ -41,7 +41,6 @@ const HikingAdventures = () => {
           alt="Red panda in natural habitat among foliage" 
           className="absolute inset-0 w-full h-full object-cover object-center" 
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/50 to-primary/60" />
 
         <div className="relative z-10 text-center text-white px-4">
           <p className="text-2xl md:text-3xl italic font-light mb-2">inspiring</p>
@@ -66,7 +65,6 @@ const HikingAdventures = () => {
                 alt={trip.title}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
               
               <div className="relative h-full flex items-center justify-between px-8 md:px-12">
                 <div className="text-white space-y-4 drop-shadow-lg">

@@ -35,7 +35,6 @@ const OutdoorExperiencesDetail = () => {
           alt="Outdoor nature experiences with wildlife safari" 
           className="absolute inset-0 w-full h-full object-cover object-center" 
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
 
         <div className="relative z-10 text-center text-white px-4">
           <p className="text-2xl md:text-3xl italic font-light mb-2">wild encounters</p>
