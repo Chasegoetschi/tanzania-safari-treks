@@ -64,7 +64,11 @@ const HikingAdventures = () => {
                 alt={trip.title}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-primary/40" />
+              {index === 0 ? (
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/50 via-primary/30 to-transparent" />
+              ) : (
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-primary/40" />
+              )}
               
               <div className="relative h-full flex items-center justify-between px-8 md:px-12">
                 <div className="text-white space-y-4">
