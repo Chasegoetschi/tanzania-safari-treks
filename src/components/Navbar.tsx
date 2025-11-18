@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Star, User, FileText } from "lucide-react";
+import { Menu, X, Star, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
@@ -60,6 +60,13 @@ const Navbar = () => {
               HOME
             </button>
 
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider"
+            >
+              ABOUT US
+            </button>
+
             <DropdownMenu>
               <DropdownMenuTrigger className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider">
                 SAFARIS
@@ -93,7 +100,7 @@ const Navbar = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider">
-                LOCATIONS
+                DESTINATIONS
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white z-[100]">
                 <DropdownMenuItem asChild>
@@ -108,29 +115,12 @@ const Navbar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider">
-                INFORMATION
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white z-[100]">
-                <DropdownMenuItem asChild>
-                  <button onClick={() => scrollToSection("about")} className="cursor-pointer w-full text-left">
-                    About Us
-                  </button>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a 
-                    href="YOUR_PDF_URL_HERE" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="cursor-pointer flex items-center gap-2"
-                  >
-                    <FileText className="w-4 h-4" />
-                    Business Certificate
-                  </a>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider"
+            >
+              CONTACT US
+            </button>
 
             {user ? (
               <Button asChild variant="default">
@@ -163,6 +153,13 @@ const Navbar = () => {
               className="block w-full text-left text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider px-4 py-2"
             >
               HOME
+            </button>
+
+            <button
+              onClick={() => scrollToSection("about")}
+              className="block w-full text-left text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider px-4 py-2"
+            >
+              ABOUT US
             </button>
 
             <DropdownMenu>
@@ -208,7 +205,7 @@ const Navbar = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger className="w-full text-left text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider px-4 py-2">
-                LOCATIONS
+                DESTINATIONS
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white z-[100]">
                 <DropdownMenuItem asChild>
@@ -229,33 +226,12 @@ const Navbar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger className="w-full text-left text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider px-4 py-2">
-                INFORMATION
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white z-[100]">
-                <DropdownMenuItem asChild>
-                  <button 
-                    onClick={() => scrollToSection("about")} 
-                    className="cursor-pointer w-full text-left"
-                  >
-                    About Us
-                  </button>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a 
-                    href="YOUR_PDF_URL_HERE" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    onClick={() => setIsOpen(false)}
-                    className="cursor-pointer flex items-center gap-2"
-                  >
-                    <FileText className="w-4 h-4" />
-                    Business Certificate
-                  </a>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="block w-full text-left text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider px-4 py-2"
+            >
+              CONTACT US
+            </button>
           </div>
         )}
       </div>
