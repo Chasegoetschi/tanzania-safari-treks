@@ -60,7 +60,7 @@ const CulturalExperiencesDetail = () => {
               <div
                 key={index}
                 onClick={() => window.location.href = `/book?content_type=activity&content_name=CULTURAL EXPERIENCES - ${pkg.title}`}
-                className="group relative h-[280px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
               >
                 <img
                   src={culturalExperiencesCardImage}
@@ -69,14 +69,11 @@ const CulturalExperiencesDetail = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
                 
-                <div className="relative h-full flex flex-col justify-center px-8 md:px-12">
+                <div className="relative h-full flex items-center justify-between px-8 md:px-12">
                   <div className="text-white space-y-4">
                     <h3 className="text-3xl md:text-4xl font-serif uppercase tracking-wide [text-shadow:_2px_2px_8px_rgb(0_0_0_/_80%)]">
                       {pkg.title}
                     </h3>
-                    <p className="text-lg max-w-xl [text-shadow:_1px_1px_4px_rgb(0_0_0_/_80%)]">
-                      {pkg.description}
-                    </p>
                     <div className="flex flex-wrap items-center gap-6 text-base [text-shadow:_1px_1px_4px_rgb(0_0_0_/_80%)]">
                       <div className="flex items-center gap-2">
                         <DollarSign className="w-5 h-5 drop-shadow-lg" />
@@ -93,7 +90,7 @@ const CulturalExperiencesDetail = () => {
                     </div>
                   </div>
                   
-                  <div className="absolute bottom-8 right-8 md:flex items-center justify-center w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm group-hover:bg-white/30 transition-colors hidden">
+                  <div className="hidden md:flex items-center justify-center w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm group-hover:bg-white/30 transition-colors">
                     <ArrowRight className="w-8 h-8 text-white" />
                   </div>
                 </div>
