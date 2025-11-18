@@ -1,5 +1,6 @@
 import { ArrowRight, DollarSign, Users, Calendar } from "lucide-react";
 import hikingAdventuresCardImage from "@/assets/hiking-adventures-card.png";
+import mountMeruImage from "@/assets/mount-meru.png";
 
 const HikingAdventuresDetail = () => {
   const packages = [
@@ -9,6 +10,7 @@ const HikingAdventuresDetail = () => {
       duration: "1 Day",
       groupSize: "2-8",
       description: "Perfect for beginners, explore local trails with experienced guides",
+      image: mountMeruImage,
     },
     {
       title: "MOUNT KILIMANJARO",
@@ -16,6 +18,7 @@ const HikingAdventuresDetail = () => {
       duration: "2 Days",
       groupSize: "2-6",
       description: "Immersive experience with overnight camping and mountain views",
+      image: hikingAdventuresCardImage,
     },
     {
       title: "NGORONGORO HIGHLANDS",
@@ -23,6 +26,7 @@ const HikingAdventuresDetail = () => {
       duration: "5 Days",
       groupSize: "2-4",
       description: "Ultimate hiking journey through diverse landscapes and terrains",
+      image: hikingAdventuresCardImage,
     },
   ];
 
@@ -62,7 +66,7 @@ const HikingAdventuresDetail = () => {
                 className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
               >
                 <img
-                  src={hikingAdventuresCardImage}
+                  src={pkg.image}
                   alt={pkg.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
