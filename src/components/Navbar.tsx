@@ -62,7 +62,7 @@ const Navbar = () => {
 
             <button
               onClick={() => scrollToSection("about")}
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider"
+              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider whitespace-nowrap"
             >
               ABOUT US
             </button>
@@ -117,7 +117,7 @@ const Navbar = () => {
 
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider"
+              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider whitespace-nowrap"
             >
               CONTACT US
             </button>
@@ -157,7 +157,7 @@ const Navbar = () => {
 
             <button
               onClick={() => scrollToSection("about")}
-              className="block w-full text-left text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider px-4 py-2"
+              className="block w-full text-left text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider px-4 py-2 whitespace-nowrap"
             >
               ABOUT US
             </button>
@@ -228,7 +228,7 @@ const Navbar = () => {
 
             <button
               onClick={() => scrollToSection("contact")}
-              className="block w-full text-left text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider px-4 py-2"
+              className="block w-full text-left text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider px-4 py-2 whitespace-nowrap"
             >
               CONTACT US
             </button>
