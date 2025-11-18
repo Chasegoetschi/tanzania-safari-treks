@@ -276,8 +276,7 @@ const Book = () => {
           <div className="space-y-6">
             <Card>
               <CardHeader>
-                <CardTitle>Select Your Tour</CardTitle>
-                <CardDescription>Choose the adventure that calls to you</CardDescription>
+                <CardTitle>Select Your Trip</CardTitle>
               </CardHeader>
               <CardContent>
                 <Select
