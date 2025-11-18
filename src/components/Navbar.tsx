@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, Star, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import grantLogo from "@/assets/grant-expedition-logo.png";
 import {
@@ -13,8 +13,24 @@ import {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
   const { user } = useAuth();
+  
+  const isHomePage = location.pathname === '/';
+
+  useEffect(() => {
+    if (!isHomePage) return;
+    
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 100);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isHomePage]);
 
   const scrollToSection = (id: string) => {
     navigate("/");
@@ -26,7 +42,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-400 ${
+      isHomePage 
+        ? isScrolled 
+          ? 'bg-primary shadow-sm' 
+          : 'bg-transparent'
+        : 'bg-primary shadow-sm'
+    }`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-24">
           {/* Logo and Branding */}
@@ -34,16 +56,24 @@ const Navbar = () => {
             <Link to="/" className="flex items-center gap-3">
               <img src={grantLogo} alt="Grant Expedition" className="h-14 w-14 object-contain" />
               <div>
-                <h1 className="text-xl font-serif text-foreground tracking-wide uppercase">
+                <h1 className={`text-xl font-serif tracking-wide uppercase transition-colors ${
+                  isHomePage && !isScrolled ? 'text-white' : 'text-foreground'
+                }`}>
                   GRANT EXPEDITION
                 </h1>
                 <div className="flex items-center gap-2 mt-0.5">
                   <div className="flex gap-0.5">
                     {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="w-3 h-3 fill-primary text-primary" />
+                      <Star key={star} className={`w-3 h-3 transition-colors ${
+                        isHomePage && !isScrolled 
+                          ? 'fill-white text-white' 
+                          : 'fill-primary text-primary'
+                      }`} />
                     ))}
                   </div>
-                  <span className="text-xs text-muted-foreground italic">
+                  <span className={`text-xs italic transition-colors ${
+                    isHomePage && !isScrolled ? 'text-white/80' : 'text-muted-foreground'
+                  }`}>
                     "A wonderful experience" – Trip Advisor
                   </span>
                 </div>
@@ -55,20 +85,32 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-8">
             <button
               onClick={() => scrollToSection("home")}
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider"
+              className={`text-sm font-medium transition-colors uppercase tracking-wider ${
+                isHomePage && !isScrolled 
+                  ? 'text-white/80 hover:text-white' 
+                  : 'text-foreground/70 hover:text-foreground'
+              }`}
             >
               HOME
             </button>
 
             <button
               onClick={() => scrollToSection("about")}
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider whitespace-nowrap"
+              className={`text-sm font-medium transition-colors uppercase tracking-wider whitespace-nowrap ${
+                isHomePage && !isScrolled 
+                  ? 'text-white/80 hover:text-white' 
+                  : 'text-foreground/70 hover:text-foreground'
+              }`}
             >
               ABOUT US
             </button>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider">
+              <DropdownMenuTrigger className={`text-sm font-medium transition-colors uppercase tracking-wider ${
+                isHomePage && !isScrolled 
+                  ? 'text-white/80 hover:text-white' 
+                  : 'text-foreground/70 hover:text-foreground'
+              }`}>
                 SAFARIS
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white z-[100]">
@@ -82,7 +124,11 @@ const Navbar = () => {
             </DropdownMenu>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider">
+              <DropdownMenuTrigger className={`text-sm font-medium transition-colors uppercase tracking-wider ${
+                isHomePage && !isScrolled 
+                  ? 'text-white/80 hover:text-white' 
+                  : 'text-foreground/70 hover:text-foreground'
+              }`}>
                 ACTIVITIES
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white z-[100]">
@@ -99,7 +145,11 @@ const Navbar = () => {
             </DropdownMenu>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider">
+              <DropdownMenuTrigger className={`text-sm font-medium transition-colors uppercase tracking-wider ${
+                isHomePage && !isScrolled 
+                  ? 'text-white/80 hover:text-white' 
+                  : 'text-foreground/70 hover:text-foreground'
+              }`}>
                 DESTINATIONS
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white z-[100]">
@@ -117,7 +167,11 @@ const Navbar = () => {
 
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider whitespace-nowrap"
+              className={`text-sm font-medium transition-colors uppercase tracking-wider whitespace-nowrap ${
+                isHomePage && !isScrolled 
+                  ? 'text-white/80 hover:text-white' 
+                  : 'text-foreground/70 hover:text-foreground'
+              }`}
             >
               CONTACT US
             </button>
@@ -139,7 +193,9 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-foreground p-2"
+            className={`lg:hidden p-2 transition-colors ${
+              isHomePage && !isScrolled ? 'text-white' : 'text-foreground'
+            }`}
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
