@@ -122,15 +122,6 @@ const Navbar = () => {
               CONTACT US
             </button>
 
-            <a
-              href="/Certificate_of_Incorporation.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider"
-            >
-              CERTIFICATE OF INCORPORATION
-            </a>
-
             {user ? (
               <Button asChild variant="default">
                 <Link to="/account">
@@ -241,16 +232,6 @@ const Navbar = () => {
             >
               CONTACT US
             </button>
-
-            <a
-              href="/Certificate_of_Incorporation.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsOpen(false)}
-              className="block w-full text-left text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider px-4 py-2"
-            >
-              CERTIFICATE OF INCORPORATION
-            </a>
           </div>
         )}
       </div>
