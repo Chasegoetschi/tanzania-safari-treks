@@ -2,6 +2,7 @@ import { ArrowRight, DollarSign, Users } from "lucide-react";
 import hikingAdventuresImage from "@/assets/hiking-hero.png";
 import hikingAdventuresCardImage from "@/assets/hiking-adventures-card.png";
 import culturalExperiencesCardImage from "@/assets/cultural-experiences-card.png";
+import outdoorExperiencesCardImage from "@/assets/outdoor-experiences-card.png";
 import kilimanjaroSignImage from "@/assets/kilimanjaro-sign.png";
 import kilimanjaroNightImage from "@/assets/kilimanjaro-night.png";
 import riftValleyImage from "@/assets/rift-valley.png";
@@ -26,7 +27,7 @@ const HikingAdventures = () => {
       title: "OUTDOOR NATURE EXPERIENCES",
       price: "18,000",
       groupSize: "4+",
-      image: kilimanjaroSignImage,
+      image: outdoorExperiencesCardImage,
       link: "/book?content_type=activity&content_name=OUTDOOR NATURE EXPERIENCES"
     },
   ];
