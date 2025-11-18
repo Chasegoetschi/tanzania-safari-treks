@@ -7,7 +7,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { MapPin, Clock, DollarSign, Loader2 } from "lucide-react";
@@ -486,12 +485,6 @@ const Book = () => {
                   autoComplete="off"
                 />
 
-                <Alert className="bg-accent/10 border-accent/20">
-                  <AlertDescription className="text-sm text-foreground/80">
-                    Booking Inquiries are not binding. Payment will only be necessary upon booking with a member of staff. Inquiries are typically answered in 1-5 business days.
-                  </AlertDescription>
-                </Alert>
-
                 <div className="flex items-start gap-2 pt-2">
                   <Checkbox
                     id="terms"
@@ -502,8 +495,7 @@ const Book = () => {
                     }}
                   />
                   <Label htmlFor="terms" className="text-sm leading-relaxed cursor-pointer">
-                    I understand this is a booking request and that Grant Expedition will contact me
-                    to confirm availability and final details. <span className="text-destructive">*</span>
+                    I understand that booking requests are not binding and that Grant Expedition will contact me to confirm availability and payment. Requests are typically answered in 1-5 business days. <span className="text-destructive">*</span>
                   </Label>
                 </div>
                 {errors.terms && <p className="text-sm text-destructive">{errors.terms}</p>}
