@@ -37,7 +37,7 @@ const HikingAdventuresDetail = () => {
         />
 
         <div className="relative z-10 text-center text-white px-4">
-          <p className="text-2xl md:text-3xl italic font-light mb-2">adventure awaits</p>
+          <p className="text-2xl md:text-3xl italic font-light mb-2">exhilarating</p>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif uppercase tracking-wide">
             HIKING ADVENTURES
           </h1>
