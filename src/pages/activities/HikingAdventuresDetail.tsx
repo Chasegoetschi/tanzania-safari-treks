@@ -3,6 +3,7 @@ import hikingAdventuresCardImage from "@/assets/hiking-adventures-card.png";
 import hikingAdventuresHeroImage from "@/assets/hiking-adventures-hero.png";
 import mountMeruImage from "@/assets/mount-meru.png";
 import mountKilimanjaroImage from "@/assets/mount-kilimanjaro.png";
+import ngorongoroHighlandsImage from "@/assets/ngorongoro-highlands.png";
 
 const HikingAdventuresDetail = () => {
   const packages = [
@@ -28,7 +29,7 @@ const HikingAdventuresDetail = () => {
       duration: "5 Days",
       groupSize: "2-4",
       description: "Ultimate hiking journey through diverse landscapes and terrains",
-      image: hikingAdventuresCardImage,
+      image: ngorongoroHighlandsImage,
     },
   ];
 
