@@ -1,5 +1,6 @@
 import { ArrowRight, DollarSign, Users, Calendar } from "lucide-react";
 import culturalExperiencesCardImage from "@/assets/cultural-experiences-card.png";
+import culturalExperiencesHeroImage from "@/assets/cultural-experiences-hero.png";
 
 const CulturalExperiencesDetail = () => {
   const packages = [
@@ -31,7 +32,7 @@ const CulturalExperiencesDetail = () => {
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <img 
-          src={culturalExperiencesCardImage} 
+          src={culturalExperiencesHeroImage} 
           alt="Cultural and local experiences with traditional crafts" 
           className="absolute inset-0 w-full h-full object-cover object-center" 
         />
