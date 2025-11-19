@@ -1,28 +1,34 @@
 import { ArrowRight, DollarSign, Users, Calendar } from "lucide-react";
-import outdoorExperiencesCardImage from "@/assets/outdoor-experiences-card.png";
+import outdoorExperiencesHeroImage from "@/assets/outdoor-experiences-hero.png";
+import hotAirBalloonImage from "@/assets/hot-air-balloon.png";
+import lakeManyaraCanoeingImage from "@/assets/lake-manyara-canoeing.png";
+import nightGameDriveImage from "@/assets/night-game-drive.png";
 
 const OutdoorExperiencesDetail = () => {
   const packages = [
     {
-      title: "Wildlife Safari Day Trip",
+      title: "HOT AIR BALLOON EXPERIENCE",
       price: "9,500",
       duration: "1 Day",
       groupSize: "4-12",
       description: "Experience wildlife in their natural habitat with expert guides",
+      image: hotAirBalloonImage,
     },
     {
-      title: "Nature Explorer",
+      title: "LAKE MANYARA CANOEING",
       price: "14,500",
       duration: "2 Days",
       groupSize: "4-10",
       description: "Extended wildlife viewing with camping under the stars",
+      image: lakeManyaraCanoeingImage,
     },
     {
-      title: "Outdoor Adventure Package",
+      title: "NIGHT GAME DRIVE",
       price: "18,000",
       duration: "3 Days",
       groupSize: "4-8",
       description: "Comprehensive outdoor experience combining wildlife, landscapes, and nature",
+      image: nightGameDriveImage,
     },
   ];
 
@@ -31,15 +37,15 @@ const OutdoorExperiencesDetail = () => {
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <img 
-          src={outdoorExperiencesCardImage} 
-          alt="Outdoor nature experiences with wildlife safari" 
+          src={outdoorExperiencesHeroImage} 
+          alt="Breathtaking nature experiences in the wild" 
           className="absolute inset-0 w-full h-full object-cover object-center" 
         />
 
         <div className="relative z-10 text-center text-white px-4">
-          <p className="text-2xl md:text-3xl italic font-light mb-2">wild encounters</p>
+          <p className="text-2xl md:text-3xl italic font-light mb-2">experience the</p>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif uppercase tracking-wide">
-            OUTDOOR EXPERIENCES
+            breathtaking Nature Experiences
           </h1>
         </div>
       </section>
@@ -62,7 +68,7 @@ const OutdoorExperiencesDetail = () => {
                 className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
               >
                 <img
-                  src={outdoorExperiencesCardImage}
+                  src={pkg.image}
                   alt={pkg.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
