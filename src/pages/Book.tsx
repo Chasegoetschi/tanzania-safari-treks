@@ -463,7 +463,7 @@ const Book = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="specialRequests">Special Requests / Notes</Label>
+                  <Label htmlFor="specialRequests">Special Requests / Notes (Optional)</Label>
                   <Textarea
                     id="specialRequests"
                     value={specialRequests}

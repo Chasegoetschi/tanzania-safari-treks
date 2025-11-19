@@ -311,6 +311,21 @@ const Navbar = () => {
             >
               CONTACT US
             </button>
+
+            {user ? (
+              <Link to="/account" onClick={() => setIsOpen(false)} className="block w-full px-4 py-2">
+                <Button variant="default" className="w-full">
+                  <User className="w-4 h-4 mr-2" />
+                  My Account
+                </Button>
+              </Link>
+            ) : (
+              <Link to="/login" onClick={() => setIsOpen(false)} className="block w-full px-4 py-2">
+                <Button variant="default" className="w-full">
+                  Login
+                </Button>
+              </Link>
+            )}
           </div>
         )}
       </div>
