@@ -1,5 +1,6 @@
 import { ArrowRight, DollarSign, Users, Calendar } from "lucide-react";
 import hikingAdventuresCardImage from "@/assets/hiking-adventures-card.png";
+import hikingAdventuresHeroImage from "@/assets/hiking-adventures-hero.png";
 import mountMeruImage from "@/assets/mount-meru.png";
 import mountKilimanjaroImage from "@/assets/mount-kilimanjaro.png";
 
@@ -36,7 +37,7 @@ const HikingAdventuresDetail = () => {
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <img 
-          src={hikingAdventuresCardImage} 
+          src={hikingAdventuresHeroImage} 
           alt="Hiking adventures through scenic trails" 
           className="absolute inset-0 w-full h-full object-cover object-center" 
         />
