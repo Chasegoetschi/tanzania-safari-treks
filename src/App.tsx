@@ -25,6 +25,7 @@ import OutdoorExperiencesDetail from "./pages/activities/OutdoorExperiencesDetai
 import ZanzibarIslands from "./pages/locations/ZanzibarIslands";
 import MainlandHighlights from "./pages/locations/MainlandHighlights";
 import NorthernCircuit from "./pages/locations/NorthernCircuit";
+import Destinations from "./pages/locations/Destinations";
 import Book from "./pages/Book";
 import BookingSuccess from "./pages/BookingSuccess";
 import Navbar from "./components/Navbar";
@@ -89,6 +90,7 @@ const App = () => (
             <Route path="/activities/cultural-detail" element={<CulturalExperiencesDetail />} />
             <Route path="/activities/outdoor" element={<OutdoorExperiences />} />
             <Route path="/activities/outdoor-detail" element={<OutdoorExperiencesDetail />} />
+            <Route path="/locations" element={<Destinations />} />
             <Route path="/locations/zanzibar" element={<ZanzibarIslands />} />
             <Route path="/locations/mainland" element={<MainlandHighlights />} />
             <Route path="/locations/northern-circuit" element={<NorthernCircuit />} />
