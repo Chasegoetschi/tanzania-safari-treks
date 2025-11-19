@@ -494,7 +494,7 @@ const Book = () => {
                     }}
                   />
                   <Label htmlFor="terms" className="text-sm leading-relaxed cursor-pointer">
-                    I understand that booking requests are not binding and that Grant Expedition will contact me to confirm availability and payment. Requests are typically answered in 1-5 business days. <span className="text-destructive">*</span>
+                    I understand that booking requests are not binding and that Grant Expedition will contact me to confirm availability and payment. Requests are typically answered in 1-3 business days. <span className="text-destructive">*</span>
                   </Label>
                 </div>
                 {errors.terms && <p className="text-sm text-destructive">{errors.terms}</p>}

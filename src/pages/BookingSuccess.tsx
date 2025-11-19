@@ -84,7 +84,7 @@ const BookingSuccess = () => {
               <li className="flex items-start gap-2">
                 <span className="text-primary mt-1">•</span>
                 <span>
-                  We'll contact you at the email address provided within 24-48 hours to confirm
+                  We'll contact you at the email address provided within 24-72 hours to confirm
                   details
                 </span>
               </li>
