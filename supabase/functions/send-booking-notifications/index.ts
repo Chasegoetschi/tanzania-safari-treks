@@ -208,39 +208,32 @@ const handler = async (req: Request): Promise<Response> => {
       </div>
     `;
 
-    // Send both emails
-    const [userEmailResponse, ownerEmailResponse] = await Promise.all([
-      // User confirmation email
-      resend.emails.send({
-        from: "Grant Expedition <onboarding@resend.dev>", // Update with verified domain
-        to: [email],
-        subject: `${contentName} Booking Request Received (Ref: ${bookingRef})`,
-        html: userEmailHtml,
-      }),
-      
-      // Owner and team alert email
-      resend.emails.send({
-        from: "Grant Expedition Bookings <onboarding@resend.dev>", // Update with verified domain
-        to: TEAM_EMAILS,
-        subject: `NEW BOOKING REQUEST: ${contentName} - ${new Date(bookingData.startDate).toLocaleDateString()}`,
-        html: ownerEmailHtml,
-      }),
-    ]);
+    // Note: Customer confirmation emails are currently disabled
+    // To enable them, verify a domain at resend.com/domains and update the 'from' address
+    console.log("Customer confirmation email skipped (requires domain verification in Resend)");
+    console.log("Customer would receive email at:", email);
+    
+    // Send owner notification email only
+    console.log("Sending owner notification email to:", TEAM_EMAILS);
+    const ownerEmailResponse = await resend.emails.send({
+      from: "Grant Expedition <onboarding@resend.dev>",
+      to: TEAM_EMAILS,
+      subject: `NEW BOOKING REQUEST: ${contentName} - ${new Date(bookingData.startDate).toLocaleDateString()}`,
+      html: ownerEmailHtml,
+    });
 
-    console.log("User email response:", userEmailResponse);
     console.log("Owner email response:", ownerEmailResponse);
 
-    if (userEmailResponse.error || ownerEmailResponse.error) {
+    if (ownerEmailResponse.error) {
       throw new Error(
-        `Email sending failed: ${userEmailResponse.error?.message || ownerEmailResponse.error?.message}`
+        `Email sending failed: ${ownerEmailResponse.error?.message}`
       );
     }
 
     return new Response(
       JSON.stringify({ 
         success: true,
-        message: "Booking notifications sent successfully",
-        userEmailId: userEmailResponse.data?.id,
+        message: "Owner notification sent successfully. Customer email skipped (requires domain verification).",
         ownerEmailId: ownerEmailResponse.data?.id,
       }),
       {
