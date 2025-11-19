@@ -196,7 +196,7 @@ const handler = async (req: Request): Promise<Response> => {
         </div>
         
         <div style="background-color: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 20px 0;">
-          <p style="margin: 0;"><strong>⚡ Action Required:</strong> Please review this booking request and contact the customer within 24 hours to confirm availability and finalize the booking details.</p>
+          <p style="margin: 0;"><strong>⚡ Action Required:</strong> Please review this booking request and contact the customer within 1-3 business days to confirm availability and finalize the booking details.</p>
         </div>
         
         <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 30px 0;">
