@@ -1,30 +1,31 @@
 import { ArrowRight, DollarSign, Users } from "lucide-react";
-import safariJeepImage from "@/assets/safari-jeep.jpg";
-import maraRiverImage from "@/assets/mara-river-aerial.png";
-import riverCruiseImage from "@/assets/river-cruise.png";
+import activitiesHeroImage from "@/assets/activities-hero.jpg";
+import hikingAdventuresCardImage from "@/assets/hiking-adventures-card.png";
+import culturalExperiencesCardImage from "@/assets/cultural-experiences-card.png";
+import natureExperiencesCardImage from "@/assets/nature-experiences-card.png";
 
 const OutdoorExperiences = () => {
   const outdoorTrips = [
     {
-      title: "OUTDOOR EXPERIENCES",
+      title: "HIKING ADVENTURES",
       price: "8,500",
       groupSize: "2+",
-      image: safariJeepImage,
-      link: "/book?content_type=activity&content_name=Hot Air Balloon Experience"
+      image: hikingAdventuresCardImage,
+      link: "/book?content_type=activity&content_name=Hiking Adventures"
     },
     {
-      title: "RIVER SAFARI ADVENTURE",
+      title: "CULTURAL & LOCAL EXPERIENCES",
       price: "12,000",
       groupSize: "4+",
-      image: maraRiverImage,
-      link: "/book?content_type=activity&content_name=Lake Manyara Canoeing"
+      image: culturalExperiencesCardImage,
+      link: "/book?content_type=activity&content_name=Cultural & Local Experiences"
     },
     {
-      title: "LAKE CRUISE EXPERIENCE",
+      title: "NATURE EXPERIENCES",
       price: "6,500",
       groupSize: "2+",
-      image: riverCruiseImage,
-      link: "/book?content_type=activity&content_name=Night Game Drive"
+      image: natureExperiencesCardImage,
+      link: "/book?content_type=activity&content_name=Nature Experiences"
     },
   ];
 
@@ -33,15 +34,15 @@ const OutdoorExperiences = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <img 
-          src={safariJeepImage} 
-          alt="Outdoor Experiences" 
+          src={activitiesHeroImage} 
+          alt="Exhilarating Activities" 
           className="absolute inset-0 w-full h-full object-cover object-center" 
         />
 
         <div className="relative z-10 text-center text-white px-4">
           <p className="text-2xl md:text-3xl italic font-light mb-2">experience the</p>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif uppercase tracking-wide">
-            ACTIVITIES
+            EXHILARATING ACTIVITIES
           </h1>
         </div>
       </section>
