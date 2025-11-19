@@ -1,29 +1,34 @@
 import { ArrowRight, DollarSign, Users, Calendar } from "lucide-react";
-import culturalExperiencesCardImage from "@/assets/cultural-experiences-card.png";
 import culturalExperiencesHeroImage from "@/assets/cultural-experiences-hero.png";
+import maasaiVillageImage from "@/assets/maasai-village.png";
+import lakeEyasiImage from "@/assets/lake-eyasi.png";
+import arushaTownImage from "@/assets/arusha-town.png";
 
 const CulturalExperiencesDetail = () => {
   const packages = [
     {
-      title: "Village Cultural Tour",
+      title: "MAASAI VILLAGE VISIT",
       price: "12,000",
       duration: "1 Day",
       groupSize: "2-10",
       description: "Immerse yourself in local traditions, crafts, and authentic cuisine",
+      image: maasaiVillageImage,
     },
     {
-      title: "Heritage Experience",
+      title: "LAKE EYASI CULTURAL TOUR",
       price: "18,000",
       duration: "2 Days",
       groupSize: "2-8",
       description: "Deep dive into local history, art, and cultural ceremonies",
+      image: lakeEyasiImage,
     },
     {
-      title: "Cultural Immersion",
+      title: "ARUSHA TOWN TOUR",
       price: "25,000",
       duration: "4 Days",
       groupSize: "2-6",
       description: "Complete cultural journey with homestays and traditional activities",
+      image: arushaTownImage,
     },
   ];
 
@@ -63,7 +68,7 @@ const CulturalExperiencesDetail = () => {
                 className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
               >
                 <img
-                  src={culturalExperiencesCardImage}
+                  src={pkg.image}
                   alt={pkg.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
