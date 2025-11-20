@@ -18,8 +18,8 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 30 25% 25%;
 
-    /* Primary: Terracotta/Orange */
-    --primary: 25 65% 55%;
+    /* Primary: Warm Orange */
+    --primary: 31 65% 62%;
     --primary-foreground: 0 0% 100%;
 
     /* Secondary: Dark Forest Green */
@@ -102,7 +102,7 @@ All colors MUST be HSL.
     --popover: 30 20% 18%;
     --popover-foreground: 45 50% 92%;
 
-    --primary: 25 65% 55%;
+    --primary: 31 65% 62%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 120 30% 25%;
