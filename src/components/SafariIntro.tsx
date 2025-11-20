@@ -1,17 +1,11 @@
 import tigerImage from "@/assets/tiger.png";
-
 const SafariIntro = () => {
-  return (
-    <section className="py-16 bg-white">
+  return <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Image Side */}
           <div className="relative">
-            <img 
-              src={tigerImage} 
-              alt="Tiger in Tanzania" 
-              className="w-full h-[400px] object-cover rounded-lg shadow-lg"
-            />
+            <img src={tigerImage} alt="Tiger in Tanzania" className="w-full h-[400px] object-cover rounded-lg shadow-lg" />
           </div>
 
           {/* Text Side */}
@@ -20,7 +14,7 @@ const SafariIntro = () => {
               Experience the wild
             </p>
             <h2 className="text-4xl md:text-5xl font-serif">
-              <span className="text-primary uppercase tracking-wide">NORTHERN TANZANIA</span>
+              <span className="text-primary uppercase tracking-wide font-serif">NORTHERN TANZANIA</span>
               <br />
               <span className="text-primary/80 italic">safari</span>{" "}
               <span className="text-primary uppercase tracking-wide">EXCURSIONS</span>
@@ -37,8 +31,6 @@ const SafariIntro = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default SafariIntro;
