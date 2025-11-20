@@ -23,7 +23,7 @@ All colors MUST be HSL.
     --primary-foreground: 0 0% 100%;
 
     /* Secondary: Dark Forest Green */
-    --secondary: 120 30% 20%;
+    --secondary: 88 38% 15%;
     --secondary-foreground: 45 50% 92%;
 
     /* Muted: Light tan/sand */
@@ -105,7 +105,7 @@ All colors MUST be HSL.
     --primary: 31 65% 62%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 120 30% 25%;
+    --secondary: 88 38% 15%;
     --secondary-foreground: 45 50% 92%;
 
     --muted: 30 15% 25%;
