@@ -1,4 +1,4 @@
-import { ArrowRight, DollarSign, Users } from "lucide-react";
+import { ArrowRight, DollarSign, Users, ChevronDown } from "lucide-react";
 import zanzibarHeroImage from "@/assets/zanzibar-hero.jpg";
 import zanzibarBeachImage from "@/assets/zanzibar-beach.png";
 import zanzibarExperienceImage from "@/assets/zanzibar-experience.png";
@@ -32,7 +32,7 @@ const ZanzibarIslands = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section - Using Design System Standards */}
-      <section className="hero-section">
+      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <img 
           src={zanzibarHeroImage} 
           alt="Zanzibar Islands" 
@@ -47,6 +47,14 @@ const ZanzibarIslands = () => {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif uppercase tracking-wide">
             LOCATIONS
           </h1>
+        </div>
+        
+        {/* Chevron Down with Hover Animation */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+          <ChevronDown 
+            className="w-10 h-10 text-white transition-all duration-500 hover:translate-y-2 hover:scale-110 cursor-pointer animate-pulse" 
+            strokeWidth={1.5}
+          />
         </div>
       </section>
 
