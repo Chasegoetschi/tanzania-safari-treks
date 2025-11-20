@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl cormorant-garamond mb-4 text-primary font-medium">GRANT EXPEDITION LTD  </h3>
+            <h3 className="text-2xl cormorant-garamond mb-4 text-primary font-bold">GRANT EXPEDITION LTD  </h3>
             <p className="text-white/80 leading-relaxed">
               Creating unforgettable safari experiences in the heart of Africa since 2008. 
               Discover the wild with expert guides and authentic adventures.
