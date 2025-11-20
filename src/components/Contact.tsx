@@ -71,7 +71,7 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div>
-            <h3 className="text-2xl font-semibold mb-6 italic">contact information</h3>
+            <h3 className="text-2xl font-semibold mb-6">CONTACT information</h3>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
