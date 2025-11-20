@@ -52,7 +52,7 @@ const ZanzibarIslands = () => {
         {/* Chevron Down with Hover Animation */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
           <ChevronDown 
-            className="w-10 h-10 text-white transition-all duration-500 hover:translate-y-2 hover:scale-110 cursor-pointer animate-pulse" 
+            className="w-10 h-10 text-white transition-all duration-500 hover:translate-y-2 cursor-pointer" 
             strokeWidth={1.5}
           />
         </div>
