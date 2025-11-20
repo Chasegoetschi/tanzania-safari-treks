@@ -49,9 +49,9 @@ const Navbar = () => {
                 </h1>
                 {(!isHomePage || !isScrolled) && <div className="flex items-center gap-2 mt-0.5">
                     <div className="flex gap-0.5">
-                      {[1, 2, 3, 4, 5].map(star => <Star key={star} className={`w-3 h-3 transition-colors ${isHomePage && !isScrolled ? 'fill-white text-white' : 'fill-primary text-primary'}`} />)}
+                      {[1, 2, 3, 4, 5].map(star => <Star key={star} className="w-3 h-3 fill-[hsl(var(--navbar-text))] text-[hsl(var(--navbar-text))]" />)}
                     </div>
-                    <span className={`text-xs italic transition-colors ${isHomePage && !isScrolled ? 'text-white/80' : 'text-muted-foreground'}`}>
+                    <span className="text-xs italic text-[hsl(var(--navbar-text))]/80">
                       "A wonderful experience" – Trip Advisor
                     </span>
                   </div>}
