@@ -107,26 +107,26 @@ const TripFinder = () => {
                 <div className="space-y-4">
                   {/* Location */}
                   <div className="flex items-center gap-2 text-sm">
-                    <MapPin className="w-4 h-4 text-primary" />
+                    <MapPin className="w-5 h-5 text-primary" strokeWidth={2.5} />
                     <span className="font-semibold">{expedition.location}</span>
                   </div>
 
                   {/* Duration */}
                   <div className="flex items-center gap-2 text-sm">
-                    <Clock className="w-4 h-4 text-primary" />
+                    <Clock className="w-5 h-5 text-primary" strokeWidth={2.5} />
                     <span className="font-semibold">{expedition.duration}</span>
                   </div>
 
                   {/* Price */}
                   <div className="flex items-center gap-2 text-sm">
-                    <DollarSign className="w-4 h-4 text-primary" />
+                    <DollarSign className="w-5 h-5 text-primary" strokeWidth={2.5} />
                     <span className="font-semibold">{expedition.price}</span>
                   </div>
                   
                   {/* Arrow Button */}
                   <div className="flex justify-end">
                     <div className="w-10 h-10 rounded-full bg-primary/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
-                      <ArrowRight className="w-5 h-5 text-white" />
+                      <ArrowRight className="w-6 h-6 text-white" strokeWidth={2.5} />
                     </div>
                   </div>
                 </div>
