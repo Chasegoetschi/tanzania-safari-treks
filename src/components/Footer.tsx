@@ -11,7 +11,7 @@ const Footer = () => {
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-4 text-xl">QUICK LINKS   </h4>
+            <h4 className="font-sans font-semibold mb-4 text-xl">QUICK LINKS   </h4>
             <ul className="space-y-2 text-white/80">
               <li><a href="#home" className="hover:text-primary transition-colors">Home</a></li>
               <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
@@ -20,7 +20,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4 text-xl">CONNECT WITH US          </h4>
+            <h4 className="font-sans font-semibold mb-4 text-xl">CONNECT WITH US          </h4>
             <div className="space-y-2 text-white/80 mb-4">
               <p>
                 <span className="font-semibold text-white">Email:</span> info@grantexpedition.com
