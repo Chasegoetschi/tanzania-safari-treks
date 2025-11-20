@@ -96,6 +96,9 @@ const TripFinder = () => {
               {/* Background Image */}
               <img src={expedition.image} alt={expedition.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
 
+              {/* Black Overlay */}
+              <div className="absolute inset-0 bg-black/25" />
+
               {/* Content */}
               <div className="relative h-full flex flex-col justify-end p-6 text-white">
                 <div className="mb-auto">
