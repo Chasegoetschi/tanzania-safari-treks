@@ -123,7 +123,7 @@ const SafariDetail = () => {
           
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
-              <h1 className="text-4xl md:text-5xl font-serif uppercase text-secondary mb-4 pt-[50px]">
+              <h1 className="text-4xl md:text-5xl font-serif uppercase text-secondary mb-4 pt-[50px] font-semibold">
                 {safari.name}
               </h1>
               
