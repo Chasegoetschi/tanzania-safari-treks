@@ -44,7 +44,7 @@ const Navbar = () => {
             <Link to="/" className="flex items-center gap-3">
               <img alt="Grant Expedition" className="h-14 w-14 object-contain" src="/lovable-uploads/f76fd234-d3cc-4575-b93e-f3996af6dcac.png" />
               <div>
-                <h1 className="text-[48px] font-bold font-serif tracking-wide uppercase transition-colors text-[hsl(var(--navbar-text))]">
+                <h1 className="h-14 flex items-center text-3xl font-bold font-serif tracking-wide uppercase transition-colors text-[hsl(var(--navbar-text))]">
                   GRANT EXPEDITION
                 </h1>
                 {(!isHomePage || !isScrolled) && <div className="flex items-center gap-2 mt-0.5">
