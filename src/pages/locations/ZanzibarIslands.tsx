@@ -1,6 +1,6 @@
 import { ArrowRight, DollarSign, Users, ChevronDown } from "lucide-react";
 import zanzibarHeroImage from "@/assets/zanzibar-hero.jpg";
-import zanzibarBeachImage from "@/assets/zanzibar-beach.png";
+import zanzibarAlleyImage from "@/assets/zanzibar-alley.jpg";
 import zanzibarExperienceImage from "@/assets/zanzibar-experience.png";
 import zanzibarStonetownImage from "@/assets/zanzibar-stonetown.png";
 const ZanzibarIslands = () => {
@@ -8,7 +8,7 @@ const ZanzibarIslands = () => {
     title: "BEACH GETAWAY",
     price: "26,000",
     groupSize: "2+",
-    image: zanzibarBeachImage,
+    image: zanzibarAlleyImage,
     link: "/book?content_type=location&content_name=5-Day Beach Getaway"
   }, {
     title: "ISLAND ADVENTURE",
