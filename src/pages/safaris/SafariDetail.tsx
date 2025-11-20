@@ -159,7 +159,7 @@ const SafariDetail = () => {
         <div className="container mx-auto px-4 max-w-5xl">
           {/* Overview */}
           <div className="mb-16">
-            <h2 className="text-3xl font-serif uppercase text-secondary mb-6 tracking-wide">
+            <h2 className="text-3xl font-serif uppercase text-secondary mb-6 tracking-wide font-semibold">
               OVERVIEW
             </h2>
             <p className="text-foreground/80 leading-relaxed">
@@ -169,7 +169,7 @@ const SafariDetail = () => {
 
           {/* Accommodation Options */}
           <div className="mb-16">
-            <h2 className="text-3xl font-serif uppercase text-secondary mb-6 tracking-wide">
+            <h2 className="text-3xl font-serif uppercase text-secondary mb-6 tracking-wide font-semibold">
               ACCOMMODATION <span className="italic lowercase text-2xl">options</span>
             </h2>
             <div className="space-y-3">
@@ -187,13 +187,13 @@ const SafariDetail = () => {
 
           {/* Itinerary */}
           <div className="mb-16">
-            <h2 className="text-3xl font-serif uppercase text-secondary mb-8 tracking-wide">
+            <h2 className="text-3xl font-serif uppercase text-secondary mb-8 tracking-wide font-semibold">
               ITINERARY <span className="italic lowercase text-2xl">walk-through</span>
             </h2>
             
             <div className="space-y-12">
               {safari.itinerary.map((day: any) => <div key={day.day}>
-                  <h3 className="text-2xl font-serif text-primary mb-6">{day.title}</h3>
+                  <h3 className="text-2xl font-serif text-primary mb-6 font-semibold">{day.title}</h3>
                   <div className="relative pl-12 space-y-8">
                     {day.activities.map((activity: any, idx: number) => <div key={idx} className="relative">
                         <div className="absolute -left-12 w-10 h-10 rounded-full bg-accent flex items-center justify-center">
