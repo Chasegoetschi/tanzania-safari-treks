@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/lion-acacia-hero.png";
 
 const Hero = () => {
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
+  const scrollToTripFinder = () => {
+    const element = document.getElementById("trip-finder");
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -20,9 +20,18 @@ const Hero = () => {
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif text-white mb-8 animate-fade-in tracking-[0.15em] uppercase">
             SAFARI EXPERIENCES
           </h1>
-          <p className="text-xl md:text-2xl text-white font-light animate-fade-in leading-relaxed" style={{ animationDelay: "0.2s" }}>
+          <p className="text-xl md:text-2xl text-white font-light mb-12 animate-fade-in leading-relaxed" style={{ animationDelay: "0.2s" }}>
             Escape to the wild with our unforgettable safari tours.
           </p>
+          <div className="flex justify-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
+            <Button 
+              size="lg" 
+              onClick={scrollToTripFinder} 
+              className="text-base px-12 py-6 bg-white/95 hover:bg-white text-foreground border-none uppercase tracking-widest font-medium"
+            >
+              FIND YOUR ADVENTURE
+            </Button>
+          </div>
         </div>
       </div>
 
