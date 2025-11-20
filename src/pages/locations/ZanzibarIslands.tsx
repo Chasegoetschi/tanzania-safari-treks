@@ -17,7 +17,7 @@ const ZanzibarIslands = () => {
     image: zanzibarExperienceImage,
     link: "/book?content_type=location&content_name=6-Day Island Adventure"
   }, {
-    title: "STONE TOWN HERITAGE",
+    title: "NORTHERN CIRCUIT MOUNTAINS",
     price: "32,000",
     groupSize: "4+",
     image: zanzibarStonetownImage,
