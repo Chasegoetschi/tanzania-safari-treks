@@ -4,31 +4,14 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-serif italic mb-4 text-primary font-medium">GRANT EXPEDITION LTD
-
-Creating unforgettable safari experiences in the heart of Africa since 2008. Discover the wild with expert guides and authentic adventures.
-
-QUICK LINKS
-Home
-About
-Safaris
-Contact
-Connect With Us
-
-Email: info@grantexpedition.com
-
-Phone: +255 766 437 358
-
-Address: Arusha, Tanzania
-
-Stay connected for safari updates, wildlife photography, and exclusive offers</h3>
+            <h3 className="text-2xl font-serif italic mb-4 text-primary font-medium">GRANT EXPEDITION LTD  </h3>
             <p className="text-white/80 leading-relaxed">
               Creating unforgettable safari experiences in the heart of Africa since 2008. 
               Discover the wild with expert guides and authentic adventures.
             </p>
           </div>
           <div>
-            <h4 className="cormorant-garamon-semibold mb-4 text-lg">Quick Links</h4>
+            <h4 className="cormorant-garamon-semibold mb-4 text-lg">QUICK LINKS   </h4>
             <ul className="space-y-2 text-white/80">
               <li><a href="#home" className="hover:text-primary transition-colors">Home</a></li>
               <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
@@ -37,7 +20,7 @@ Stay connected for safari updates, wildlife photography, and exclusive offers</h
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4 text-lg">Connect With Us</h4>
+            <h4 className="font-semibold mb-4 text-lg">CONNECT WITH US          </h4>
             <div className="space-y-2 text-white/80 mb-4">
               <p>
                 <span className="font-semibold text-white">Email:</span> info@grantexpedition.com
