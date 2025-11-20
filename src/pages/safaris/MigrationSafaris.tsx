@@ -67,7 +67,7 @@ const MigrationSafaris = () => {
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center gap-6 mb-12">
-            <h2 className="text-sm uppercase tracking-[0.3em] text-foreground">SORT BY</h2>
+            <h2 className="text-base font-sans font-medium uppercase tracking-[0.3em] text-foreground">SORT BY</h2>
             <div className="flex gap-4">
               <Select>
                 <SelectTrigger className="w-[180px] bg-primary text-white border-none uppercase tracking-wider">
