@@ -3,49 +3,38 @@ import outdoorExperiencesHeroImage from "@/assets/outdoor-experiences-hero.png";
 import hotAirBalloonImage from "@/assets/hot-air-balloon.png";
 import lakeManyaraCanoeingImage from "@/assets/lake-manyara-canoeing.png";
 import nightGameDriveImage from "@/assets/night-game-drive.png";
-
 const OutdoorExperiencesDetail = () => {
-  const packages = [
-    {
-      title: "HOT AIR BALLOON EXPERIENCE",
-      price: "9,500",
-      duration: "1 Day",
-      groupSize: "4-12",
-      description: "Experience wildlife in their natural habitat with expert guides",
-      image: hotAirBalloonImage,
-    },
-    {
-      title: "LAKE MANYARA CANOEING",
-      price: "14,500",
-      duration: "2 Days",
-      groupSize: "4-10",
-      description: "Extended wildlife viewing with camping under the stars",
-      image: lakeManyaraCanoeingImage,
-    },
-    {
-      title: "NIGHT GAME DRIVE",
-      price: "18,000",
-      duration: "3 Days",
-      groupSize: "4-8",
-      description: "Comprehensive outdoor experience combining wildlife, landscapes, and nature",
-      image: nightGameDriveImage,
-    },
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const packages = [{
+    title: "HOT AIR BALLOON EXPERIENCE",
+    price: "9,500",
+    duration: "1 Day",
+    groupSize: "4-12",
+    description: "Experience wildlife in their natural habitat with expert guides",
+    image: hotAirBalloonImage
+  }, {
+    title: "LAKE MANYARA CANOEING",
+    price: "14,500",
+    duration: "2 Days",
+    groupSize: "4-10",
+    description: "Extended wildlife viewing with camping under the stars",
+    image: lakeManyaraCanoeingImage
+  }, {
+    title: "NIGHT GAME DRIVE",
+    price: "18,000",
+    duration: "3 Days",
+    groupSize: "4-8",
+    description: "Comprehensive outdoor experience combining wildlife, landscapes, and nature",
+    image: nightGameDriveImage
+  }];
+  return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <img 
-          src={outdoorExperiencesHeroImage} 
-          alt="Breathtaking nature experiences in the wild" 
-          className="absolute inset-0 w-full h-full object-cover object-center" 
-        />
+        <img src={outdoorExperiencesHeroImage} alt="Breathtaking nature experiences in the wild" className="absolute inset-0 w-full h-full object-cover object-center" />
 
         <div className="relative z-10 text-center text-white px-4">
-          <p className="text-2xl md:text-3xl italic font-light mb-2">experience the</p>
+          <p className="text-2xl md:text-3xl italic font-light mb-2">breathtaking</p>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif uppercase tracking-wide">
-            breathtaking Nature Experiences
+            NATURE EXPERIENCES
           </h1>
         </div>
       </section>
@@ -61,17 +50,8 @@ const OutdoorExperiencesDetail = () => {
           </div>
 
           <div className="space-y-6">
-            {packages.map((pkg, index) => (
-              <div
-                key={index}
-                onClick={() => window.location.href = `/book?content_type=activity&content_name=OUTDOOR EXPERIENCES - ${pkg.title}`}
-                className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
-              >
-                <img
-                  src={pkg.image}
-                  alt={pkg.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+            {packages.map((pkg, index) => <div key={index} onClick={() => window.location.href = `/book?content_type=activity&content_name=OUTDOOR EXPERIENCES - ${pkg.title}`} className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                <img src={pkg.image} alt={pkg.title} className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
                 
                 <div className="relative h-full flex items-center justify-between px-8 md:px-12">
@@ -99,13 +79,10 @@ const OutdoorExperiencesDetail = () => {
                     <ArrowRight className="w-8 h-8 text-white" />
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default OutdoorExperiencesDetail;
