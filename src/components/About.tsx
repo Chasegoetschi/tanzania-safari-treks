@@ -37,7 +37,7 @@ const About = () => {
               <h3 className="text-xl font-semibold mb-2 text-[#646c45]">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-[#dda15f]">
                 {feature.description}
               </p>
             </div>)}
