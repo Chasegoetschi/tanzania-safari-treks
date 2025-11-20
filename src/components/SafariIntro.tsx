@@ -9,7 +9,7 @@ const SafariIntro = () => {
           </div>
 
           {/* Text Side */}
-          <div className="space-y-6">
+          <div className="space-y-3">
             <p className="text-muted-foreground tracking-wider text-xl">
               Experience the wild
             </p>
