@@ -22,7 +22,6 @@ const generateConfirmationNumber = (): string => {
   }
   return result;
 };
-
 const bookingSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(100),
   lastName: z.string().trim().min(1, "Last name is required").max(100),
@@ -31,9 +30,8 @@ const bookingSchema = z.object({
   groupSize: z.number().min(1, "Group size must be at least 1").max(100),
   startDate: z.string().min(1, "Start date is required"),
   endDate: z.string().optional(),
-  specialRequests: z.string().max(2000).optional(),
+  specialRequests: z.string().max(2000).optional()
 });
-
 interface Tour {
   id: string;
   name: string;
@@ -46,19 +44,21 @@ interface Tour {
   region?: string;
   image_url?: string;
 }
-
 const Book = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const { toast } = useToast();
-  const { user } = useAuth();
-  
+  const {
+    toast
+  } = useToast();
+  const {
+    user
+  } = useAuth();
   const [tours, setTours] = useState<Tour[]>([]);
   const [selectedTour, setSelectedTour] = useState<Tour | null>(null);
   const [contentType, setContentType] = useState<'safari' | 'activity' | 'location'>('safari');
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
-  
+
   // Form state
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -73,11 +73,9 @@ const Book = () => {
 
   // Validation errors
   const [errors, setErrors] = useState<Record<string, string>>({});
-
   useEffect(() => {
     loadTours();
   }, []);
-
   const loadTours = async () => {
     setLoading(true);
     try {
@@ -85,46 +83,33 @@ const Book = () => {
       const contentTypeParam = searchParams.get('content_type') || 'safari';
       const contentNameParam = searchParams.get('content_name');
       const contentIdParam = searchParams.get('content_id');
-      
       setContentType(contentTypeParam as 'safari' | 'activity' | 'location');
-      
+
       // Determine which table to query based on content type
-      const tableName = contentTypeParam === 'safari' ? 'tours' : 
-                       contentTypeParam === 'activity' ? 'activities' : 'locations';
-      
-      const { data, error } = await supabase
-        .from(tableName)
-        .select('*')
-        .eq('is_active', true)
-        .order('name');
-
+      const tableName = contentTypeParam === 'safari' ? 'tours' : contentTypeParam === 'activity' ? 'activities' : 'locations';
+      const {
+        data,
+        error
+      } = await supabase.from(tableName).select('*').eq('is_active', true).order('name');
       if (error) throw error;
-
       if (data) {
         setTours(data);
-        
+
         // Try to match by ID first, then by name
         if (data.length > 0) {
           let matchedContent = null;
-          
           if (contentIdParam) {
-            matchedContent = data.find((t) => t.id === contentIdParam);
+            matchedContent = data.find(t => t.id === contentIdParam);
           }
-          
           if (!matchedContent && contentNameParam) {
             // Try exact match
-            matchedContent = data.find(
-              (t) => t.name.toLowerCase() === contentNameParam.toLowerCase()
-            );
-            
+            matchedContent = data.find(t => t.name.toLowerCase() === contentNameParam.toLowerCase());
+
             // Try partial match
             if (!matchedContent) {
-              matchedContent = data.find((t) =>
-                t.name.toLowerCase().includes(contentNameParam.toLowerCase())
-              );
+              matchedContent = data.find(t => t.name.toLowerCase().includes(contentNameParam.toLowerCase()));
             }
           }
-          
           setSelectedTour(matchedContent || data[0]);
         }
       }
@@ -133,40 +118,30 @@ const Book = () => {
       toast({
         title: "Error",
         description: "Failed to load content. Please try again.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setLoading(false);
     }
   };
-
   const validateForm = (): boolean => {
     const newErrors: Record<string, string> = {};
-
     if (!selectedTour) newErrors.tour = "Please select a tour";
     if (!firstName.trim()) newErrors.firstName = "First name is required";
     if (!lastName.trim()) newErrors.lastName = "Last name is required";
-    if (!email.trim()) newErrors.email = "Email is required";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) newErrors.email = "Invalid email format";
-    
+    if (!email.trim()) newErrors.email = "Email is required";else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) newErrors.email = "Invalid email format";
     const size = parseInt(groupSize);
     if (!groupSize || size < 1) newErrors.groupSize = "Group size must be at least 1";
-    
-    if (!startDate) newErrors.startDate = "Start date is required";
-    else if (new Date(startDate) < new Date(new Date().setHours(0, 0, 0, 0))) {
+    if (!startDate) newErrors.startDate = "Start date is required";else if (new Date(startDate) < new Date(new Date().setHours(0, 0, 0, 0))) {
       newErrors.startDate = "Start date cannot be in the past";
     }
-    
     if (endDate && new Date(endDate) < new Date(startDate)) {
       newErrors.endDate = "End date must be on or after start date";
     }
-    
     if (!agreedToTerms) newErrors.terms = "You must agree to the terms";
-
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -175,26 +150,24 @@ const Book = () => {
       toast({
         title: "Error",
         description: "Invalid submission detected.",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
-
     if (!validateForm()) {
       toast({
         title: "Validation Error",
         description: "Please check all required fields.",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
-
     setSubmitting(true);
-
     try {
       const bookingRef = generateConfirmationNumber();
-
-      const { error } = await supabase.from("bookings").insert({
+      const {
+        error
+      } = await supabase.from("bookings").insert({
         booking_ref: bookingRef,
         user_id: user?.id || null,
         tour_id: selectedTour?.id,
@@ -209,9 +182,8 @@ const Book = () => {
         special_requests: specialRequests.trim() || null,
         status: "pending",
         content_type: contentType,
-        content_name: selectedTour?.name || "",
+        content_name: selectedTour?.name || ""
       });
-
       if (error) throw error;
 
       // Send booking notification emails
@@ -227,8 +199,8 @@ const Book = () => {
             groupSize: parseInt(groupSize),
             startDate,
             endDate: endDate || null,
-            specialRequests: specialRequests.trim() || null,
-          },
+            specialRequests: specialRequests.trim() || null
+          }
         });
         console.log("Booking notification emails sent successfully");
       } catch (emailError) {
@@ -244,23 +216,18 @@ const Book = () => {
       toast({
         title: "Submission Error",
         description: "Failed to submit your booking. Please try again.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setSubmitting(false);
     }
   };
-
   if (loading) {
-    return (
-      <div className="min-h-screen pt-20 flex items-center justify-center">
+    return <div className="min-h-screen pt-20 flex items-center justify-center">
         <Loader2 className="w-8 h-8 animate-spin text-primary" />
-      </div>
-    );
+      </div>;
   }
-
-  return (
-    <div className="min-h-screen pt-20 bg-background">
+  return <div className="min-h-screen pt-20 bg-background">
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-serif uppercase tracking-wide text-secondary mb-4">
@@ -279,31 +246,28 @@ const Book = () => {
                 <CardTitle>Select Your Trip</CardTitle>
               </CardHeader>
               <CardContent>
-                <Select
-                  value={selectedTour?.id || ""}
-                  onValueChange={(value) => {
-                    const tour = tours.find((t) => t.id === value);
-                    setSelectedTour(tour || null);
-                    setErrors({ ...errors, tour: "" });
-                  }}
-                >
+                <Select value={selectedTour?.id || ""} onValueChange={value => {
+                const tour = tours.find(t => t.id === value);
+                setSelectedTour(tour || null);
+                setErrors({
+                  ...errors,
+                  tour: ""
+                });
+              }}>
                   <SelectTrigger className={errors.tour ? "border-destructive" : ""}>
                     <SelectValue placeholder="Choose a tour..." />
                   </SelectTrigger>
                   <SelectContent className="max-h-[300px]">
-                    {tours.map((tour) => (
-                      <SelectItem key={tour.id} value={tour.id}>
+                    {tours.map(tour => <SelectItem key={tour.id} value={tour.id}>
                         {tour.name}
-                      </SelectItem>
-                    ))}
+                      </SelectItem>)}
                   </SelectContent>
                 </Select>
                 {errors.tour && <p className="text-sm text-destructive mt-1">{errors.tour}</p>}
               </CardContent>
             </Card>
 
-            {selectedTour && (
-              <Card className="bg-white">
+            {selectedTour && <Card className="bg-white">
                 <CardHeader>
                   <CardTitle className="text-2xl font-serif uppercase tracking-wide">
                     BEACH GETAWAY
@@ -321,13 +285,10 @@ const Book = () => {
                   </div>
                   <div className="flex items-center gap-2 text-foreground">
                     <DollarSign className="w-5 h-5 text-primary" />
-                    <span className="font-bold text-xl">
-                      From ${selectedTour.base_price?.toLocaleString()}
-                    </span>
+                    
                   </div>
                 </CardContent>
-              </Card>
-            )}
+              </Card>}
           </div>
 
           {/* Right Side: Booking Form */}
@@ -343,36 +304,28 @@ const Book = () => {
                     <Label htmlFor="firstName">
                       First Name <span className="text-destructive">*</span>
                     </Label>
-                    <Input
-                      id="firstName"
-                      value={firstName}
-                      onChange={(e) => {
-                        setFirstName(e.target.value);
-                        setErrors({ ...errors, firstName: "" });
-                      }}
-                      className={errors.firstName ? "border-destructive" : ""}
-                    />
-                    {errors.firstName && (
-                      <p className="text-sm text-destructive">{errors.firstName}</p>
-                    )}
+                    <Input id="firstName" value={firstName} onChange={e => {
+                    setFirstName(e.target.value);
+                    setErrors({
+                      ...errors,
+                      firstName: ""
+                    });
+                  }} className={errors.firstName ? "border-destructive" : ""} />
+                    {errors.firstName && <p className="text-sm text-destructive">{errors.firstName}</p>}
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="lastName">
                       Last Name <span className="text-destructive">*</span>
                     </Label>
-                    <Input
-                      id="lastName"
-                      value={lastName}
-                      onChange={(e) => {
-                        setLastName(e.target.value);
-                        setErrors({ ...errors, lastName: "" });
-                      }}
-                      className={errors.lastName ? "border-destructive" : ""}
-                    />
-                    {errors.lastName && (
-                      <p className="text-sm text-destructive">{errors.lastName}</p>
-                    )}
+                    <Input id="lastName" value={lastName} onChange={e => {
+                    setLastName(e.target.value);
+                    setErrors({
+                      ...errors,
+                      lastName: ""
+                    });
+                  }} className={errors.lastName ? "border-destructive" : ""} />
+                    {errors.lastName && <p className="text-sm text-destructive">{errors.lastName}</p>}
                   </div>
                 </div>
 
@@ -380,48 +333,33 @@ const Book = () => {
                   <Label htmlFor="email">
                     Email <span className="text-destructive">*</span>
                   </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                      setErrors({ ...errors, email: "" });
-                    }}
-                    className={errors.email ? "border-destructive" : ""}
-                  />
+                  <Input id="email" type="email" value={email} onChange={e => {
+                  setEmail(e.target.value);
+                  setErrors({
+                    ...errors,
+                    email: ""
+                  });
+                }} className={errors.email ? "border-destructive" : ""} />
                   {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number</Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="Optional"
-                  />
+                  <Input id="phone" type="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder="Optional" />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="groupSize">
                     Group Size <span className="text-destructive">*</span>
                   </Label>
-                  <Input
-                    id="groupSize"
-                    type="number"
-                    min="1"
-                    value={groupSize}
-                    onChange={(e) => {
-                      setGroupSize(e.target.value);
-                      setErrors({ ...errors, groupSize: "" });
-                    }}
-                    className={errors.groupSize ? "border-destructive" : ""}
-                  />
-                  {errors.groupSize && (
-                    <p className="text-sm text-destructive">{errors.groupSize}</p>
-                  )}
+                  <Input id="groupSize" type="number" min="1" value={groupSize} onChange={e => {
+                  setGroupSize(e.target.value);
+                  setErrors({
+                    ...errors,
+                    groupSize: ""
+                  });
+                }} className={errors.groupSize ? "border-destructive" : ""} />
+                  {errors.groupSize && <p className="text-sm text-destructive">{errors.groupSize}</p>}
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
@@ -429,98 +367,62 @@ const Book = () => {
                     <Label htmlFor="startDate">
                       Preferred Start Date <span className="text-destructive">*</span>
                     </Label>
-                    <Input
-                      id="startDate"
-                      type="date"
-                      value={startDate}
-                      onChange={(e) => {
-                        setStartDate(e.target.value);
-                        setErrors({ ...errors, startDate: "" });
-                      }}
-                      className={errors.startDate ? "border-destructive" : ""}
-                    />
-                    {errors.startDate && (
-                      <p className="text-sm text-destructive">{errors.startDate}</p>
-                    )}
+                    <Input id="startDate" type="date" value={startDate} onChange={e => {
+                    setStartDate(e.target.value);
+                    setErrors({
+                      ...errors,
+                      startDate: ""
+                    });
+                  }} className={errors.startDate ? "border-destructive" : ""} />
+                    {errors.startDate && <p className="text-sm text-destructive">{errors.startDate}</p>}
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="endDate">Preferred End Date</Label>
-                    <Input
-                      id="endDate"
-                      type="date"
-                      value={endDate}
-                      onChange={(e) => {
-                        setEndDate(e.target.value);
-                        setErrors({ ...errors, endDate: "" });
-                      }}
-                      className={errors.endDate ? "border-destructive" : ""}
-                    />
-                    {errors.endDate && (
-                      <p className="text-sm text-destructive">{errors.endDate}</p>
-                    )}
+                    <Input id="endDate" type="date" value={endDate} onChange={e => {
+                    setEndDate(e.target.value);
+                    setErrors({
+                      ...errors,
+                      endDate: ""
+                    });
+                  }} className={errors.endDate ? "border-destructive" : ""} />
+                    {errors.endDate && <p className="text-sm text-destructive">{errors.endDate}</p>}
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="specialRequests">Special Requests / Notes (Optional)</Label>
-                  <Textarea
-                    id="specialRequests"
-                    value={specialRequests}
-                    onChange={(e) => setSpecialRequests(e.target.value)}
-                    placeholder="Any dietary requirements, accessibility needs, or special requests..."
-                    rows={4}
-                  />
+                  <Textarea id="specialRequests" value={specialRequests} onChange={e => setSpecialRequests(e.target.value)} placeholder="Any dietary requirements, accessibility needs, or special requests..." rows={4} />
                 </div>
 
                 {/* Honeypot field - hidden from users */}
-                <input
-                  type="text"
-                  name="company"
-                  value={honeypot}
-                  onChange={(e) => setHoneypot(e.target.value)}
-                  className="hidden"
-                  tabIndex={-1}
-                  autoComplete="off"
-                />
+                <input type="text" name="company" value={honeypot} onChange={e => setHoneypot(e.target.value)} className="hidden" tabIndex={-1} autoComplete="off" />
 
                 <div className="flex items-start gap-2 pt-2">
-                  <Checkbox
-                    id="terms"
-                    checked={agreedToTerms}
-                    onCheckedChange={(checked) => {
-                      setAgreedToTerms(checked as boolean);
-                      setErrors({ ...errors, terms: "" });
-                    }}
-                  />
+                  <Checkbox id="terms" checked={agreedToTerms} onCheckedChange={checked => {
+                  setAgreedToTerms(checked as boolean);
+                  setErrors({
+                    ...errors,
+                    terms: ""
+                  });
+                }} />
                   <Label htmlFor="terms" className="text-sm leading-relaxed cursor-pointer">
                     I understand that booking requests are not binding and that Grant Expedition will contact me to confirm availability and payment. Requests are typically answered in 1-3 business days. <span className="text-destructive">*</span>
                   </Label>
                 </div>
                 {errors.terms && <p className="text-sm text-destructive">{errors.terms}</p>}
 
-                <Button
-                  type="submit"
-                  className="w-full uppercase tracking-wider"
-                  size="lg"
-                  disabled={submitting}
-                >
-                  {submitting ? (
-                    <>
+                <Button type="submit" className="w-full uppercase tracking-wider" size="lg" disabled={submitting}>
+                  {submitting ? <>
                       <Loader2 className="w-4 h-4 mr-2 animate-spin" />
                       Submitting...
-                    </>
-                  ) : (
-                    "Submit Booking Request"
-                  )}
+                    </> : "Submit Booking Request"}
                 </Button>
               </form>
             </CardContent>
           </Card>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Book;
