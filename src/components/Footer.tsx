@@ -28,7 +28,7 @@ Stay connected for safari updates, wildlife photography, and exclusive offers</h
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-4 text-lg">Quick Links</h4>
+            <h4 className="cormorant-garamon-semibold mb-4 text-lg">Quick Links</h4>
             <ul className="space-y-2 text-white/80">
               <li><a href="#home" className="hover:text-primary transition-colors">Home</a></li>
               <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
