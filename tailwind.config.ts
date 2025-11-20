@@ -62,6 +62,10 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        "olive-accent": {
+          DEFAULT: "hsl(var(--olive-accent))",
+          foreground: "hsl(var(--olive-accent-foreground))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",

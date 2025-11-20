@@ -85,7 +85,7 @@ const TripFinder = () => {
           <p className="text-sm text-primary uppercase tracking-[0.3em] mb-4">
             TRIP FINDER
           </p>
-          <h2 className="text-4xl md:text-6xl font-serif text-secondary">
+          <h2 className="text-4xl md:text-6xl font-serif text-olive-accent">
             DISCOVER <span className="italic font-light font-serif">your next</span> ADVENTURE
           </h2>
         </div>
