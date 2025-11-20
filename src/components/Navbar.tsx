@@ -61,7 +61,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            <button onClick={() => scrollToSection("home")} className="text-sm font-medium transition-colors uppercase tracking-wider text-[hsl(var(--navbar-text))]/80 hover:text-[hsl(var(--navbar-text))]">
+            <button onClick={() => scrollToSection("home")} className={`text-sm font-medium transition-colors uppercase tracking-wider text-[hsl(var(--navbar-text))]/80 hover:text-[hsl(var(--navbar-text))] ${isHomePage ? 'font-bold' : ''}`}>
               HOME
             </button>
 
@@ -71,7 +71,7 @@ const Navbar = () => {
 
             <DropdownMenu open={openSafaris} onOpenChange={setOpenSafaris}>
               <div onMouseEnter={() => setOpenSafaris(true)} onMouseLeave={() => setOpenSafaris(false)}>
-                <DropdownMenuTrigger className="text-sm font-medium transition-colors uppercase tracking-wider text-[hsl(var(--navbar-text))]/80 hover:text-[hsl(var(--navbar-text))]">
+                <DropdownMenuTrigger className={`text-sm font-medium transition-colors uppercase tracking-wider text-[hsl(var(--navbar-text))]/80 hover:text-[hsl(var(--navbar-text))] ${location.pathname.includes('/safaris') ? 'font-bold' : ''}`}>
                   SAFARIS
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-background border z-[100]">
@@ -87,7 +87,7 @@ const Navbar = () => {
 
             <DropdownMenu open={openActivities} onOpenChange={setOpenActivities}>
               <div onMouseEnter={() => setOpenActivities(true)} onMouseLeave={() => setOpenActivities(false)}>
-                <DropdownMenuTrigger asChild className="text-sm font-medium transition-colors uppercase tracking-wider cursor-pointer text-[hsl(var(--navbar-text))]/80 hover:text-[hsl(var(--navbar-text))]">
+                <DropdownMenuTrigger asChild className={`text-sm font-medium transition-colors uppercase tracking-wider cursor-pointer text-[hsl(var(--navbar-text))]/80 hover:text-[hsl(var(--navbar-text))] ${location.pathname.includes('/activities') ? 'font-bold' : ''}`}>
                   <Link to="/activities/outdoor" onClick={() => window.scrollTo(0, 0)}>
                     ACTIVITIES
                   </Link>
@@ -108,7 +108,7 @@ const Navbar = () => {
 
             <DropdownMenu open={openDestinations} onOpenChange={setOpenDestinations}>
               <div onMouseEnter={() => setOpenDestinations(true)} onMouseLeave={() => setOpenDestinations(false)}>
-                <DropdownMenuTrigger className="text-sm font-medium transition-colors uppercase tracking-wider text-[hsl(var(--navbar-text))]/80 hover:text-[hsl(var(--navbar-text))]">
+                <DropdownMenuTrigger className={`text-sm font-medium transition-colors uppercase tracking-wider text-[hsl(var(--navbar-text))]/80 hover:text-[hsl(var(--navbar-text))] ${location.pathname.includes('/locations') ? 'font-bold' : ''}`}>
                   DESTINATIONS
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-background border z-[100]">
