@@ -11,7 +11,7 @@ const ZanzibarIslands = () => {
     image: zanzibarBeachImage,
     link: "/book?content_type=location&content_name=5-Day Beach Getaway"
   }, {
-    title: "MAINLAND HIGHLIGHTS",
+    title: "ISLAND ADVENTURE",
     price: "28,000",
     groupSize: "2+",
     image: zanzibarExperienceImage,
