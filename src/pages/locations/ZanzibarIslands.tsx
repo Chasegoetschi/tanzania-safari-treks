@@ -32,9 +32,9 @@ const ZanzibarIslands = () => {
         <div className="absolute inset-0 bg-black/25" />
 
         <div className="relative z-10 text-center text-white px-4">
-          <p className="text-2xl md:text-3xl italic font-light mb-2">wondrous</p>
+          <p className="text-2xl md:text-3xl italic font-light mb-2">​explore</p>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif uppercase tracking-wide">
-            DESTINATIONS
+            ZANZIBAR
           </h1>
         </div>
         
