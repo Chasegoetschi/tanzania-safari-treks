@@ -20,12 +20,12 @@ const SafariIntro = () => {
               <span className="text-copper uppercase tracking-wide font-serif font-semibold">EXCURSIONS</span>
             </h2>
             <div className="space-y-4 text-foreground/80 leading-relaxed">
-              <p>
+              <p className="font-light">
                 At Grant Expedition, we specialize in creating spectacular safari experiences across Tanzania's most stunning landscapes.
               </p>
-              <p>
-                From the vast plains of <strong className="text-secondary">Serengeti</strong> to the majestic{" "}
-                <strong className="text-secondary">Mount Kilimanjaro</strong>, our expertly crafted tours connect you with nature, culture, and adventure. We deliver personalized itineraries blending luxury, comfort, and authenticity.
+              <p className="font-light">
+                From the vast plains of <strong className="text-secondary font-semibold">Serengeti</strong> to the majestic{" "}
+                <strong className="text-secondary font-semibold">Mount Kilimanjaro</strong>, our expertly crafted tours connect you with nature, culture, and adventure. We deliver personalized itineraries blending luxury, comfort, and authenticity.
               </p>
             </div>
           </div>
