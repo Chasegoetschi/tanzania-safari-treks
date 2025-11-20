@@ -82,7 +82,7 @@ const TripFinder = () => {
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-sm text-primary uppercase tracking-[0.3em] mb-4">
+          <p className="text-primary uppercase tracking-[0.3em] mb-4 text-lg">
             TRIP FINDER
           </p>
           <h2 className="text-4xl md:text-6xl font-serif text-olive-accent">
