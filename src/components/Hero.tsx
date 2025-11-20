@@ -15,7 +15,7 @@ const Hero = () => {
       
       <div className="relative z-10 container mx-auto px-4 text-center pt-24 py-[2px]">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-serif text-white mb-8 animate-fade-in tracking-[0.15em] uppercase lg:text-8xl">
+          <h1 className="text-6xl md:text-8xl font-serif text-[hsl(var(--navbar-text))] mb-8 animate-fade-in tracking-[0.15em] uppercase lg:text-8xl">
             SAFARI EXPERIENCES
           </h1>
           <p className="text-xl md:text-2xl text-white font-light mb-12 animate-fade-in leading-relaxed" style={{
