@@ -1,10 +1,14 @@
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import circleLogo from "@/assets/circle-logo-ge.png";
 const Footer = () => {
   return <footer className="bg-secondary text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl cormorant-garamond mb-4 text-primary font-bold">GRANT EXPEDITION LTD  </h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={circleLogo} alt="Grant Expedition Logo" className="h-8 w-auto" />
+              <h3 className="text-2xl cormorant-garamond text-primary font-bold">GRANT EXPEDITION LTD</h3>
+            </div>
             <p className="text-white/80 leading-relaxed">
               Creating unforgettable safari experiences in the heart of Africa since 2008. 
               Discover the wild with expert guides and authentic adventures.
