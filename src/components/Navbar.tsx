@@ -42,7 +42,7 @@ const Navbar = () => {
           {/* Logo and Branding */}
           <div className="flex items-center gap-4">
             <Link to="/" className="flex items-center gap-3">
-              <img alt="Grant Expedition" className="h-14 w-14 object-contain" src="/lovable-uploads/3e2ddf74-c908-450e-8712-22dcc065a366.png" />
+              <img alt="Grant Expedition" className="h-14 w-14 object-contain" src="/lovable-uploads/f76fd234-d3cc-4575-b93e-f3996af6dcac.png" />
               <div>
                 <h1 className={`text-xl font-serif tracking-wide uppercase transition-colors ${isHomePage && !isScrolled ? 'text-white' : 'text-foreground'}`}>
                   GRANT EXPEDITION
