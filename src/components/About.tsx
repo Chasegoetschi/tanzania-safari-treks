@@ -1,31 +1,23 @@
 import { MapPin, Users, Award, Shield } from "lucide-react";
-
 const About = () => {
-  const features = [
-    {
-      icon: MapPin,
-      title: "Local Expertise",
-      description: "Born and raised in Tanzania, we know every hidden gem and wildlife hotspot",
-    },
-    {
-      icon: Users,
-      title: "Expert Guides",
-      description: "Professional, certified guides with decades of combined safari experience",
-    },
-    {
-      icon: Award,
-      title: "Award Winning",
-      description: "Recognized as one of Tanzania's premier safari tour operators",
-    },
-    {
-      icon: Shield,
-      title: "Safety First",
-      description: "Your safety and comfort are our top priorities on every adventure",
-    },
-  ];
-
-  return (
-    <section id="about" className="py-11 bg-white scroll-mt-24">
+  const features = [{
+    icon: MapPin,
+    title: "Local Expertise",
+    description: "Born and raised in Tanzania, we know every hidden gem and wildlife hotspot"
+  }, {
+    icon: Users,
+    title: "Expert Guides",
+    description: "Professional, certified guides with decades of combined safari experience"
+  }, {
+    icon: Award,
+    title: "Award Winning",
+    description: "Recognized as one of Tanzania's premier safari tour operators"
+  }, {
+    icon: Shield,
+    title: "Safety First",
+    description: "Your safety and comfort are our top priorities on every adventure"
+  }];
+  return <section id="about" className="py-11 bg-white scroll-mt-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-10 uppercase tracking-wide">
@@ -38,26 +30,19 @@ const About = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="text-center p-6 rounded-lg bg-card transition-all duration-300 border border-accent/20"
-            >
+          {features.map((feature, index) => <div key={index} className="text-center p-6 rounded-lg bg-card transition-all duration-300 border border-accent/20">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/20 mb-4">
                 <feature.icon className="w-8 h-8 text-accent" />
               </div>
-              <h3 className="text-xl font-semibold text-secondary mb-2">
+              <h3 className="text-xl font-semibold mb-2 text-[#646c45]">
                 {feature.title}
               </h3>
               <p className="text-muted-foreground">
                 {feature.description}
               </p>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
