@@ -64,22 +64,24 @@ const Navbar = () => {
                 }`}>
                   GRANT EXPEDITION
                 </h1>
-                <div className="flex items-center gap-2 mt-0.5">
-                  <div className="flex gap-0.5">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className={`w-3 h-3 transition-colors ${
-                        isHomePage && !isScrolled 
-                          ? 'fill-white text-white' 
-                          : 'fill-primary text-primary'
-                      }`} />
-                    ))}
+                {(!isHomePage || !isScrolled) && (
+                  <div className="flex items-center gap-2 mt-0.5">
+                    <div className="flex gap-0.5">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Star key={star} className={`w-3 h-3 transition-colors ${
+                          isHomePage && !isScrolled 
+                            ? 'fill-white text-white' 
+                            : 'fill-primary text-primary'
+                        }`} />
+                      ))}
+                    </div>
+                    <span className={`text-xs italic transition-colors ${
+                      isHomePage && !isScrolled ? 'text-white/80' : 'text-muted-foreground'
+                    }`}>
+                      "A wonderful experience" – Trip Advisor
+                    </span>
                   </div>
-                  <span className={`text-xs italic transition-colors ${
-                    isHomePage && !isScrolled ? 'text-white/80' : 'text-muted-foreground'
-                  }`}>
-                    "A wonderful experience" – Trip Advisor
-                  </span>
-                </div>
+                )}
               </div>
             </Link>
           </div>
