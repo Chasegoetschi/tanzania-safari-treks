@@ -21,6 +21,10 @@ All colors MUST be HSL.
     /* Primary: Warm Orange */
     --primary: 31 65% 62%;
     --primary-foreground: 0 0% 100%;
+    
+    /* Copper accent color */
+    --copper: 28 66% 44%;
+    --copper-foreground: 0 0% 100%;
 
     /* Secondary: Dark Forest Green */
     --secondary: 88 38% 15%;

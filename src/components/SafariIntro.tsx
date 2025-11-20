@@ -14,7 +14,7 @@ const SafariIntro = () => {
               Experience the wild
             </p>
             <h2 className="text-4xl md:text-5xl font-serif">
-              <span className="text-primary uppercase tracking-wide font-serif font-semibold">NORTHERN TANZANIA</span>
+              <span className="text-copper uppercase tracking-wide font-serif font-semibold">NORTHERN TANZANIA</span>
               <br />
               <span className="text-primary/80 italic font-serif">safari</span>{" "}
               <span className="text-primary uppercase tracking-wide font-serif font-semibold">EXCURSIONS</span>
