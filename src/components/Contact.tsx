@@ -65,7 +65,7 @@ const Contact = () => {
             questions?
           </h2>
           <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
-            Contact our team!  
+            CONTACT OUR TEAM    
           </p>
         </div>
 
