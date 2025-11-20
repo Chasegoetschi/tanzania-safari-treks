@@ -120,22 +120,22 @@ const MigrationSafaris = () => {
                     <div className="space-y-2">
                       <div className="flex items-center gap-2 text-sm">
                         <MapPin className="w-5 h-5 text-white" />
-                        <span>{safari.location}</span>
+                        <span className="font-sans font-semibold">{safari.location}</span>
                       </div>
                       
                       <div className="flex items-center gap-2 text-sm">
                         <Clock className="w-5 h-5 text-white" />
-                        <span>{safari.duration}</span>
+                        <span className="font-sans font-semibold">{safari.duration}</span>
                       </div>
                       
                       <div className="flex items-center gap-2 text-sm">
                         <DollarSign className="w-5 h-5 text-white" />
-                        <span className="font-semibold">{safari.price}</span>
+                        <span className="font-sans font-semibold">{safari.price}</span>
                       </div>
                       
                       <div className="flex items-center gap-2 text-sm">
                         <Users className="w-5 h-5 text-white" />
-                        <span>Group Size: {safari.groupSize}</span>
+                        <span className="font-sans font-semibold">Group Size: {safari.groupSize}</span>
                       </div>
                     </div>
                   </div>
