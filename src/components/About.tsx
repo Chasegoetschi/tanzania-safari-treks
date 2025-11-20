@@ -20,7 +20,7 @@ const About = () => {
   return <section id="about" className="py-11 bg-white scroll-mt-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-10 uppercase tracking-wide">
+          <h2 className="text-4xl md:text-6xl font-serif mb-10 uppercase tracking-wide text-[#646c45]">
             QUALITY FIRST
           </h2>
           <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-loose">
