@@ -212,7 +212,7 @@ const SafariDetail = () => {
           {/* Included/Excluded */}
           <div className="mb-16 grid md:grid-cols-2 gap-8">
             <div>
-              <h2 className="text-3xl font-serif uppercase text-secondary mb-6 tracking-wide">
+              <h2 className="text-3xl font-serif uppercase text-secondary mb-6 tracking-wide font-semibold">
                 INCLUDED
               </h2>
               <ul className="space-y-2">
@@ -224,7 +224,7 @@ const SafariDetail = () => {
             </div>
             
             <div>
-              <h2 className="text-3xl font-serif uppercase text-secondary mb-6 tracking-wide">
+              <h2 className="text-3xl font-serif uppercase text-secondary mb-6 tracking-wide font-semibold">
                 EXCLUDED
               </h2>
               <ul className="space-y-2">
