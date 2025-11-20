@@ -113,7 +113,7 @@ const MigrationSafaris = () => {
                 {/* Content */}
                 <div className="relative h-full flex items-center justify-between px-8">
                   <div className="text-white space-y-4">
-                    <h3 className="text-3xl md:text-4xl font-serif uppercase tracking-wide">
+                    <h3 className="text-3xl md:text-4xl font-serif font-semibold uppercase tracking-wide">
                       {safari.title}
                     </h3>
                     
