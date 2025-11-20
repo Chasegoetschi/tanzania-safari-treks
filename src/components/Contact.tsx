@@ -6,47 +6,40 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
-
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
   email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
   phone: z.string().trim().max(20, "Phone must be less than 20 characters").optional().or(z.literal("")),
-  message: z.string().trim().min(10, "Message must be at least 10 characters").max(2000, "Message must be less than 2000 characters"),
+  message: z.string().trim().min(10, "Message must be at least 10 characters").max(2000, "Message must be less than 2000 characters")
 });
-
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
       // Validate input data
       const validatedData = contactSchema.parse({
         name,
         email,
         phone: phone || "",
-        message,
+        message
       });
-
-      const { error } = await supabase
-        .from("contact_submissions")
-        .insert({
-          name: validatedData.name,
-          email: validatedData.email,
-          phone: validatedData.phone || null,
-          message: validatedData.message,
-        });
-
+      const {
+        error
+      } = await supabase.from("contact_submissions").insert({
+        name: validatedData.name,
+        email: validatedData.email,
+        phone: validatedData.phone || null,
+        message: validatedData.message
+      });
       if (error) throw error;
-
       toast.success("Thank you! We'll contact you soon to plan your adventure.");
-      
+
       // Reset form
       setName("");
       setEmail("");
@@ -55,7 +48,7 @@ const Contact = () => {
     } catch (error) {
       if (error instanceof z.ZodError) {
         // Show validation errors
-        error.errors.forEach((err) => {
+        error.errors.forEach(err => {
           toast.error(err.message);
         });
       } else {
@@ -65,16 +58,14 @@ const Contact = () => {
       setIsSubmitting(false);
     }
   };
-
-  return (
-    <section id="contact" className="min-h-screen pt-2 pb-12 bg-background scroll-mt-24 flex items-center justify-center">
+  return <section id="contact" className="min-h-screen pt-2 pb-12 bg-background scroll-mt-24 flex items-center justify-center">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-6 uppercase tracking-wide">
             questions?
           </h2>
           <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
-            Submit an Inquiry
+            Contact our team!  
           </p>
         </div>
 
@@ -114,59 +105,23 @@ const Contact = () => {
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <Input
-                placeholder="Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                disabled={isSubmitting}
-                className="h-12"
-              />
+              <Input placeholder="Name" value={name} onChange={e => setName(e.target.value)} required disabled={isSubmitting} className="h-12" />
             </div>
             <div>
-              <Input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                disabled={isSubmitting}
-                className="h-12"
-              />
+              <Input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required disabled={isSubmitting} className="h-12" />
             </div>
             <div>
-              <Input
-                type="tel"
-                placeholder="Phone Number"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                disabled={isSubmitting}
-                className="h-12"
-              />
+              <Input type="tel" placeholder="Phone Number" value={phone} onChange={e => setPhone(e.target.value)} disabled={isSubmitting} className="h-12" />
             </div>
             <div>
-              <Textarea
-                placeholder="Inquiry"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                required
-                disabled={isSubmitting}
-                className="min-h-[150px]"
-              />
+              <Textarea placeholder="Inquiry" value={message} onChange={e => setMessage(e.target.value)} required disabled={isSubmitting} className="min-h-[150px]" />
             </div>
-            <Button 
-              type="submit" 
-              size="lg" 
-              className="w-full bg-primary hover:bg-primary/90 text-white"
-              disabled={isSubmitting}
-            >
+            <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-white" disabled={isSubmitting}>
               {isSubmitting ? "Sending..." : "Submit"}
             </Button>
           </form>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
