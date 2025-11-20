@@ -40,6 +40,7 @@ All colors MUST be HSL.
     
     /* Olive Green Accent */
     --olive-accent: 72 22% 35%;
+    --sage-bg: 76 29% 87%;
     --olive-accent-foreground: 0 0% 100%;
     
     /* Trip Finder Background */
