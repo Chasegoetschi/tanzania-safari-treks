@@ -303,7 +303,7 @@ const Book = () => {
             </Card>
 
             {selectedTour && (
-              <Card className="bg-muted/30">
+              <Card className="bg-white">
                 <CardHeader>
                   <CardTitle className="text-2xl font-serif uppercase tracking-wide">
                     BEACH GETAWAY
