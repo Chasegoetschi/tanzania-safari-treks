@@ -56,7 +56,7 @@ const ZanzibarIslands = () => {
                 
                 <div className="relative h-full flex items-center justify-between px-8 md:px-12">
                   <div className="text-white space-y-4">
-                    <h2 className="text-2xl md:text-3xl font-serif uppercase tracking-wide">
+                    <h2 className="text-2xl md:text-3xl font-serif font-semibold uppercase tracking-wide">
                       {pkg.title}
                     </h2>
                     <div className="flex items-center gap-8 text-lg">
