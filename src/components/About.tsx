@@ -30,7 +30,7 @@ const About = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {features.map((feature, index) => <div key={index} className="text-center p-6 rounded-lg bg-sage-card transition-all duration-300 border border-accent/20">
+          {features.map((feature, index) => <div key={index} className="text-center p-6 rounded-lg bg-card transition-all duration-300 border border-accent/20">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/20 mb-4">
                 <feature.icon className="w-8 h-8 text-accent" />
               </div>

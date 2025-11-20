@@ -67,7 +67,6 @@ export default {
           foreground: "hsl(var(--olive-accent-foreground))",
         },
         "sage-bg": "hsl(var(--sage-bg))",
-        "sage-card": "hsl(var(--sage-card))",
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
