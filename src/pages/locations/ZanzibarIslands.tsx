@@ -51,6 +51,9 @@ const ZanzibarIslands = () => {
             {beachPackages.map((pkg, index) => <div key={index} onClick={() => window.location.href = pkg.link} className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                 <img src={pkg.image} alt={pkg.title} className="absolute inset-0 w-full h-full object-cover" />
                 
+                {/* Black Overlay */}
+                <div className="absolute inset-0 bg-black/25" />
+                
                 <div className="relative h-full flex items-center justify-between px-8 md:px-12">
                   <div className="text-white space-y-4">
                     <h2 className="text-2xl md:text-3xl font-serif uppercase tracking-wide">
