@@ -78,7 +78,7 @@ const TripFinder = () => {
     image: zanzibarBeachImage,
     link: "/locations/zanzibar"
   }];
-  return <section id="trip-finder" className="py-20 bg-muted/20 scroll-mt-24">
+  return <section id="trip-finder" className="py-20 bg-trip-bg scroll-mt-24">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
