@@ -138,8 +138,14 @@ All colors MUST be HSL.
     font-family: 'Poppins', sans-serif;
   }
   
+  /* Serif text - Cormorant Garamond */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Cormorant Garamond', serif;
+  }
+  
+  /* Sans-serif text - Poppins */
+  p, span, div, button, input, textarea, label, a {
+    font-family: 'Poppins', sans-serif;
   }
 }
 
