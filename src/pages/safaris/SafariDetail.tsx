@@ -155,7 +155,7 @@ const SafariDetail = () => {
       </section>
 
       {/* Content Section */}
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           {/* Overview */}
           <div className="mb-16">
