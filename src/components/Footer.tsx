@@ -1,12 +1,10 @@
 import { Facebook, Instagram, Twitter } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-secondary text-white py-16">
+  return <footer className="bg-secondary text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-serif italic mb-4 text-primary">Grant Expedition Ltd</h3>
+            <h3 className="text-2xl font-serif italic mb-4 text-primary font-medium">GRANT EXPEDITION LTD</h3>
             <p className="text-white/80 leading-relaxed">
               Creating unforgettable safari experiences in the heart of Africa since 2008. 
               Discover the wild with expert guides and authentic adventures.
@@ -38,29 +36,13 @@ const Footer = () => {
               Stay connected for safari updates, wildlife photography, and exclusive offers
             </p>
             <div className="flex gap-4">
-              <a 
-                href="https://facebook.com/profile.php?id=100063871123184" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="Facebook"
-              >
+              <a href="https://facebook.com/profile.php?id=100063871123184" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110" aria-label="Facebook">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a 
-                href="https://www.instagram.com/grant_expedition_ltd/" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="Instagram"
-              >
+              <a href="https://www.instagram.com/grant_expedition_ltd/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="Twitter"
-              >
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110" aria-label="Twitter">
                 <Twitter className="w-5 h-5" />
               </a>
             </div>
@@ -69,19 +51,12 @@ const Footer = () => {
         <div className="border-t border-white/20 pt-8 text-center text-white/70">
           <p>&copy; {new Date().getFullYear()} Grant Expedition Ltd. All rights reserved.</p>
           <p className="mt-2">
-            <a 
-              href="/Certificate_of_Incorporation.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors underline"
-            >
+            <a href="/Certificate_of_Incorporation.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors underline">
               Certificate of Incorporation
             </a>
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
