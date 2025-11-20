@@ -43,6 +43,9 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
     
+    /* Navbar specific colors */
+    --navbar-text: 52 86% 94%;
+    
     /* Global Design System - Spacing Variables */
     --space-sm: 8px;
     --space-md: 16px;

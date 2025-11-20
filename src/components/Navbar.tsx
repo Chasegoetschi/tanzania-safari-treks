@@ -44,7 +44,7 @@ const Navbar = () => {
             <Link to="/" className="flex items-center gap-3">
               <img alt="Grant Expedition" className="h-14 w-14 object-contain" src="/lovable-uploads/f76fd234-d3cc-4575-b93e-f3996af6dcac.png" />
               <div>
-                <h1 className={`text-xl font-serif tracking-wide uppercase transition-colors ${isHomePage && !isScrolled ? 'text-white' : 'text-foreground'}`}>
+                <h1 className="text-xl font-serif tracking-wide uppercase transition-colors text-[hsl(var(--navbar-text))]">
                   GRANT EXPEDITION
                 </h1>
                 {(!isHomePage || !isScrolled) && <div className="flex items-center gap-2 mt-0.5">
@@ -61,17 +61,17 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            <button onClick={() => scrollToSection("home")} className={`text-sm font-medium transition-colors uppercase tracking-wider ${isHomePage && !isScrolled ? 'text-white/80 hover:text-white' : 'text-foreground/70 hover:text-foreground'}`}>
+            <button onClick={() => scrollToSection("home")} className="text-sm font-medium transition-colors uppercase tracking-wider text-[hsl(var(--navbar-text))]/80 hover:text-[hsl(var(--navbar-text))]">
               HOME
             </button>
 
-            <button onClick={() => scrollToSection("about")} className={`text-sm font-medium transition-colors uppercase tracking-wider whitespace-nowrap ${isHomePage && !isScrolled ? 'text-white/80 hover:text-white' : 'text-foreground/70 hover:text-foreground'}`}>
+            <button onClick={() => scrollToSection("about")} className="text-sm font-medium transition-colors uppercase tracking-wider whitespace-nowrap text-[hsl(var(--navbar-text))]/80 hover:text-[hsl(var(--navbar-text))]">
               ABOUT US
             </button>
 
             <DropdownMenu open={openSafaris} onOpenChange={setOpenSafaris}>
               <div onMouseEnter={() => setOpenSafaris(true)} onMouseLeave={() => setOpenSafaris(false)}>
-                <DropdownMenuTrigger className={`text-sm font-medium transition-colors uppercase tracking-wider ${isHomePage && !isScrolled ? 'text-white/80 hover:text-white' : 'text-foreground/70 hover:text-foreground'}`}>
+                <DropdownMenuTrigger className="text-sm font-medium transition-colors uppercase tracking-wider text-[hsl(var(--navbar-text))]/80 hover:text-[hsl(var(--navbar-text))]">
                   SAFARIS
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-background border z-[100]">
@@ -87,7 +87,7 @@ const Navbar = () => {
 
             <DropdownMenu open={openActivities} onOpenChange={setOpenActivities}>
               <div onMouseEnter={() => setOpenActivities(true)} onMouseLeave={() => setOpenActivities(false)}>
-                <DropdownMenuTrigger asChild className={`text-sm font-medium transition-colors uppercase tracking-wider cursor-pointer ${isHomePage && !isScrolled ? 'text-white/80 hover:text-white' : 'text-foreground/70 hover:text-foreground'}`}>
+                <DropdownMenuTrigger asChild className="text-sm font-medium transition-colors uppercase tracking-wider cursor-pointer text-[hsl(var(--navbar-text))]/80 hover:text-[hsl(var(--navbar-text))]">
                   <Link to="/activities/outdoor" onClick={() => window.scrollTo(0, 0)}>
                     ACTIVITIES
                   </Link>
@@ -108,7 +108,7 @@ const Navbar = () => {
 
             <DropdownMenu open={openDestinations} onOpenChange={setOpenDestinations}>
               <div onMouseEnter={() => setOpenDestinations(true)} onMouseLeave={() => setOpenDestinations(false)}>
-                <DropdownMenuTrigger className={`text-sm font-medium transition-colors uppercase tracking-wider ${isHomePage && !isScrolled ? 'text-white/80 hover:text-white' : 'text-foreground/70 hover:text-foreground'}`}>
+                <DropdownMenuTrigger className="text-sm font-medium transition-colors uppercase tracking-wider text-[hsl(var(--navbar-text))]/80 hover:text-[hsl(var(--navbar-text))]">
                   DESTINATIONS
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-background border z-[100]">
@@ -125,7 +125,7 @@ const Navbar = () => {
               </div>
             </DropdownMenu>
 
-            <button onClick={() => scrollToSection("contact")} className={`text-sm font-medium transition-colors uppercase tracking-wider whitespace-nowrap ${isHomePage && !isScrolled ? 'text-white/80 hover:text-white' : 'text-foreground/70 hover:text-foreground'}`}>
+            <button onClick={() => scrollToSection("contact")} className="text-sm font-medium transition-colors uppercase tracking-wider whitespace-nowrap text-[hsl(var(--navbar-text))]/80 hover:text-[hsl(var(--navbar-text))]">
               CONTACT US
             </button>
 
@@ -140,7 +140,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsOpen(!isOpen)} className={`lg:hidden p-2 transition-colors ${isHomePage && !isScrolled ? 'text-white' : 'text-foreground'}`}>
+          <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden p-2 transition-colors text-[hsl(var(--navbar-text))]">
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
