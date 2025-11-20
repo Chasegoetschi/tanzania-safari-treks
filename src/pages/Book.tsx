@@ -306,7 +306,7 @@ const Book = () => {
               <Card className="bg-muted/30">
                 <CardHeader>
                   <CardTitle className="text-2xl font-serif uppercase tracking-wide">
-                    {selectedTour.name}
+                    BEACH GETAWAY
                   </CardTitle>
                   <CardDescription>{selectedTour.description}</CardDescription>
                 </CardHeader>
