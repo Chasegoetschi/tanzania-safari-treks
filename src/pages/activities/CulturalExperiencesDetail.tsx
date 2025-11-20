@@ -41,6 +41,9 @@ const CulturalExperiencesDetail = () => {
           alt="Cultural and local experiences with traditional crafts" 
           className="absolute inset-0 w-full h-full object-cover object-center" 
         />
+        
+        {/* Black Overlay */}
+        <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative z-10 text-center text-white px-4">
           <p className="text-2xl md:text-3xl italic font-light mb-2">authentic traditions</p>
