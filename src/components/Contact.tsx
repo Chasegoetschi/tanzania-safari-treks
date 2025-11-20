@@ -61,7 +61,7 @@ const Contact = () => {
   return <section id="contact" className="min-h-screen pt-2 pb-12 bg-trip-bg scroll-mt-24 flex items-center justify-center">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-serif text-secondary mb-6 uppercase tracking-wide">
+          <h2 className="text-4xl md:text-6xl font-serif text-[hsl(72,22%,35%)] mb-6 uppercase tracking-wide">
             questions?
           </h2>
           <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
