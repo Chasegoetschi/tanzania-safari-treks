@@ -30,6 +30,9 @@ const OutdoorExperiencesDetail = () => {
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <img src={outdoorExperiencesHeroImage} alt="Breathtaking nature experiences in the wild" className="absolute inset-0 w-full h-full object-cover object-center" />
+        
+        {/* Black Overlay */}
+        <div className="absolute inset-0 bg-black/25" />
 
         <div className="relative z-10 text-center text-white px-4">
           <p className="text-2xl md:text-3xl italic font-light mb-2">breathtaking</p>
