@@ -111,19 +111,19 @@ const TripFinder = () => {
                   {/* Location */}
                   <div className="flex items-center gap-2 text-sm">
                     <MapPin className="w-5 h-5 text-primary" strokeWidth={2.5} />
-                    <span className="font-semibold">{expedition.location}</span>
+                    <span className="font-semibold text-lg">{expedition.location}</span>
                   </div>
 
                   {/* Duration */}
                   <div className="flex items-center gap-2 text-sm">
                     <Clock className="w-5 h-5 text-primary" strokeWidth={2.5} />
-                    <span className="font-semibold">{expedition.duration}</span>
+                    <span className="font-semibold text-lg">{expedition.duration}</span>
                   </div>
 
                   {/* Price */}
                   <div className="flex items-center gap-2 text-sm">
                     <DollarSign className="w-5 h-5 text-primary" strokeWidth={2.5} />
-                    <span className="font-semibold">{expedition.price}</span>
+                    <span className="font-semibold text-lg">{expedition.price}</span>
                   </div>
                   
                   {/* Arrow Button */}
