@@ -52,6 +52,8 @@ const MigrationSafaris = () => {
         className="relative h-[60vh] flex items-center justify-center bg-cover bg-center"
         style={{ backgroundImage: `url(${lionsSavannaImage})` }}
       >
+        {/* Black Overlay */}
+        <div className="absolute inset-0 bg-black/25" />
         <div className="relative z-10 text-center text-white px-4">
           <p className="text-2xl md:text-3xl italic font-light mb-2">remarkable</p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif uppercase tracking-wide leading-tight">
