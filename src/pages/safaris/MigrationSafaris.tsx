@@ -58,7 +58,7 @@ const MigrationSafaris = () => {
             SERENGETI AND<br />MIGRATION SAFARIS
           </h1>
         </div>
-        <button className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white animate-bounce">
+        <button className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white transition-transform duration-700 hover:translate-y-2">
           <ChevronDown className="w-8 h-8" />
         </button>
       </section>
