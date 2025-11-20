@@ -114,7 +114,7 @@ const Contact = () => {
               <Input type="tel" placeholder="Phone Number" value={phone} onChange={e => setPhone(e.target.value)} disabled={isSubmitting} className="h-12" />
             </div>
             <div>
-              <Textarea placeholder="Inquiry" value={message} onChange={e => setMessage(e.target.value)} required disabled={isSubmitting} className="min-h-[150px]" />
+              <Textarea value={message} onChange={e => setMessage(e.target.value)} required disabled={isSubmitting} className="min-h-[150px]" placeholder="Questions/Comments:" />
             </div>
             <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-white" disabled={isSubmitting}>
               {isSubmitting ? "Sending..." : "Submit"}
