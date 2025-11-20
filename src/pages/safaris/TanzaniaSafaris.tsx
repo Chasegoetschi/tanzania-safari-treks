@@ -77,7 +77,7 @@ const TanzaniaSafaris = () => {
         </div>
 
         {/* Scroll Down Arrow */}
-        <button className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <button className="absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-transform duration-700 hover:translate-y-2">
           <ChevronDown className="w-8 h-8 text-white" />
         </button>
       </section>
