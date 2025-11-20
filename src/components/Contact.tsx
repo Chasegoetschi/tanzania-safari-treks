@@ -78,7 +78,7 @@ const Contact = () => {
                   <Phone className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-1 text-secondary">Phone</h4>
+                  <h4 className="font-semibold mb-1 text-secondary">PHONE</h4>
                   <p className="text-muted-foreground">+255 123 456 789</p>
                 </div>
               </div>
@@ -87,7 +87,7 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-1 text-secondary">Email</h4>
+                  <h4 className="font-semibold mb-1 text-secondary">EMAIL</h4>
                   <p className="text-muted-foreground">info@grantexpedition.com</p>
                 </div>
               </div>
@@ -96,7 +96,7 @@ const Contact = () => {
                   <MapPin className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-1 text-secondary">Location</h4>
+                  <h4 className="font-semibold mb-1 text-secondary">LOCATION</h4>
                   <p className="text-muted-foreground">Arusha, Tanzania</p>
                 </div>
               </div>
