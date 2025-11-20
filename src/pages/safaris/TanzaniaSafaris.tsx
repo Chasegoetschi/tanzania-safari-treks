@@ -163,22 +163,22 @@ const TanzaniaSafaris = () => {
                     <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
                       <div className="flex items-center gap-2">
                         <MapPin className="w-4 h-4 text-white" />
-                        <span>{safari.location}</span>
+                        <span className="font-sans font-semibold">{safari.location}</span>
                       </div>
 
                       <div className="flex items-center gap-2">
                         <DollarSign className="w-4 h-4 text-white" />
-                        <span className="font-semibold">{safari.price}</span>
+                        <span className="font-sans font-semibold">{safari.price}</span>
                       </div>
 
                       <div className="flex items-center gap-2">
                         <Clock className="w-4 h-4 text-white" />
-                        <span>{safari.duration}</span>
+                        <span className="font-sans font-semibold">{safari.duration}</span>
                       </div>
 
                       <div className="flex items-center gap-2">
                         <Users className="w-4 h-4 text-white" />
-                        <span>{safari.groupSize}</span>
+                        <span className="font-sans font-semibold">{safari.groupSize}</span>
                       </div>
                     </div>
                   </div>
