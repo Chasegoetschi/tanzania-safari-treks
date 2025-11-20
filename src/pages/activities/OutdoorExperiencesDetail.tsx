@@ -29,7 +29,7 @@ const OutdoorExperiencesDetail = () => {
   return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <img src={outdoorExperiencesHeroImage} alt="Breathtaking nature experiences in the wild" className="absolute inset-0 w-full h-full object-cover object-top" />
+        <img src={outdoorExperiencesHeroImage} alt="Breathtaking nature experiences in the wild" className="absolute inset-0 w-full h-full object-cover object-[50%_20%]" />
         
         {/* Black Overlay */}
         <div className="absolute inset-0 bg-black/25" />
