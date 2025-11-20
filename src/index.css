@@ -155,12 +155,11 @@ All colors MUST be HSL.
 @layer components {
   /* Cormorant Garamond font utility classes */
   .cormorant-garamond {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    @apply font-serif;
   }
   
   .cormorant-garamond-semibold {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 600;
+    @apply font-serif font-semibold;
   }
   
   /* Standard Section Padding */
