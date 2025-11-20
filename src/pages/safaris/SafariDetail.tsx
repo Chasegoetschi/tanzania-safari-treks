@@ -193,7 +193,7 @@ const SafariDetail = () => {
             
             <div className="space-y-12">
               {safari.itinerary.map((day: any) => <div key={day.day}>
-                  <h3 className="text-2xl font-serif text-primary mb-6 font-semibold">
+                  <h3 className="font-serif text-primary mb-6 font-semibold text-4xl">
                     {day.title.split(' ')[0]} <span className="italic">{day.title.split(' ')[1]}</span>
                   </h3>
                   <div className="relative pl-12 space-y-8">
