@@ -109,6 +109,9 @@ const MigrationSafaris = () => {
                   alt={safari.title}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+                
+                {/* Black Overlay */}
+                <div className="absolute inset-0 bg-black/25" />
 
                 {/* Content */}
                 <div className="relative h-full flex items-center justify-between px-8">
