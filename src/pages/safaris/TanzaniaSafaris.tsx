@@ -156,7 +156,7 @@ const TanzaniaSafaris = () => {
                 {/* Content */}
                 <div className="relative h-full flex items-center justify-between px-8 text-white">
                   <div className="space-y-3">
-                    <h3 className="text-2xl md:text-3xl font-serif uppercase tracking-wide">
+                    <h3 className="text-2xl md:text-3xl font-serif font-semibold uppercase tracking-wide">
                       {safari.title}
                     </h3>
 
