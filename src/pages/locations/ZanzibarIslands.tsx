@@ -5,7 +5,7 @@ import zanzibarExperienceImage from "@/assets/zanzibar-experience.png";
 import zanzibarStonetownImage from "@/assets/zanzibar-stonetown.png";
 const ZanzibarIslands = () => {
   const beachPackages = [{
-    title: "ZANZIBAR ISLANDS",
+    title: "BEACH GETAWAY",
     price: "26,000",
     groupSize: "2+",
     image: zanzibarBeachImage,
