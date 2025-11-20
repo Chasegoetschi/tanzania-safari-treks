@@ -4,7 +4,24 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-serif italic mb-4 text-primary font-medium">GRANT EXPEDITION LTD</h3>
+            <h3 className="text-2xl font-serif italic mb-4 text-primary font-medium">GRANT EXPEDITION LTD
+
+Creating unforgettable safari experiences in the heart of Africa since 2008. Discover the wild with expert guides and authentic adventures.
+
+QUICK LINKS
+Home
+About
+Safaris
+Contact
+Connect With Us
+
+Email: info@grantexpedition.com
+
+Phone: +255 766 437 358
+
+Address: Arusha, Tanzania
+
+Stay connected for safari updates, wildlife photography, and exclusive offers</h3>
             <p className="text-white/80 leading-relaxed">
               Creating unforgettable safari experiences in the heart of Africa since 2008. 
               Discover the wild with expert guides and authentic adventures.
