@@ -20,8 +20,8 @@ const About = () => {
   return <section id="about" className="py-11 bg-white scroll-mt-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-4xl md:text-6xl font-serif mb-10 uppercase tracking-wide text-[#646c45]">
-            QUALITY FIRST
+          <h2 className="text-4xl md:text-6xl font-serif mb-10 tracking-wide text-[#646c45]">
+            QUALITY <span className="italic lowercase">first</span>
           </h2>
           <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-loose">
             Immerse yourself in Tanzania's rich tapestry of wildlife, culture, and natural wonders. 
