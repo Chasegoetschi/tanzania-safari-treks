@@ -79,7 +79,7 @@ const TripFinder = () => {
     link: "/locations/zanzibar"
   }];
   return <section id="trip-finder" className="py-20 bg-trip-bg scroll-mt-24">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8 md:px-16 lg:px-24">
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-sm text-primary uppercase tracking-[0.3em] mb-4">
