@@ -1,4 +1,5 @@
 import { ArrowRight, DollarSign, Users } from "lucide-react";
+import zanzibarHeroImage from "@/assets/zanzibar-hero.jpg";
 import zanzibarBeachImage from "@/assets/zanzibar-beach.png";
 import zanzibarExperienceImage from "@/assets/zanzibar-experience.png";
 import zanzibarStonetownImage from "@/assets/zanzibar-stonetown.png";
@@ -33,10 +34,13 @@ const ZanzibarIslands = () => {
       {/* Hero Section - Using Design System Standards */}
       <section className="hero-section">
         <img 
-          src={zanzibarBeachImage} 
+          src={zanzibarHeroImage} 
           alt="Zanzibar Islands" 
           className="absolute inset-0 w-full h-full object-cover object-center" 
         />
+        
+        {/* Black Overlay */}
+        <div className="absolute inset-0 bg-black/25" />
 
         <div className="relative z-10 text-center text-white px-4">
           <p className="text-2xl md:text-3xl italic font-light mb-2">discover the</p>
