@@ -27,7 +27,7 @@ const RebrandingDialog = () => {
             className="w-48 h-48 md:w-56 md:h-56 mb-6 object-contain"
           />
           
-          <h2 className="text-3xl md:text-4xl font-serif italic text-[#8B7355] mb-6">
+          <h2 className="text-3xl md:text-4xl font-serif italic text-[#8B7355] mb-3">
             We've Re-branded
           </h2>
           
