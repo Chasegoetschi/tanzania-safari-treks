@@ -18,7 +18,7 @@ const Hero = () => {
           <h1 className="text-6xl md:text-8xl font-serif text-[hsl(var(--navbar-text))] mb-8 animate-fade-in tracking-[0.15em] uppercase lg:text-8xl">
             SAFARI EXPERIENCES
           </h1>
-          <p className="text-xl md:text-2xl text-white font-light mb-12 animate-fade-in leading-relaxed" style={{
+          <p className="text-xl md:text-2xl text-[hsl(var(--navbar-text))] font-light mb-12 animate-fade-in leading-relaxed" style={{
           animationDelay: "0.2s"
         }}>
             Escape to the wild with our unforgettable safari tours.
