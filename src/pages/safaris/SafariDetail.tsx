@@ -240,7 +240,7 @@ const SafariDetail = () => {
 
           {/* Safari Activities */}
           {safari.activities && safari.activities.length > 0 && <div className="mb-16">
-              <h2 className="text-3xl font-serif uppercase text-secondary mb-6 tracking-wide">
+              <h2 className="text-3xl font-serif uppercase text-secondary mb-6 tracking-wide font-semibold">
                 SAFARI ACTIVITIES <span className="italic lowercase text-2xl">options</span>
               </h2>
               <ul className="space-y-2">
