@@ -16,7 +16,7 @@ const SafariIntro = () => {
             <h2 className="text-4xl md:text-5xl font-serif">
               <span className="text-copper uppercase tracking-wide font-serif font-semibold">NORTHERN TANZANIA</span>
               <br />
-              <span className="text-primary/80 italic font-serif">safari</span>{" "}
+              <span className="text-copper italic font-serif">safari</span>{" "}
               <span className="text-copper uppercase tracking-wide font-serif font-semibold">EXCURSIONS</span>
             </h2>
             <div className="space-y-4 text-foreground/80 leading-relaxed">
