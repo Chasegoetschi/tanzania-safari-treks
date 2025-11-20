@@ -102,7 +102,7 @@ const TripFinder = () => {
               {/* Content */}
               <div className="relative h-full flex flex-col justify-end p-6 text-white">
                 <div className="mb-auto">
-                  <h3 className="font-serif font-semibold uppercase tracking-wide leading-tight mb-4 text-4xl my-0 pt-0">
+                  <h3 className="font-semibold uppercase tracking-wide leading-tight mb-4 my-0 pt-0 font-sans text-3xl">
                     {expedition.title}
                   </h3>
                 </div>
