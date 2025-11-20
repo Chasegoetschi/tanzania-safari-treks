@@ -64,7 +64,7 @@ const Contact = () => {
           <h2 className="text-4xl md:text-6xl font-serif text-[hsl(72,22%,35%)] mb-6 uppercase tracking-wide">
             questions?
           </h2>
-          <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-[hsl(29,64%,62%)] max-w-3xl mx-auto leading-relaxed">
             CONTACT OUR TEAM    
           </p>
         </div>
