@@ -23,9 +23,9 @@ const Hero = () => {
         }}>
             Escape to the wild with our unforgettable safari tours.
           </p>
-          <div className="flex justify-center animate-fade-in" style={{
+          <div style={{
           animationDelay: "0.4s"
-        }}>
+        }} className="flex justify-center animate-fade-in pb-[200px]">
             <Button size="lg" onClick={scrollToTripFinder} className="text-base px-12 py-6 text-foreground border-none uppercase tracking-widest font-medium bg-white/[0.87]">
               FIND YOUR ADVENTURE
             </Button>
