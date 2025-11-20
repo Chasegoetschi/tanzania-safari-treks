@@ -17,7 +17,7 @@ const About = () => {
     title: "Safety First",
     description: "Your safety and comfort are our top priorities on every adventure"
   }];
-  return <section id="about" className="py-11 bg-white scroll-mt-24">
+  return <section id="about" className="py-11 bg-sage-bg scroll-mt-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-4xl md:text-6xl font-serif mb-10 tracking-wide text-[#646c45]">
