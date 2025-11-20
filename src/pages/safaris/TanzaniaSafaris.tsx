@@ -64,7 +64,7 @@ const TanzaniaSafaris = () => {
   return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <img src={giraffeImage} alt="Giraffe silhouette at sunset in Tanzania Safaris hero" className="absolute inset-0 w-full h-full object-[center_35%] object-fill" />
+        <img src={giraffeImage} alt="Giraffe silhouette at sunset in Tanzania Safaris hero" className="absolute inset-0 w-full h-full object-cover object-center" />
 
         <div className="relative z-10 text-center text-white px-4">
           <p className="text-2xl md:text-3xl italic font-light mb-2">breathtaking</p>
