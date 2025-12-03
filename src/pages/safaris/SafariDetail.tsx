@@ -111,7 +111,7 @@ const SafariDetail = () => {
       </div>;
   }
   const handleBooking = () => {
-    navigate(`/book?content_type=safari&content_id=${safari.id}&content_name=${encodeURIComponent(safari.name)}`);
+    navigate(`/book?trip=${encodeURIComponent(safari.name)}&content_type=safari&content_id=${safari.id}`);
   };
   return <div className="min-h-screen bg-background">
       {/* Header Section */}

@@ -11,28 +11,28 @@ const MainlandHighlights = () => {
       price: "26,000",
       groupSize: "2+",
       image: safariHeroImage,
-      link: "/book?content_type=location&content_name=Serengeti National Park"
+      link: "/book?trip=Serengeti%20National%20Park&content_type=location"
     },
     {
       title: "SERENGETI EXPEDITION",
       price: "32,000",
       groupSize: "4+",
       image: lionsImage,
-      link: "/book?content_type=location&content_name=Serengeti National Park"
+      link: "/book?trip=Serengeti%20National%20Park&content_type=location"
     },
     {
       title: "NGORONGORO CRATER",
       price: "28,000",
       groupSize: "2+",
       image: elephantsImage,
-      link: "/book?content_type=location&content_name=Ngorongoro Crater"
+      link: "/book?trip=Ngorongoro%20Crater&content_type=location"
     },
     {
       title: "TARANGIRE ADVENTURE",
       price: "24,000",
       groupSize: "4+",
       image: zebraImage,
-      link: "/book?content_type=location&content_name=Tarangire National Park"
+      link: "/book?trip=Tarangire%20National%20Park&content_type=location"
     },
   ];
 
