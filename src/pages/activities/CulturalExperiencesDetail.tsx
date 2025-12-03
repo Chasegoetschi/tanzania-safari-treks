@@ -53,7 +53,7 @@ const CulturalExperiencesDetail = () => {
           </div>
 
           <div className="space-y-6">
-            {packages.map((pkg, index) => <div key={index} onClick={() => window.location.href = `/book?content_type=activity&content_name=CULTURAL EXPERIENCES - ${pkg.title}`} className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            {packages.map((pkg, index) => <div key={index} onClick={() => window.location.href = `/book?trip=cultural%20tours&content_type=activity`} className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                 <img src={pkg.image} alt={pkg.title} className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
                 

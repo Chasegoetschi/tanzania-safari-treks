@@ -10,21 +10,21 @@ const CulturalExperiences = () => {
       price: "8,000",
       groupSize: "2+",
       image: giraffePatternImage,
-      link: "/book?content_type=activity&content_name=Maasai Village Visit"
+      link: "/book?trip=cultural%20tours&content_type=activity"
     },
     {
       title: "MAASAI VILLAGE IMMERSION",
       price: "12,000",
       groupSize: "4+",
       image: giraffeFeedingImage,
-      link: "/book?content_type=activity&content_name=Maasai Village Visit"
+      link: "/book?trip=cultural%20tours&content_type=activity"
     },
     {
       title: "TRIBAL HERITAGE TOUR",
       price: "15,000",
       groupSize: "2+",
       image: oryxImage,
-      link: "/book?content_type=activity&content_name=Lake Eyasi Cultural Tour"
+      link: "/book?trip=cultural%20tours&content_type=activity"
     },
   ];
 

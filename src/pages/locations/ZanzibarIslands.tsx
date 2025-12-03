@@ -9,19 +9,19 @@ const ZanzibarIslands = () => {
     price: "26,000",
     groupSize: "2+",
     image: zanzibarAlleyImage,
-    link: "/book?content_type=location&content_name=5-Day Beach Getaway"
+    link: "/book?trip=Zanzibar%205%20Days%204%20Nights%20Package&content_type=location"
   }, {
     title: "ISLAND ADVENTURE",
     price: "28,000",
     groupSize: "2+",
     image: zanzibarExperienceImage,
-    link: "/book?content_type=location&content_name=6-Day Island Adventure"
+    link: "/book?trip=Zanzibar%206%20Days%205%20Nights%20Package&content_type=location"
   }, {
     title: "LUXURY ESCAPE",
     price: "32,000",
     groupSize: "4+",
     image: zanzibarStonetownImage,
-    link: "/book?content_type=location&content_name=7-Day Luxury Escape"
+    link: "/book?trip=Zanzibar%207%20Days%206%20Nights%20Package&content_type=location"
   }];
   return <div className="min-h-screen">
       {/* Hero Section - Using Design System Standards */}

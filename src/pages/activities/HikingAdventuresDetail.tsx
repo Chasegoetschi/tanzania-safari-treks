@@ -14,6 +14,7 @@ const HikingAdventuresDetail = () => {
       groupSize: "2-8",
       description: "Perfect for beginners, explore local trails with experienced guides",
       image: mountMeruImage,
+      tripName: "mount meru climbing"
     },
     {
       title: "MOUNT KILIMANJARO",
@@ -22,6 +23,7 @@ const HikingAdventuresDetail = () => {
       groupSize: "2-6",
       description: "Immersive experience with overnight camping and mountain views",
       image: mountKilimanjaroImage,
+      tripName: "Mount Kilimanjaro"
     },
     {
       title: "NGORONGORO HIGHLANDS",
@@ -30,6 +32,7 @@ const HikingAdventuresDetail = () => {
       groupSize: "2-4",
       description: "Ultimate hiking journey through diverse landscapes and terrains",
       image: ngorongoroHighlandsImage,
+      tripName: "Ngorongoro Crater"
     },
   ];
 
@@ -68,7 +71,7 @@ const HikingAdventuresDetail = () => {
             {packages.map((pkg, index) => (
               <div
                 key={index}
-                onClick={() => window.location.href = `/book?content_type=activity&content_name=HIKING ADVENTURES - ${pkg.title}`}
+                onClick={() => window.location.href = `/book?trip=${encodeURIComponent(pkg.tripName)}&content_type=activity`}
                 className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
               >
                 <img

@@ -8,19 +8,19 @@ const NorthernCircuit = () => {
     price: "26,000",
     groupSize: "4+",
     image: kilimanjaroSummitImage,
-    link: "/book?content_type=location&content_name=Mount Kilimanjaro"
+    link: "/book?trip=Mount%20Kilimanjaro&content_type=location"
   }, {
     title: "KILIMANJARO EXPEDITION",
     price: "28,000",
     groupSize: "2+",
     image: kilimanjaroNightImage,
-    link: "/book?content_type=location&content_name=Mount Kilimanjaro"
+    link: "/book?trip=Mount%20Kilimanjaro&content_type=location"
   }, {
     title: "MOUNT MERU TREK",
     price: "18,000",
     groupSize: "4+",
     image: riftValleyImage,
-    link: "/book?content_type=location&content_name=Mount Meru"
+    link: "/book?trip=mount%20meru%20climbing&content_type=location"
   }];
   return <div className="min-h-screen">
       {/* Hero Section */}

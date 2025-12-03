@@ -10,21 +10,24 @@ const OutdoorExperiencesDetail = () => {
     duration: "1 Day",
     groupSize: "4-12",
     description: "Experience wildlife in their natural habitat with expert guides",
-    image: hotAirBalloonImage
+    image: hotAirBalloonImage,
+    tripName: "Serengeti National Park"
   }, {
     title: "LAKE MANYARA CANOEING",
     price: "14,500",
     duration: "2 Days",
     groupSize: "4-10",
     description: "Extended wildlife viewing with camping under the stars",
-    image: lakeManyaraCanoeingImage
+    image: lakeManyaraCanoeingImage,
+    tripName: "Lake Manyara National Park"
   }, {
     title: "NIGHT GAME DRIVE",
     price: "18,000",
     duration: "3 Days",
     groupSize: "4-8",
     description: "Comprehensive outdoor experience combining wildlife, landscapes, and nature",
-    image: nightGameDriveImage
+    image: nightGameDriveImage,
+    tripName: "Tarangire National Park"
   }];
   return <div className="min-h-screen">
       {/* Hero Section */}
@@ -53,7 +56,7 @@ const OutdoorExperiencesDetail = () => {
           </div>
 
           <div className="space-y-6">
-            {packages.map((pkg, index) => <div key={index} onClick={() => window.location.href = `/book?content_type=activity&content_name=OUTDOOR EXPERIENCES - ${pkg.title}`} className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            {packages.map((pkg, index) => <div key={index} onClick={() => window.location.href = `/book?trip=${encodeURIComponent(pkg.tripName)}&content_type=activity`} className="group relative h-[200px] overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                 <img src={pkg.image} alt={pkg.title} className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
                 
