@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import About from "@/components/About";
 import SafariIntro from "@/components/SafariIntro";
 import TripFinder from "@/components/TripFinder";
 import Contact from "@/components/Contact";
@@ -12,7 +11,6 @@ const Index = () => {
       <Hero />
       <SafariIntro />
       <TripFinder />
-      <About />
       <Contact />
     </div>
   );

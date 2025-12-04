@@ -20,63 +20,63 @@ const TripFinder = () => {
     duration: "6 Days",
     price: "From $3,000",
     image: lionessSunsetImage,
-    link: "/safaris/tanzania"
+    link: "/trips/tanzania-highlights-safari"
   }, {
     title: "CRATER RIM ADVENTURE",
     location: "Serengeti National Park",
     duration: "7 Days",
     price: "From $3,200",
     image: oryxImage,
-    link: "/safaris/tanzania"
+    link: "/trips/crater-rim-adventure"
   }, {
     title: "NDUTU MIGRATION EXPERIENCE",
     location: "Southern Serengeti & Ndutu",
     duration: "6 Days",
     price: "From $4,000",
     image: riftValleyImage,
-    link: "/safaris/migration"
+    link: "/trips/ndutu-migration-experience"
   }, {
     title: "MT. KILIMANJARO MARANGU ROUTE",
     location: "Kilimanjaro Trail Huts",
     duration: "5 Days",
     price: "From $4,000",
     image: kilimanjaroSignImage,
-    link: "/activities/hiking"
+    link: "/trips/kilimanjaro-marangu"
   }, {
     title: "MT. KILIMANJARO MACHAME ROUTE",
     location: "Kilimanjaro Trail Huts",
     duration: "6 Days",
     price: "From $4,000",
     image: kilimanjaroNightImage,
-    link: "/activities/hiking"
+    link: "/trips/kilimanjaro-machame"
   }, {
     title: "MT. KILIMANJARO LEMOSHO ROUTE",
     location: "Kilimanjaro Trail Huts",
     duration: "8 Days",
     price: "From $4,000",
     image: kilimanjaroSummitImage,
-    link: "/activities/hiking"
+    link: "/trips/kilimanjaro-lemosho"
   }, {
     title: "EXPLORE ZANZIBAR",
     location: "Mnarani Seafront Hotel, Stone Town",
-    duration: "5 Days, 1 Night",
+    duration: "5 Days, 4 Nights",
     price: "From $3,000",
     image: zanzibarStonetownImage,
-    link: "/locations/zanzibar"
+    link: "/trips/explore-zanzibar"
   }, {
     title: "THE ZANZIBAR EXPERIENCE",
     location: "Mnarani Seafront Hotel, Stone Town",
     duration: "3 Days, 2 Nights",
     price: "From $4,000",
     image: zanzibarExperienceImage,
-    link: "/locations/zanzibar"
+    link: "/trips/zanzibar-experience"
   }, {
     title: "ZANZIBAR IMMERSIVE",
     location: "Mnarani Seafront Hotel, Stone Town",
     duration: "4 Days, 3 Nights",
     price: "From $5,000",
     image: zanzibarBeachImage,
-    link: "/locations/zanzibar"
+    link: "/trips/zanzibar-immersive"
   }];
   return <section id="trip-finder" className="py-20 bg-trip-bg scroll-mt-24">
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
