@@ -84,8 +84,8 @@ const About = () => {
             drives everything we do.
           </p>
           <a 
-            href="/Certificate_of_Incorporation.pdf" 
-            target="_blank" 
+            href="/CERTIFICATE_OF_INCORPORATION.pdf" 
+            target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-6 text-primary hover:text-primary/80 underline underline-offset-4 transition-colors"
           >
