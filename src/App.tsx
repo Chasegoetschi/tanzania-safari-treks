@@ -30,6 +30,8 @@ import Book from "./pages/Book";
 import BookingSuccess from "./pages/BookingSuccess";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import About from "./pages/About";
+import TripDetail from "./pages/trips/TripDetail";
 
 const NavigationHandler = () => {
   const navigate = useNavigate();
@@ -87,6 +89,8 @@ const App = () => {
           <Navbar />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/trips/:slug" element={<TripDetail />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/admin-login" element={<AdminLogin />} />

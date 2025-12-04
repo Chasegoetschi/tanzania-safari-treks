@@ -65,9 +65,9 @@ const Navbar = () => {
               HOME
             </button>
 
-            <button onClick={() => scrollToSection("about")} className="text-sm font-medium transition-colors uppercase tracking-wider whitespace-nowrap text-[hsl(var(--navbar-text))]/80 hover:text-[hsl(var(--navbar-text))]">
+            <Link to="/about" className="text-sm font-medium transition-colors uppercase tracking-wider whitespace-nowrap text-[hsl(var(--navbar-text))]/80 hover:text-[hsl(var(--navbar-text))]" onClick={() => window.scrollTo(0, 0)}>
               ABOUT US
-            </button>
+            </Link>
 
             <DropdownMenu open={openSafaris} onOpenChange={setOpenSafaris}>
               <div onMouseEnter={() => setOpenSafaris(true)} onMouseLeave={() => setOpenSafaris(false)}>
@@ -151,9 +151,9 @@ const Navbar = () => {
               HOME
             </button>
 
-            <button onClick={() => scrollToSection("about")} className="block w-full text-left text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider px-4 py-2 whitespace-nowrap">
+            <Link to="/about" onClick={() => setIsOpen(false)} className="block w-full text-left text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider px-4 py-2 whitespace-nowrap">
               ABOUT US
-            </button>
+            </Link>
 
             <DropdownMenu>
               <DropdownMenuTrigger className="w-full text-left text-sm font-medium text-foreground/70 hover:text-foreground transition-colors uppercase tracking-wider px-4 py-2">
