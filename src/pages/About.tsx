@@ -83,6 +83,14 @@ const About = () => {
             with travelers from around the world. Our passion for wildlife, culture, and authentic experiences 
             drives everything we do.
           </p>
+          <a 
+            href="/Certificate_of_Incorporation.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block mt-6 text-primary hover:text-primary/80 underline underline-offset-4 transition-colors"
+          >
+            View our Certificate of Incorporation
+          </a>
         </div>
       </section>
 
