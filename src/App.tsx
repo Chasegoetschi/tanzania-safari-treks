@@ -97,6 +97,7 @@ const App = () => {
             <Route path="/account" element={<Account />} />
             <Route path="/my-bookings" element={<MyBookings />} />
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin/bookings" element={<AdminDashboard />} />
             <Route path="/safaris/tanzania" element={<TanzaniaSafaris />} />
             <Route path="/safaris/migration" element={<MigrationSafaris />} />
             <Route path="/safaris/:slug" element={<SafariDetail />} />
