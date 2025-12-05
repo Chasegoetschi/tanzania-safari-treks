@@ -267,6 +267,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      check_contact_rate_limit: {
+        Args: { check_email: string }
+        Returns: boolean
+      }
       has_role:
         | {
             Args: {
