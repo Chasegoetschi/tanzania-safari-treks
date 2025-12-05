@@ -70,14 +70,18 @@ const Account = () => {
                     <FileText className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <CardTitle>My Bookings</CardTitle>
-                    <CardDescription>View your trip reservations</CardDescription>
+                    <CardTitle>{isAdmin ? "All Bookings" : "My Bookings"}</CardTitle>
+                    <CardDescription>
+                      {isAdmin ? "View and manage all reservations" : "View your trip reservations"}
+                    </CardDescription>
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
-                <Link to="/my-bookings">
-                  <Button className="w-full">View My Bookings</Button>
+                <Link to={isAdmin ? "/admin/bookings" : "/my-bookings"}>
+                  <Button className="w-full">
+                    {isAdmin ? "View All Bookings" : "View My Bookings"}
+                  </Button>
                 </Link>
               </CardContent>
             </Card>
