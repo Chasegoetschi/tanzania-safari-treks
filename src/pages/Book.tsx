@@ -245,6 +245,17 @@ const Book = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Require authentication
+    if (!user) {
+      toast({
+        title: "Authentication Required",
+        description: "Please log in to make a booking.",
+        variant: "destructive"
+      });
+      navigate('/login?redirect=/book');
+      return;
+    }
+
     // Check honeypot
     if (honeypot) {
       toast({
@@ -269,7 +280,7 @@ const Book = () => {
       const bookingRef = generateConfirmationNumber();
       const { error } = await supabase.from("bookings").insert({
         booking_ref: bookingRef,
-        user_id: user?.id || null,
+        user_id: user.id,
         tour_id: selectedTour?.id,
         tour_name: selectedTour?.name || "",
         first_name: firstName.trim(),
